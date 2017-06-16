@@ -1,0 +1,933 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness ASL</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+        </div>
+        <div class="col-md-10 user_utils no_padding">
+          <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+            <div class="notification_utils">
+              <ul class="notifications clearfix">
+                <li>
+                  <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown language">
+              <select class="header_language">
+                <option>English US</option>
+                <option>English UK</option>
+                <option>French</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+              <div class="dropdown user_details">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">John Mattew</button>
+                  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="Library/my_profile.html">My Profile</a></li>
+                    <li><a href="Library/login.html">Sign out</a></li>
+                    <li class="thm-def"><a href="javascript:void(0)">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:void(0)">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:void(0)">Theme - Purple</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here --> 
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends --> 
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends --> 
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends --> 
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Site Tour</a></li>
+      <li><a href="javascript:;">Glossary of Terms</a></li>
+      <li><a href="javascript:;">About this Page</a></li>
+    </ul>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- FAQ popover ends --> 
+  <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+<!-- Main menu starts -->
+<nav class="navbar main_navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+    <div id="mainnavigation" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="javascript:;">My Portfolio</a></li>
+        <li><a href="javascript:;">Projects</a></li>
+        <li><a href="javascript:;">Loans</a></li>
+        <li><a href="javascript:;">Organizations</a></li>
+        <li><a href="javascript:;">Events</a></li>
+        <li><a href="javascript:;" class="current_page">ASL</a></li>
+        <li><a href="javascript:;">User Management</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Main menu ends -->
+
+<div class="container"> 
+  <!-- Example row of columns -->
+  <div class="row section_wrapper"> 
+    <!--page title starts here-->
+    <div class="page_title_section clearfix">
+      <h1 class="pull-left">Review Authorized Signatory Letter</h1>
+      <div class="page_utils_links"> <a href="javascript:;">View WB Docs</a> <a title="View/Print ASL" href="javascript:;" class="page_options"><span class="sprite sprite-ico_print"></span></a> </div>
+    </div>
+    <!--<div class="clearfix review_page">
+      <div class="page_utils_links">
+        <p class="mandatory_text">Fields marked with "<span class="mandatory">*</span>" are mandatory.</p>
+      </div>
+    </div>-->
+    <!--page title ends here-->
+    <div class="col-md-12 column_wrapper">
+      <div class="content_wrapper no_padding">
+        <div class="panel-group setup_accordion" id=""> 
+          
+          <!--step 1 starts here-->
+          
+          <div class="panel panel-default completed step1">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix reviewpage_header" data-rel="step1">
+                  <div class="item_counter"><span class="step_completed_check">1<span class="stat-checked"><span class="sprite sprite-ico_tick_big"></span></span></span></div>
+                  <div class="item_title"> <span>Loan Selections</span> <a href="javascript:;1" class="pull-right collapseOne mar_right-50">Edit</a> </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form-horizontal">
+                    <fieldset>
+                      
+                      <div class="col-md-11 readonly">
+                        <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2 row_item__selected">
+                          <thead>
+                            <tr>
+                              <th width="30%"><a class="sort_column" href="javascript:;">Loan number <span class="ascending"></span></a></th>
+                              <th width="20%"><a href="javascript:;">Project ID</a></th>
+                              <th width="50%"><a href="javascript:;">Project Name</a></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="loan_number_row_5">
+                              <td>IDA 53150</td>
+                              <td>P558956</td>
+                              <td>Environment &amp; Natural Resources</td>
+                            </tr>
+                            <tr class="loan_number_row_6">
+                              <td>IDA 49450</td>
+                              <td>P352545</td>
+                              <td>Finance &amp; Markets</td>
+                            </tr>
+                            <tr class="loan_number_row_7">
+                              <td>IBRD 75570</td>
+                              <td>P235689</td>
+                              <td>Fragility, Conflict &amp; Violence</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="col-md-1 no_padding"></div>
+                      <div class="clearfix"></div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--step 1 ends here--> 
+          
+          <!--step 2 starts here-->
+          
+          <div class="panel panel-default completed step2">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix reviewpage_header" data-rel="step2">
+                  <div class="item_counter"><span class="step_completed_check">2<span class="stat-checked"><span class="sprite sprite-ico_tick_big"></span></span></span></div>
+                  <div class="item_title"> <span>Signatories Selections</span> <a href="javascript:;" class="pull-right collapseTwo mar_right-50">Edit</a> </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form-horizontal">
+                    
+                    <fieldset>
+                        <p>How many eSignatories are required to sign the withdrawal application ?: 2</p>
+
+                      
+                      <div class="col-md-11 readonly">
+                        <div class="user_group_wrap">
+                          <h4>Group 1</h4>
+                          <table width="100%" cellspacing="0" cellpadding="0" align="center" class="tbl table tbl_type2 group1">
+                            <thead>
+                              <tr>
+                                <th width="20%" class="no_lt_bdr"><a class="sort_column" href="javascript:;">User Name</a></th>
+                                <th width="20%"><a href="javascript:;">Title</a></th>
+                                <th width="30%"><a href="javascript:;">Organization</a></th>
+                                <th width="15%"><a href="javascript:;">Status</a></th>
+                                <th width="15%"><a href="javascript:;">Mandatory?</a></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="group_1_row_1">
+                                <td>Michael Augustin</td>
+                                <td>Division Chief</td>
+                                <td>Cross River State PFMU</td>
+                                <td>Active</td>
+                                <td> <span class="ico-checkbox_switch disabled_switch">Yes</span></td>
+                              </tr>
+                              <tr class="group_1_row_3">
+                                <td>Nikhil Mathew</td>
+                                <td>Junior Accounts Officer</td>
+                                <td>CORAF/WECARD</td>
+                                <td>Pending</td>
+                                <td> <span class="ico-checkbox_switch disabled_switch">Yes</span></td>
+                              </tr>
+                              <tr class="group_1_row_6">
+                                <td>Michael Augustin</td>
+                                <td>Project Coordinator</td>
+                                <td>National Project Coordination Unit</td>
+                                <td>Active</td>
+                                <td> <span class="ico-checkbox_switch disabled_switch">Yes</span></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div class="required_esgin_wrap clearfix">
+                                <div class="select_all_wrap">
+                                    <a class="select_all_current_group_user" href="javascript:;">Select All</a>
+                                </div>
+                                <div class="table_utils"> 
+                                    <label class="normal_txt">Required eSignatories</label>
+                                    <select id="esign_numbers_group_1" class="form-control input-sm" disabled>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user_group_wrap">
+                          <h4>Group 2</h4>
+                          <table width="100%" cellspacing="0" cellpadding="0" align="center" class="tbl table tbl_type2 group1">
+                            <thead>
+                              <tr>
+                                <th width="20%" class="no_lt_bdr"><a class="sort_column" href="javascript:;">User Name</a></th>
+                                <th width="20%"><a href="javascript:;">Title</a></th>
+                                <th width="30%"><a href="javascript:;">Organization</a></th>
+                                <th width="15%"><a href="javascript:;">Status</a></th>
+                                <th width="15%"><a href="javascript:;">Mandatory?</a></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="group_1_row_1">
+                                <td>Julia Harpings</td>
+                                <td>Secretary General</td>
+                                <td>CORAF/WECARD</td>
+                                <td>Active</td>
+                                <td> <span class="ico-checkbox_switch disabled_switch">Yes</span></td>
+                              </tr>
+                              <tr class="group_1_row_3">
+                                <td>IDS Scudder</td>
+                                <td>Assistant Project Accountant</td>
+                                <td>National Project Coordination Unit</td>
+                                <td>Pending</td>
+                                <td> <span class="ico-checkbox_switch disabled_switch">Yes</span></td>
+                              </tr>
+                              <tr class="group_1_row_6">
+                                <td>John Peter</td>
+                                <td>State Expert</td>
+                                <td>Cross River State PFMU</td>
+                                <td>Pending</td>
+                                <td> <span class="ico-checkbox_switch ico-checkbox_switch_yes disabled_switch">Yes</span></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div class="required_esgin_wrap clearfix">
+                                <div class="select_all_wrap">
+                                    <a class="select_all_current_group_user" href="javascript:;">Select All</a>
+                                </div>
+                                <div class="table_utils"> 
+                                    <label class="normal_txt">Required eSignatories</label>
+                                    <select id="esign_numbers_group_1" class="form-control input-sm" disabled>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-md-1 no_padding"></div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--step 2 ends here--> 
+          
+          <!--step 3 starts here-->
+          
+          <div class="panel panel-default completed step3">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix reviewpage_header" data-rel="step4">
+                  <div class="item_counter"><span class="step_completed_check">3<span class="stat-checked"><span class="sprite sprite-ico_tick_big"></span></span></span></div>
+                  <div class="item_title"> <span>Upload Documents / Authorization </span> <a href="javascript:;" class="collapseThree pull-right mar_right-50">Edit</a> </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form-horizontal">
+                    <fieldset>
+                        
+                      
+                      <div class="col-md-11 ">
+                      <div class="upload_wrap">
+                       <h4> Upload PDF copy of signed ASL</h4>
+                       </div>
+                        <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2">
+                          <thead>
+                            <tr>
+                              <th>Document Name</th>
+                              <th>Attached By</th>
+                              <th>Date</th>
+                              <th>Status</th>
+                             <!-- <th>Action</th>-->
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><a href="javascript:;">ASL Letter</a></td>
+                              <td>Micheal Augustin</td>
+                              <td>Nov 20, 2014</td>
+                              <td>Pending</td>
+                              <!--<td><a href="javascript:;" title="Delete Uploaded Document"> <span class="sprite sprite-ico_delete_bin"></span> </a></td>-->
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="col-md-6 no_padding"></div>
+                      <div class="clear"></div>                      
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--step 3 ends here--> 
+          
+          <!--step 6 history starts here-->
+          
+          <!-- <div class="panel panel-default completed step6">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed history_header clearfix" data-toggle="collapse" data-parent="#accordion" data-target="#collapseSix">
+                  <div class="item_counter"> <span class="step_completed_check"> <span class="sprite sprite-ico_history"></span> </span> </div>
+                  <div class="item_title"> <span>View ASL History </span> <a href="javascript:;" class="pull-right collapseSix"> <span class="sprite sprite-ico_accord_down"></span> </a> </div>
+                </div>
+              </div>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-10">
+                    <table class="table tbl" width="100%" cellspacing="0" cellpadding="0">
+                      <thead>
+                        <tr>
+                          <th>User Name</th>
+                          <th>Role</th>
+                          <th>Action</th>
+                          <th>Date</th>
+                          <th>Comments</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Jabakumar Nethaniel</td>
+                          <td>General</td>
+                          <td>Submitted</td>
+                          <td>04-01-2015</td>
+                          <td>Attached ASL dated Nov 20, 2014</td>
+                        </tr>
+                        <tr>
+                          <td>Stephen Rerual</td>
+                          <td>Esignatory</td>
+                          <td>Submitted</td>
+                          <td>05-01-2015</td>
+                          <td>Reviewed the attachment</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-md-1"></div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          
+          <!--step 6 history ends here-->
+          
+          <div class="panel panel-default completed step3 asl_page">
+            
+            <div class="panel-collapse collapse in" id="">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form-horizontal">
+                    <fieldset>
+                        <div class="clearfix">
+              <div class="col-md-5 no_padding">
+                        <div class="form-group">
+                          <input type="checkbox" id="review_ASL"/>
+                          <label class="css-labelChk sprite sprite-ico-checkbox" for="review_ASL">I have reviewed the <a href="javascript:;" data-target=".asl-modal-lg" data-toggle="modal">Authorized Signatory Letter</a></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review_btn_wrap">
+            
+                        <input type="button" data-target=".submit-modal-sm" data-toggle="modal" value="Submit" class="btn btn-primary btn_green">
+                        <input type="button" data-target=".save-modal-sm" data-toggle="modal" value="Save" class="btn btn-secondary btn_white">
+                        <a data-target=".cancel-modal-sm" data-toggle="modal" href="javascript:;">Cancel</a> 
+                    </div>
+
+
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          
+          
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+
+<!--popup starts here--> 
+<!--cancel popup starts here-->
+<div class="modal fade cancel-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Cancel ASL<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Do you want to cancel the ASL setup Process?</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--cancel popup ends here--> 
+
+<!--save popup starts here-->
+<div class="modal fade save-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Save ASL<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">This ASL is saved as a draft.</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--save popup ends here--> 
+
+<!--submit popup starts here-->
+<div class="modal fade submit-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Submit ASL<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <!--<div class="clearfix">
+          <div class="page_utils_links">
+            <p class="mandatory_text">Fields marked with "<span class="mandatory">*</span>" are mandatory.</p>
+          </div>
+        </div>-->
+        <form class="form-horizontal">
+          <fieldset>
+            <div class="col-md-12">
+               <div class="form-group clearfix">
+                    <label class="control-label " for="inputComm_rev_asl" >Comments</label>
+                    <div class="clear"></div>
+                    <div class="col-lg-12 col-sm-12 no_padding">
+                        <textarea class="form-control" for="inputComm_rev_asl" rows="5"></textarea>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 no_padding"></div>
+                </div>
+                
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="modal-footer txt_center btn_wrap">
+        <input type="button" class="btn btn-primary btn_green confirm_asl_submit" data-dismiss="modal" value="Sumbit">
+        <a href="javascript:;" data-dismiss="modal">Cancel</a> </div>
+    </div>
+  </div>
+</div>
+
+<!--submit popup ends here--> 
+
+
+
+<!--save popup starts here-->
+<div class="modal fade confirm_asl_submit_popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">ASL is successfully submitted to liaison for review.</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--save popup ends here--> 
+
+<!--requestRevision  popup starts here-->
+<div class="modal fade requestRevision-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Request Revision<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <fieldset>
+            <div class="form-group">
+              <label class="control-label required col-xs-3" for="">Reason</label>
+              <div class="col-xs-8 no_padding">
+                <input type="text" class="form-control" placeholder="Reason for Reject"/>
+              </div>
+              <div class="col-xs-1"></div>
+            </div>
+            <div class="form-group">
+              <label class="control-label required col-xs-3" for="">Comments</label>
+              <div class="col-xs-8 no_padding">
+                <textarea class="form-control"></textarea>
+              </div>
+              <div class="col-xs-1"></div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="modal-footer txt_center btn_wrap">
+        <input type="button" class="btn btn-primary btn_green" data-dismiss="modal" value="Request Revision">
+        <a href="javascript:;" data-dismiss="modal">Cancel</a> </div>
+    </div>
+  </div>
+</div>
+
+<!--requestRevision popup ends here--> 
+
+<!--reject  popup starts here-->
+<div class="modal fade reject-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Reject Request<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <fieldset>
+            <div class="form-group">
+              <label class="control-label required col-xs-3" for="">Reason</label>
+              <div class="col-xs-8 no_padding">
+                <input type="text" class="form-control" placeholder="Reason for Reject"/>
+              </div>
+              <div class="col-xs-1"></div>
+            </div>
+            <div class="form-group">
+              <label class="control-label required col-xs-3" for="">Comments</label>
+              <div class="col-xs-8 no_padding">
+                <textarea class="form-control"></textarea>
+              </div>
+              <div class="col-xs-1"></div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="modal-footer txt_center btn_wrap">
+        <input type="button" class="btn btn-primary btn_green" data-dismiss="modal" value="Reject">
+        <a href="javascript:;" data-dismiss="modal">Cancel</a> </div>
+    </div>
+  </div>
+</div>
+
+<!--requestRevision popup ends here--> 
+
+<!--delete popup starts here-->
+<div class="modal fade delete-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Delete Organization<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <fieldset>
+            <div class="form-group">
+              <label class="control-label static_field col-xs-3" for="">Organization Name</label>
+              <div class="col-xs-8 no_padding">
+                <p class="form-control-static value_txt">Organization 1</p>
+              </div>
+              <div class="col-xs-1"></div>
+            </div>
+            <div class="form-group">
+              <label class="control-label static_field col-xs-3" for="">Category</label>
+              <div class="col-xs-8 no_padding">
+                <p class="form-control-static value_txt">Category 1</p>
+              </div>
+              <div class="col-xs-1"></div>
+            </div>
+            <div class="form-group">
+              <label class="control-label static_field col-xs-3" for="">Country</label>
+              <div class="col-xs-8 no_padding">
+                <p class="form-control-static value_txt">Afghanistan</p>
+              </div>
+              <div class="col-xs-1"></div>
+            </div>
+            <div class="form-group">
+              <label class="control-label required col-xs-3" for="">Reason </label>
+              <div class="col-xs-8 no_padding">
+                <select class="form-control">
+                  <option>Select Reason</option>
+                  <option>Reason 1</option>
+                  <option>Reason 2</option>
+                  <option>Reason 3</option>
+                </select>
+              </div>
+              <div class="col-xs-1"></div>
+            </div>
+            <div class="form-group">
+              <label class="control-label required col-xs-3" for="">Comments</label>
+              <div class="col-xs-8 no_padding">
+                <textarea class="form-control"></textarea>
+              </div>
+              <div class="col-xs-1"></div>
+            </div>
+          </fieldset>
+        </form>
+        <div class="panel panel-default">
+          <div class="panel-body"> <span class="sprite sprite-ico_alert delete_alert"></span>
+            <p class="mar_left_25Per"> This organization has existing e-signatories mapped to Authorized Signatory Letters. They will be delinked if deleted. </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer txt_center btn_wrap">
+        <input type="button" class="btn btn-primary btn_green delete_org_review" data-dismiss="modal" value="Delete Organization">
+        <a href="javascript:;" data-dismiss="modal">Cancel</a> </div>
+    </div>
+  </div>
+</div>
+
+<!--delete popup ends here--> 
+
+<!--cancel popup starts here-->
+<div class="modal fade asl-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <div class="clearfix"> <a class="pull-right" href="javascript:;" title="View/Print ASL"><span class="sprite sprite-ico_print"></span></a> </div>
+      </div>
+      <div class="modal-body asl_wrapper">
+        <h2>Authorized signatory letter</h2>
+        <p class="letter_head"> [ Letter head ] <br/>
+          Ministry of Finance,  [ Street address ] </p>
+        <div class="clearfix">
+          <div class="col-xs-12">
+            <div class="col-xs-7 no_padding">
+              <p class="address_sec"> The World Bank <br/>
+                181 H Street, N.W. Washington, D.C. 20433<br/>
+                United States of America </p>
+            </div>
+            <div class="col-xs-5 no_padding">
+              <p class="date_sec"> DATE : <span class="highlight_text">01/13/2015</span> </p>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="col-xs-12 letter_content">
+            <p class="subject_text"><strong>Attention:</strong> [Country Director]</p>
+            <p class="sub_heading_text">Re: Financing No. ____Loans: <span class="highlight_text">IDA 5280; IDA 1234</span></p>
+            <p class="letter_text"> I refer to the Financing Agreement ("Agreement") between the International Development Association (the "Association") and [name of Recipient] (the "Recipient"), dated __01/13/2015 _, providing the above Financing. For the purposes of Section 2.03 of the General Conditions as defined in the Agreement, any [one] of the persons whose authenticated specimen signatures appear below is authorized on behalf of the Recipient to sign applications for withdrawal [and applications for a special commitment] under this Financing. </p>
+            <p class="letter_info_text"> This Authorization replaces and supersedes any Authorization currently in the <br/>
+              Association records with respect to this Agreement.</p>
+            <p class="sub_heading_text"> Group 1 </p>
+            <div class="signature_wrapper">
+              <div class="signature_group clearfix">
+                <div class="col-xs-1 no_padding numbering">1.</div>
+                <div class="col-xs-6 no_padding group_member_name"> <span class="highlight_text">Mr. Alhaji Ziblm Yakubu - Ag. Chief Director</span> </div>
+                <div class="col-xs-5 no_padding signature_section">
+                  <p><span class="hor_space">:</span>Specimen Signature</p>
+                </div>
+              </div>
+              <div class="signature_group clearfix">
+                <div class="col-xs-1 no_padding numbering">2.</div>
+                <div class="col-xs-6 no_padding group_member_name"> <span class="highlight_text">Mr. Alhaji Ziblm Yakubu - Ag. Chief Director</span> </div>
+                <div class="col-xs-5 no_padding signature_section">
+                  <p><span class="hor_space">:</span>Specimen Signature</p>
+                </div>
+              </div>
+              <div class="signature_group clearfix">
+                <div class="col-xs-1 no_padding numbering">3.</div>
+                <div class="col-xs-6 no_padding group_member_name"> <span class="highlight_text">Mr. Ebenezer Siadah - Director, Finance</span> </div>
+                <div class="col-xs-5 no_padding signature_section">
+                  <p><span class="hor_space">:</span>Specimen Signature</p>
+                </div>
+              </div>
+              <div class="signature_group clearfix">
+                <div class="col-xs-1 no_padding numbering">4.</div>
+                <div class="col-xs-6 no_padding group_member_name"> <span class="highlight_text">Mr. Fredrick Addae-Director, Water</span> </div>
+                <div class="col-xs-5 no_padding signature_section">
+                  <p><span class="hor_space">:</span>Specimen Signature</p>
+                </div>
+              </div>
+            </div>
+            <p class="letter_text"> This confirms that the GoG is authorizing such persons to accept Tokens and to deliver the Applications and supporting documents to the Association by electronic means. In full recognition that the Association shall rely up on such representations and warranties, including without limitation, the representations and warranties contained in the Terms and Conditions of Use of Secure Identification Devices in connection with Use of Electronic Means to Process Applications and Supporting Documentation ("Terms and Conditions of Use of Tokens" ), the GoG represents and warrants to the Association that it will deliver to each such person a copy of the Terms and Conditions of Use of Tokens and will cause such persons to abide by those term s and conditions. </p>
+            <p class="sub_heading_text"> <strong>Attaching the reference documents below for this ASL</strong> </p>
+            <p class="reference_docs_link"> <span class="highlight_text">1. ASL_11032014</span> <span class="reference_seperator">|</span> <span class="highlight_text"> 2.ASL_11032011</span> </p>
+            <p class="truly_signature">Yours truly,</p>
+            <p class="signed_text">signed <span class="signed_text_small">[Position]</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Close</button>
+        <p class="letter_info_text"> <br/>
+          By clicking on 'Accept' button, you I have reviewed the Authorized Signatory Letter. </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--cancel popup ends here--> 
+
+<!--popup ends here--> 
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>

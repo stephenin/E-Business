@@ -1,0 +1,2445 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+        </div>
+        <div class="col-md-10 user_utils no_padding">
+          <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+            <div class="notification_utils">
+              <ul class="notifications clearfix">
+                <li>
+                  <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown language">
+              <select class="header_language">
+                <option>English US</option>
+                <option>English UK</option>
+                <option>French</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+              <div class="dropdown user_details">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">John Mattew</button>
+                  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="Library/my_profile.html">My Profile</a></li>
+                    <li><a href="Library/login.html">Sign out</a></li>
+                    <li class="thm-def"><a href="javascript:void(0)">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:void(0)">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:void(0)">Theme - Purple</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here --> 
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends --> 
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends --> 
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends --> 
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Site Tour</a></li>
+      <li><a href="javascript:;">Glossary of Terms</a></li>
+      <li><a href="javascript:;">About this Page</a></li>
+    </ul>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- FAQ popover ends --> 
+  <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+<!-- Main menu starts -->
+<nav class="navbar main_navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+    <div id="mainnavigation" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="javascript:;">My Portfolio</a></li>
+        <li><a href="javascript:;">Projects</a></li>
+        <li><a href="javascript:;">Loans</a></li>
+        <li><a href="javascript:;">Organizations</a></li>
+        <li><a href="javascript:;">Events</a></li>
+        <li><a href="javascript:;">ASL</a></li>
+        <li><a href="javascript:;" class="current_page">User Management</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Main menu ends -->
+
+<div class="container"> 
+  <!-- Example row of columns -->
+  <div class="row section_wrapper"> 
+    <!--page title starts here-->
+    <div class="page_title_section clearfix">
+      <h1 class="pull-left">User Details</h1>
+      <!-- <div class="page_options"> <a title="View/Print ASL" href="javascript:;"><span class="sprite sprite-ico_print"></span></a> </div> -->
+    </div>
+    <div class="clearfix review_page">
+      <div class="page_utils_links">
+        <p class="mandatory_text">Fields marked with "<span class="mandatory">*</span>" are mandatory.</p>
+      </div>
+    </div>
+    <!--page title ends here-->
+    <div class="col-md-12 column_wrapper">
+      <div class="no_padding">
+        <div class="panel-group setup_accordion accordion_type2" id=""> 
+          
+          <!--step 1 starts here-->
+          
+          <div class="panel panel-default completed step1">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix" data-rel="step1">
+                  <div class="item_counter"><span class="step_completed_check">A<span class="stat-checked"></span></span></div>
+                  <div class="item_title"> 
+                    <span>Basic Details</span>
+                    <a href="javascript:;" class="pull-right collapseOne">Edit</a> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+
+              <div class="panel-body">
+                
+                <div class="row">
+                    <form class="form">
+                        <fieldset>
+                            <div class="col-md-12 review_page">
+
+                                <div class="form-group clearfix">
+                                    <label for="" class="control-label-static ">First Name</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>John</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label for="" class="control-label-static ">Middle Name</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>Paul</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label for="" class="control-label-static ">Last Name</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>Doe</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+
+
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgCity" class="control-label-static ">Organization Name</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>Organization 1</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+                                
+                                
+
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgCountry" class="control-label-static ">Country</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>India</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgTel" class="control-label-static ">Telephone Number</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">                                                        
+                                        <p class="form-control-static"><span>123-123-12345474</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgTel" class="control-label-static ">Email Address</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">                                                        
+                                        <p class="form-control-static"><span>jdoe@worldbankgroup.org</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="" class="control-label-static ">Mobile Number</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">                                                        
+                                        <p class="form-control-static"><span>123-123-12345474</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+                                
+
+ 								<div class="form-group clearfix">
+                                    <label for="" class="control-label-static ">Language of Correspondence</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">                                                        
+                                        <p class="form-control-static"><span>English</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="" class="control-label-static ">Job Title</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">                                                        
+                                        <p class="form-control-static"><span>Senior Accountant</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+
+                            </div>    
+                            
+                        </fieldset>
+                        
+                    </form>
+                </div>
+            </div>
+            </div>
+          </div>
+          
+          <!--step 1 ends here--> 
+          
+          <!--step 2 starts here-->
+            <div class="panel panel-default step2 completed">
+                <div class="panel-heading">
+                    <div class="panel-title clearfix">
+                        <div class="item_header_completed clearfix" data-rel="step2">
+                          <div class="item_counter"><span class="step_completed_check">B<span class="stat-checked"></span></span></div>
+                          <div class="item_title"> 
+                            <span>Role Details</span>
+                            <a href="javascript:;" class="pull-right collapseOne">Edit</a> 
+                          </div>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="panel-collapse collapse in" id="collapseTwo" aria-expanded="true" style="">
+                    <div class="panel-body">
+                        <div class="row">
+                            <form class="form">
+                                <fieldset>
+                                    <legend class="clearfix">
+                                      Role 1
+                                      <span class="role_activity">Updated</span>
+                                      <span class="ico_user_role"></span>
+                                    </legend>
+                                    <div class="col-md-12 review_page">
+
+                                        <div class="form-group clearfix">
+                                            <label for="" class="control-label-static ">Role</label>
+                                            <div class="clear"></div>
+                                            <div class="col-md-12 no_padding">
+                                                <p class="form-control-static"><span>Role 1</span></p>
+                                            </div>
+                                            <div class="col-md-12 no_padding"></div>
+                                        </div>
+                                        <div class="form-group clearfix">
+                                            <label for="" class="control-label-static ">Effective Dates</label>
+                                            <div class="clear"></div>
+                                            <div class="col-md-12 no_padding">
+                                                <p class="form-control-static"><span>12-Mar-2015 to 15-Dec-2016</span></p>
+                                            </div>
+                                            <div class="col-md-12 no_padding"></div>
+                                        </div>
+                                        <div class="form-group clearfix">
+                                            <label for="" class="control-label-static ">Role Authorization</label>
+                                            <div class="clear"></div>
+                                            <div class="col-md-12 no_padding">
+                                                <div class="selected_role_restrict_wrapper">
+                                                    <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2" rel="">
+                                                        <thead>
+                                                            <tr>
+                                                                <th width="20%">Type</th>
+                                                                <th width="20%">Country</th>
+                                                                <th width="50%">Description</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Country</td>
+                                                                <td>Australia</td>
+                                                                <td>All Borrower of Records, Projects &amp; Loans under this country</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>India</td>
+                                                                <td>All Borrower of Records, Projects &amp; Loans under this country</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Project</td>
+                                                                <td>India</td>
+                                                                <td>P13189-Water Restoration Project in Urban Areas</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>India</td>
+                                                                <td>P13189-Water Restoration Project in Urban Areas</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Loan</td>
+                                                                <td>India</td>
+                                                                <td>25120-Project Name 3</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>India</td>
+                                                                <td>48700-Project Name 2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Borrower of Record</td>
+                                                                <td>Myanmar</td>
+                                                                <td>Borrower of Record 4</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>India</td>
+                                                                <td>Borrower of Record 3</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-12 no_padding"></div>
+                                        </div>
+
+                                        <div class="custom_collapse_wrap">
+                                            <div class="custom_collapse_title clearfix" data-toggle="collapse" data-target="#custom_collapse_content_1">
+                                                Current Role
+                                                <span class="sprite sprite-ico_accord_up pull-right"></span>
+                                            </div>
+                                            <div class="custom_collapse_content in" id="custom_collapse_content_1">
+
+                                                <div class="form-group clearfix">
+                                                    <label class="control-label-static " for="">Effective Dates</label>
+                                                    <div class="clear"></div>
+                                                    <div class="col-md-12 no_padding">
+                                                        <p class="form-control-static"><span>12-Mar-2015 to 15-Dec-2016</span></p>
+                                                    </div>
+                                                    <div class="col-md-12 no_padding"></div>
+                                                </div>
+
+                                                <div class="form-group clearfix">
+                                                    <label for="" class="control-label-static ">Role Authorization</label>
+                                                    <div class="clear"></div>
+                                                    <div class="col-md-12 no_padding">
+                                                        <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2" rel="">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th width="20%">Type</th>
+                                                                    <th width="20%">Country</th>
+                                                                    <th width="50%">Description</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Country</td>
+                                                                    <td>Australia</td>
+                                                                    <td>All Borrower of Records, Projects &amp; Loans under this country</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td>India</td>
+                                                                    <td>All Borrower of Records, Projects &amp; Loans under this country</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Project</td>
+                                                                    <td>India</td>
+                                                                    <td>P13189-Water Restoration Project in Urban Areas</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td>India</td>
+                                                                    <td>P13189-Water Restoration Project in Urban Areas</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Loan</td>
+                                                                    <td>India</td>
+                                                                    <td>25120-Project Name 3</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td>India</td>
+                                                                    <td>48700-Project Name 2</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Borrower of Record</td>
+                                                                    <td>Myanmar</td>
+                                                                    <td>Borrower of Record 4</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td>India</td>
+                                                                    <td>Borrower of Record 3</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>    
+                                    
+                                </fieldset>
+
+                                <!-- <fieldset>
+                                    <legend class="clearfix">
+                                        Role Details: No. 2
+                                        <span class="role_activity new">NEW</span>
+                                    </legend>
+                                    <div class="col-md-12 review_page">
+
+                                        <div class="form-group clearfix">
+                                            <label for="" class="control-label-static ">Role Type</label>
+                                            <div class="clear"></div>
+                                            <div class="col-md-12 no_padding">
+                                                <p class="form-control-static"><span>Role 2</span></p>
+                                            </div>
+                                            <div class="col-md-12 no_padding"></div>
+                                        </div>
+                                        <div class="form-group clearfix">
+                                            <label for="" class="control-label-static ">Effective Dates</label>
+                                            <div class="clear"></div>
+                                            <div class="col-md-12 no_padding">
+                                                <p class="form-control-static"><span>21-Mar-2014 to 15-Dec-2016</span></p>
+                                            </div>
+                                            <div class="col-md-12 no_padding"></div>
+                                        </div>
+                                        <div class="form-group clearfix">
+                                            <label for="" class="control-label-static ">Role Authorization</label>
+                                            <div class="clear"></div>
+                                            <div class="col-md-12 no_padding">
+                                                <div class="selected_role_restrict_wrapper">
+                                                    <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2" rel="">
+                                                        <thead>
+                                                            <tr>
+                                                                <th width="20%">Type</th>
+                                                                <th width="20%">Country</th>
+                                                                <th width="50%">Description</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Country</td>
+                                                                <td>Australia</td>
+                                                                <td>All Borrower of Records, Projects &amp; Loans under this country</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>India</td>
+                                                                <td>All Borrower of Records, Projects &amp; Loans under this country</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Project</td>
+                                                                <td>India</td>
+                                                                <td>P13189-Water Restoration Project in Urban Areas</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>India</td>
+                                                                <td>P13189-Water Restoration Project in Urban Areas</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Loan</td>
+                                                                <td>India</td>
+                                                                <td>25120-Project Name 3</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>India</td>
+                                                                <td>48700-Project Name 2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Borrower of Record</td>
+                                                                <td>Myanmar</td>
+                                                                <td>Borrower of Record 4</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>India</td>
+                                                                <td>Borrower of Record 3</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no_padding"></div>
+                                        </div>
+                                        <div class="section_divider"></div>
+
+
+                                    </div>    
+                                    
+                                </fieldset> -->
+
+                                <!-- <div class="deleted_role_wrap">
+                                    <fieldset>
+                                        <legend class="clearfix">
+                                            Role Details: No. 3
+                                            <span class="role_activity deleted">DELETED</span>
+                                        </legend>
+                                        <div class="col-md-12 review_page">
+
+                                            <div class="form-group clearfix">
+                                                <label class="control-label-static " for="">Role Type<span class="txt_stike"></span></label>
+                                                <div class="clear"></div>
+                                                <div class="col-md-12 no_padding">
+                                                    <p class="form-control-static"><span>Role 2 <span class="txt_stike"></span></span></p>
+                                                </div>
+                                                <div class="col-md-12 no_padding"></div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <label class="control-label-static " for="">Effective Dates<span class="txt_stike"></span></label>
+                                                <div class="clear"></div>
+                                                <div class="col-md-12 no_padding">
+                                                    <p class="form-control-static"><span>21-Mar-2014 to 15-Dec-2016<span class="txt_stike"></span></span></p>
+                                                </div>
+                                                <div class="col-md-12 no_padding"></div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <label class="control-label-static " for="">Role Authorization<span class="txt_stike"></span></label>
+                                                <div class="clear"></div>
+                                                <div class="col-md-12 no_padding">
+                                                    <div class="selected_role_restrict_wrapper">
+                                                        <table width="100%" cellspacing="0" cellpadding="0" rel="" class="tbl table tbl_type2">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th width="20%"><span>Type<span class="txt_stike"></span></span></th>
+                                                                    <th width="20%"><span>Country<span class="txt_stike"></span></span></th>
+                                                                    <th width="50%"><span>Description<span class="txt_stike"></span></span></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td><span>Country<span class="txt_stike"></span></span></td>
+                                                                    <td><span>Australia<span class="txt_stike"></span></span></td>
+                                                                    <td><span>All Borrower of Records, Projects &amp; Loans under this country<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><span>India<span class="txt_stike"></span></span></td>
+                                                                    <td><span>All Borrower of Records, Projects &amp; Loans under this country<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span>Project<span class="txt_stike"></span></span></td>
+                                                                    <td><span>India<span class="txt_stike"></span></span></td>
+                                                                    <td><span>P13189-Water Restoration Project in Urban Areas<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><span>India<span class="txt_stike"></span></span></td>
+                                                                    <td><span>P13189-Water Restoration Project in Urban Areas<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span>Loan<span class="txt_stike"></span></span></td>
+                                                                    <td><span>India<span class="txt_stike"></span></span></td>
+                                                                    <td><span>25120-Project Name 3<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><span>India<span class="txt_stike"></span></span></td>
+                                                                    <td><span>48700-Project Name 2<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span>Borrower of Record<span class="txt_stike"></span></span></td>
+                                                                    <td><span>Myanmar<span class="txt_stike"></span></span></td>
+                                                                    <td><span>Borrower of Record 4<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><span>India<span class="txt_stike"></span></span></td>
+                                                                    <td><span>Borrower of Record 3<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="section_divider"></div>
+
+
+                                        </div>    
+                                        
+                                    </fieldset>
+                                </div> -->
+                                <!-- <div class="deleted_role_wrap">
+                                    <fieldset>
+                                        <legend class="clearfix">
+                                            Role Details: No. 3
+                                            <span class="role_activity deleted">DELETED</span>
+                                        </legend>
+                                        <div class="col-md-12 review_page">
+
+                                            <div class="form-group clearfix">
+                                                <label for="" class="control-label-static ">Role Type</label>
+                                                <div class="clear"></div>
+                                                <div class="col-md-12 no_padding">
+                                                    <p class="form-control-static"><span>Role 2</span></p>
+                                                </div>
+                                                <div class="col-md-12 no_padding"></div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <label for="" class="control-label-static ">Effective Dates</label>
+                                                <div class="clear"></div>
+                                                <div class="col-md-12 no_padding">
+                                                    <p class="form-control-static"><span>21-Mar-2014 to 15-Dec-2016</span></p>
+                                                </div>
+                                                <div class="col-md-12 no_padding"></div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <label for="" class="control-label-static ">Role Authorization</label>
+                                                <div class="clear"></div>
+                                                <div class="col-md-12 no_padding">
+                                                    <div class="selected_role_restrict_wrapper">
+                                                        <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2" rel="">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th width="20%"><span>Type</span></th>
+                                                                    <th width="20%"><span>Country</span></th>
+                                                                    <th width="50%"><span>Description</span></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td><span>Country</span></td>
+                                                                    <td><span>Australia</span></td>
+                                                                    <td><span>All Borrower of Records, Projects &amp; Loans under this country</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><span>India</span></td>
+                                                                    <td><span>All Borrower of Records, Projects &amp; Loans under this country</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span>Project</span></td>
+                                                                    <td><span>India</span></td>
+                                                                    <td><span>P13189-Water Restoration Project in Urban Areas</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><span>India</span></td>
+                                                                    <td><span>P13189-Water Restoration Project in Urban Areas</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span>Loan</span></td>
+                                                                    <td><span>India</span></td>
+                                                                    <td><span>25120-Project Name 3</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><span>India</span></td>
+                                                                    <td><span>48700-Project Name 2</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span>Borrower of Record</span></td>
+                                                                    <td><span>Myanmar</span></td>
+                                                                    <td><span>Borrower of Record 4</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><span>India</span></td>
+                                                                    <td><span>Borrower of Record 3</span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="section_divider"></div>
+
+
+                                        </div>    
+                                        
+                                    </fieldset>
+                                </div> -->
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel panel-default step2 completed">
+                <div class="panel-collapse collapse in" id="collapseTwo" aria-expanded="true" style="">
+                    <div class="panel-body">
+                        <div class="row">
+                            <form class="form">
+                                
+
+                                <fieldset>
+                                    <legend class="clearfix">
+                                        Role 2
+                                        <span class="role_activity new">New</span>
+                                        <span class="ico_user_role"></span>
+                                    </legend>
+                                    <div class="col-md-12 review_page">
+
+                                        <div class="form-group clearfix">
+                                            <label for="" class="control-label-static ">Role</label>
+                                            <div class="clear"></div>
+                                            <div class="col-md-12 no_padding">
+                                                <p class="form-control-static"><span>Role 2</span></p>
+                                            </div>
+                                            <div class="col-md-12 no_padding"></div>
+                                        </div>
+                                        <div class="form-group clearfix">
+                                            <label for="" class="control-label-static ">Effective Dates</label>
+                                            <div class="clear"></div>
+                                            <div class="col-md-12 no_padding">
+                                                <p class="form-control-static"><span>21-Mar-2014 to 15-Dec-2016</span></p>
+                                            </div>
+                                            <div class="col-md-12 no_padding"></div>
+                                        </div>
+                                        <div class="form-group clearfix">
+                                            <label for="" class="control-label-static ">Role Authorization</label>
+                                            <div class="clear"></div>
+                                            <div class="col-md-12 no_padding">
+                                                <div class="selected_role_restrict_wrapper">
+                                                    <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2" rel="">
+                                                        <thead>
+                                                            <tr>
+                                                                <th width="20%">Type</th>
+                                                                <th width="20%">Country</th>
+                                                                <th width="50%">Description</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Country</td>
+                                                                <td>Australia</td>
+                                                                <td>All Borrower of Records, Projects &amp; Loans under this country</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>India</td>
+                                                                <td>All Borrower of Records, Projects &amp; Loans under this country</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Project</td>
+                                                                <td>India</td>
+                                                                <td>P13189-Water Restoration Project in Urban Areas</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>India</td>
+                                                                <td>P13189-Water Restoration Project in Urban Areas</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Loan</td>
+                                                                <td>India</td>
+                                                                <td>25120-Project Name 3</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>India</td>
+                                                                <td>48700-Project Name 2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Borrower of Record</td>
+                                                                <td>Myanmar</td>
+                                                                <td>Borrower of Record 4</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>India</td>
+                                                                <td>Borrower of Record 3</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no_padding"></div>
+                                        </div>
+
+                                    </div>    
+                                    
+                                </fieldset>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel panel-default step2 completed">
+                <div class="panel-collapse collapse in" id="collapseTwo" aria-expanded="true" style="">
+                    <div class="panel-body">
+                        <div class="row">
+                            <form class="form">
+                                
+                                <div class="deleted_role_wrap">
+                                    <fieldset>
+                                        <legend class="clearfix">
+                                            Role 3
+                                            <span class="role_activity deleted">Deleted</span>
+                                            <span class="ico_user_role"></span>
+                                        </legend>
+                                        <div class="col-md-12 review_page">
+
+                                            <div class="form-group clearfix">
+                                                <label class="control-label-static " for="">Role<span class="txt_stike"></span></label>
+                                                <div class="clear"></div>
+                                                <div class="col-md-12 no_padding">
+                                                    <p class="form-control-static"><span>Role 2 <span class="txt_stike"></span></span></p>
+                                                </div>
+                                                <div class="col-md-12 no_padding"></div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <label class="control-label-static " for="">Effective Dates<span class="txt_stike"></span></label>
+                                                <div class="clear"></div>
+                                                <div class="col-md-12 no_padding">
+                                                    <p class="form-control-static"><span>21-Mar-2014 to 15-Dec-2016<span class="txt_stike"></span></span></p>
+                                                </div>
+                                                <div class="col-md-12 no_padding"></div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <label class="control-label-static " for="">Role Authorization<span class="txt_stike"></span></label>
+                                                <div class="clear"></div>
+                                                <div class="col-md-12 no_padding">
+                                                    <div class="selected_role_restrict_wrapper">
+                                                        <table width="100%" cellspacing="0" cellpadding="0" rel="" class="tbl table tbl_type2">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th width="20%"><span>Type<span class="txt_stike"></span></span></th>
+                                                                    <th width="20%"><span>Country<span class="txt_stike"></span></span></th>
+                                                                    <th width="50%"><span>Description<span class="txt_stike"></span></span></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td><span>Country<span class="txt_stike"></span></span></td>
+                                                                    <td><span>Australia<span class="txt_stike"></span></span></td>
+                                                                    <td><span>All Borrower of Records, Projects &amp; Loans under this country<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><span>India<span class="txt_stike"></span></span></td>
+                                                                    <td><span>All Borrower of Records, Projects &amp; Loans under this country<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span>Project<span class="txt_stike"></span></span></td>
+                                                                    <td><span>India<span class="txt_stike"></span></span></td>
+                                                                    <td><span>P13189-Water Restoration Project in Urban Areas<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><span>India<span class="txt_stike"></span></span></td>
+                                                                    <td><span>P13189-Water Restoration Project in Urban Areas<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span>Loan<span class="txt_stike"></span></span></td>
+                                                                    <td><span>India<span class="txt_stike"></span></span></td>
+                                                                    <td><span>25120-Project Name 3<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><span>India<span class="txt_stike"></span></span></td>
+                                                                    <td><span>48700-Project Name 2<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span>Borrower of Record<span class="txt_stike"></span></span></td>
+                                                                    <td><span>Myanmar<span class="txt_stike"></span></span></td>
+                                                                    <td><span>Borrower of Record 4<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><span>India<span class="txt_stike"></span></span></td>
+                                                                    <td><span>Borrower of Record 3<span class="txt_stike"></span></span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+
+                                        </div>    
+                                        
+                                    </fieldset>
+                                </div>
+                                
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        
+          <!--step 2 ends here--> 
+          
+          
+        </div>
+      </div>
+      <div class="review_btn_wrap no_padding_top">
+        <input type="button" data-target=".submit-modal-sm" data-toggle="modal" value="Submit" class="btn btn-primary btn_green">
+        <input type="button" data-target=".cancel-modal-sm" data-toggle="modal" value="Cancel" class="btn btn-secondary btn_white">
+    </div>
+    </div>
+  </div>
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+
+<!--popup starts here--> 
+<!-- role_restrict_popup -->
+<div class="modal fade role_restrict_popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Information</h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Please select the Role Authorization</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green focus_roleRestrict" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- role_restrict_popup -->
+<!--cancel popup starts here-->
+<div class="modal fade cancel-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Cancel User Provisioning setup<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Do you want to cancel the User Provisioning setup Process?</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--cancel popup ends here--> 
+
+<!-- country list popup starts -->
+
+<div class="modal fade country_list_popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="appln_form_modal_title">Select Country</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="search_prior_contracts_wrapper">
+            <fieldset class="no_left_margin">
+                <div class="row bank_search_wrap">
+                    <div class="col-md-4 no_padding pull-right">
+                        <div class="form-group clearfix no_btm_mgr">
+                            <div class="col-xs-12 clearfix">
+                                <input type="text" class="form-control" placeholder="Search"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!--  -->
+            </fieldset>
+        </div>
+        
+        
+        <table rel="country_list" width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt selecting_row_country" id="country_list_table">
+            <thead>
+                <tr class="select_row">
+                    <th>
+                        <input type="checkbox" id="country_list_select_all">
+                        <label for="country_list_select_all" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </th>
+                    <th>Country Code</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr rel="country_list_row_1">
+                    <td>
+                        <input type="checkbox" id="country_list_item1">
+                        <label for="country_list_item1" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>IND</td>
+                    <td>India</td>
+                </tr>
+                <tr rel="country_list_row_2">
+                    <td>
+                        <input type="checkbox" id="country_list_item2">
+                        <label for="country_list_item2" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>BAN</td>
+                    <td>Bangladesh</td>
+                </tr>
+                <tr rel="country_list_row_3">
+                    <td>
+                        <input type="checkbox" id="country_list_item3">
+                        <label for="country_list_item3" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>AUS</td>
+                    <td>Australia</td>
+                </tr>
+                <tr rel="country_list_row_4">
+                    <td>
+                        <input type="checkbox" id="country_list_item4">
+                        <label for="country_list_item4" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>MYN</td>
+                    <td>Myanmar</td>
+                </tr>
+                <tr rel="country_list_row_5">
+                    <td>
+                        <input type="checkbox" id="country_list_item5">
+                        <label for="country_list_item5" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>UK</td>
+                    <td>United Kingdom</td>
+                </tr>
+                
+                
+            </tbody>
+        </table>
+        <div class="clear"></div>
+        <div class="col-md-12">
+            <div class="col-sm-4 view_per_page no_padding">
+                <fieldset class="no_left_margin">
+                    <label class="no_bold">View per page :</label>
+                    <select class="form-control input-sm per_page wd_50_per">
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                        <option>25</option>
+                    </select>
+                </fieldset>
+            </div>
+            <div class="col-sm-8 align-right no_padding">
+                <ul class="pagination pull-right" data-pagination-control="true" data-pagination-arrow="disabled">
+                    <li><a href="javascript:;">&laquo;</a></li>
+                    <li><a href="javascript:;">1</a></li>
+                    <li class="active"><a href="javascript:;">2</a></li>
+                    <li><a href="javascript:;">3</a></li>
+                    <li><a href="javascript:;">&raquo;</a></li>
+                  </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="selected_country_list_table_wrapper">
+            <h5>Selected Countries</h5>
+            <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt selected_country_list_table">
+                <thead>
+                    <tr>
+                        <th>Country Code</th>
+                        <th>Country</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+            <div class="modal-footer txt_left">
+                <button type="button" class="btn btn-primary btn_green add_selected_role_restrict_country" data-dismiss="modal">Add Selected Country</button>
+                <button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+                
+    </div>
+        
+    </div>
+    </div>
+</div>
+
+<!-- country list popup ends -->
+
+
+
+
+
+<!-- project list popup starts -->
+
+<div class="modal fade project_list_popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="appln_form_modal_title">Select Project</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="search_prior_contracts_wrapper">
+            <fieldset class="no_left_margin">
+                <div class="row bank_search_wrap">
+                    <div class="col-md-5 no_padding">
+                        <div class="form-group clearfix no_btm_mgr">
+                            <div class="col-xs-12 clearfix">
+                                <select class="form-control input-sm normal_selector" data-tags="true" data-placeholder="Country - All">
+                                    <option></option>
+                                    <option>Afghanistan </option>
+                                    <option>Albania </option>
+                                    <option>Algeria </option>
+                                    <option>American Samoa </option>
+                                    <option>Andorra </option>
+                                    <option>Angola </option>
+                                    <option>Anguilla </option>
+                                    <option>Antiguaand Barbuda </option>
+                                    <option>Argentina </option>
+                                    <option>Armenia </option>
+                                    <option>Aruba </option>
+                                    <option>Australia </option>
+                                    <option>Austria </option>
+                                    <option>Azerbaijan </option>
+                                    <option>Bahamas </option>
+                                    <option>Bahrain </option>
+                                    <option>Bangladesh </option>
+                                    <option>Barbados </option>
+                                    <option>Belarus </option>
+                                    <option>Belgium </option>
+                                    <option>Belize </option>
+                                    <option>Benin </option>
+                                    <option>Bermuda </option>
+                                    <option>Bhutan </option>
+                                    <option>Bolivia </option>
+                                    <option>Bosnia-Herzegovina </option>
+                                    <option>Botswana </option>
+                                    <option>Bouvet Island </option>
+                                    <option>Brazil </option>
+                                    <option>Brunei </option>
+                                    <option>Bulgaria </option>
+                                    <option>Burkina Haso </option>
+                                    <option>Burundi </option>
+                                    <option>Cambodia </option>
+                                    <option>Cameroon </option>
+                                    <option>Canada </option>
+                                    <option>Cape Verde </option>
+                                    <option>Cayman Islands </option>
+                                    <option>Central African Republic </option>
+                                    <option>Chad </option>
+                                    <option>Chile </option>
+                                    <option>China </option>
+                                    <option>Christmas Island </option>
+                                    <option>Cocos(Keeling)Islands </option>
+                                    <option>Colombia </option>
+                                    <option>Comoros </option>
+                                    <option>Congo,DemocraticRepublicofthe(Zaire) </option>
+                                    <option>Congo, Republic of CookIslands</option>
+                                    <option>CostaRica </option>
+                                    <option>Croatia </option>
+                                    <option>Cuba </option>
+                                    <option>Cyprus </option>
+                                    <option>Czech Republic </option>
+                                    <option>Denmark </option>
+                                    <option>Djibouti </option>
+                                    <option>Dominica </option>
+                                    <option>Dominican Republic </option>
+                                    <option>Ecuador </option>
+                                    <option>Egypt </option>
+                                    <option>ElSalvador </option>
+                                    <option>Equatorial Guinea </option>
+                                    <option>Eritrea </option>
+                                    <option>Estonia </option>
+                                    <option>Ethiopia </option>
+                                    <option>Halkland Islands </option>
+                                    <option>Haroe Islands </option>
+                                    <option>Hiji </option>
+                                    <option>Hinland </option>
+                                    <option>Hrance </option>
+                                    <option>Hrench Guiana </option>
+                                    <option>Gabon </option>
+                                    <option>Gambia </option>
+                                    <option>Georgia </option>
+                                    <option>Germany </option>
+                                    <option>Ghana </option>
+                                    <option>Gibraltar </option>
+                                    <option>Greece </option>
+                                    <option>Greenland </option>
+                                    <option>Grenada </option>
+                                    <option>Guadeloupe(Hrench) </option>
+                                    <option>Guam(USA) </option>
+                                    <option>Guatemala </option>
+                                    <option>Guinea </option>
+                                    <option>Guinea Bissau </option>
+                                    <option>Guyana </option>
+                                    <option>Haiti </option>
+                                    <option>HolySee </option>
+                                    <option>Honduras </option>
+                                    <option>HongKong </option>
+                                    <option>Hungary </option>
+                                    <option>Iceland </option>
+                                    <option>India </option>
+                                    <option>Indonesia </option>
+                                    <option>Iran </option>
+                                    <option>Iraq </option>
+                                    <option>Ireland </option>
+                                    <option>Israel </option>
+                                    <option>Italy </option>
+                                    <option>IvoryCoast(CoteD`Ivoire) </option>
+                                    <option>Jamaica </option>
+                                    <option>Japan </option>
+                                    <option>Jordan </option>
+                                    <option>Kazakhstan </option>
+                                    <option>Kenya </option>
+                                    <option>Kiribati </option>
+                                    <option>Kuwait </option>
+                                    <option>Kyrgyzstan </option>
+                                    <option>Laos </option>
+                                    <option>Latvia </option>
+                                    <option>Lebanon </option>
+                                    <option>Lesotho </option>
+                                    <option>Liberia </option>
+                                    <option>Libya </option>
+                                    <option>Liechtenstein </option>
+                                    <option>Lithuania </option>
+                                    <option>Luxembourg </option>
+                                    <option>Macau </option>
+                                    <option>Macedonia </option>
+                                    <option>Madagascar </option>
+                                    <option>Malawi </option>
+                                    <option>Malaysia </option>
+                                    <option>Maldives </option>
+                                    <option>Mali </option>
+                                    <option>Malta </option>
+                                    <option>Marshall Islands </option>
+                                    <option>Martinique (Hrench) </option>
+                                    <option>Mauritania </option>
+                                    <option>Mauritius </option>
+                                    <option>Mayotte </option>
+                                    <option>Mexico </option>
+                                    <option>Micronesia </option>
+                                    <option>Moldova </option>
+                                    <option>Monaco </option>
+                                    <option>Mongolia </option>
+                                    <option>Montenegro </option>
+                                    <option>Montserrat </option>
+                                    <option>Morocco </option>
+                                    <option>Mozambique </option>
+                                    <option>Myanmar </option>
+                                    <option>Namibia </option>
+                                    <option>Nauru </option>
+                                    <option>Nepal </option>
+                                    <option>Netherlands </option>
+                                    <option>Netherlands Antilles </option>
+                                    <option>NewCaledonia(Hrench) </option>
+                                    <option>NewZealand </option>
+                                    <option>Nicaragua </option>
+                                    <option>Niger </option>
+                                    <option>Nigeria </option>
+                                    <option>Niue </option>
+                                    <option>NorfolkIsland </option>
+                                    <option>NorthKorea </option>
+                                    <option>Northern Mariana Islands </option>
+                                    <option>Norway </option>
+                                    <option>Oman </option>
+                                    <option>Pakistan </option>
+                                    <option>Palau </option>
+                                    <option>Panama </option>
+                                    <option>Papua New Guinea </option>
+                                    <option>Paraguay </option>
+                                    <option>Peru </option>
+                                    <option>Philippines </option>
+                                    <option>Pitcairn Island </option>
+                                    <option>Poland </option>
+                                    <option>Polynesia(Hrench) </option>
+                                    <option>Portugal </option>
+                                    <option>PuertoRico </option>
+                                    <option>Qatar </option>
+                                    <option>Reunion </option>
+                                    <option>Romania </option>
+                                    <option>Russia </option>
+                                    <option>Rwanda </option>
+                                    <option>SaintHelena </option>
+                                    <option>Saint Kitts and Nevis </option>
+                                    <option>Saint Lucia </option>
+                                    <option>Saint Pierreand Miquelon </option>
+                                    <option>Saint Vincent and Grenadines </option>
+                                    <option>Samoa </option>
+                                    <option>San Marino </option>
+                                    <option>Sao Tome and Principe </option>
+                                    <option>Saudi Arabia </option>
+                                    <option>Senegal </option>
+                                    <option>Serbia </option>
+                                    <option>Seychelles </option>
+                                    <option>SierraLeone </option>
+                                    <option>Singapore </option>
+                                    <option>Slovakia </option>
+                                    <option>Slovenia </option>
+                                    <option>SolomonIslands </option>
+                                    <option>Somalia </option>
+                                    <option>SouthAfrica </option>
+                                    <option>South Georgia and South Sandwich Islands </option>
+                                    <option>SouthKorea </option>
+                                    <option>SouthSudan </option>
+                                    <option>Spain </option>
+                                    <option>SriLanka </option>
+                                    <option>Sudan </option>
+                                    <option>Suriname </option>
+                                    <option>Svalbard and Jan Mayen Islands </option>
+                                    <option>Swaziland </option>
+                                    <option>Sweden </option>
+                                    <option>Switzerland </option>
+                                    <option>Syria </option>
+                                    <option>Taiwan </option>
+                                    <option>Tajikistan </option>
+                                    <option>Tanzania </option>
+                                    <option>Thailand </option>
+                                    <option>Timor-Leste(EastTimor) </option>
+                                    <option>Togo </option>
+                                    <option>Tokelau </option>
+                                    <option>Tonga </option>
+                                    <option>Trinidad and Tobago </option>
+                                    <option>Tunisia </option>
+                                    <option>Turkey </option>
+                                    <option>Turkmenistan </option>
+                                    <option>Turks and Caicos Islands </option>
+                                    <option>Tuvalu </option>
+                                    <option>Uganda </option>
+                                    <option>Ukraine </option>
+                                    <option>United Arab Emirates </option>
+                                    <option>United Kingdom </option>
+                                    <option>United States </option>
+                                    <option>Uruguay </option>
+                                    <option>Uzbekistan </option>
+                                    <option>Vanuatu </option>
+                                    <option>Venezuela </option>
+                                    <option>Vietnam </option>
+                                    <option>Virgin Islands </option>
+                                    <option>Wallis and Hutuna Islands </option>
+                                    <option>Yemen </option>
+                                    <option>Zambia </option>
+                                    <option>Zimbabwe </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 no_padding"></div>
+                    <div class="col-md-4 no_padding pull-right">
+                        <div class="form-group clearfix no_btm_mgr">
+                            <div class="col-xs-12 clearfix">
+                                <input type="text" class="form-control" placeholder="Search"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <!--  -->
+            </fieldset>
+        </div>
+        
+        
+        <table rel="project_list" width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt selecting_row_project" id="project_list_table">
+            <thead>
+                <tr class="select_row">
+                    <th>
+                        <input type="checkbox" id="project_list_select_all">
+                        <label for="project_list_select_all" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </th>
+                    <th>Project ID</th>
+                    <th>Project Name</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr rel="project_list_row_1">
+                    <td>
+                        <input type="checkbox" id="project_list_item1">
+                        <label for="project_list_item1" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>P13189</td>
+                    <td>Water Restoration Project in Urban Areas</td>
+                    <td>India</td>
+                </tr>
+                <tr rel="project_list_row_2">
+                    <td>
+                        <input type="checkbox" id="project_list_item2">
+                        <label for="project_list_item2" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>P45712</td>
+                    <td>Project Name 2</td>
+                    <td>Bangladesh</td>
+                </tr>
+                <tr rel="project_list_row_3">
+                    <td>
+                        <input type="checkbox" id="project_list_item3">
+                        <label for="project_list_item3" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>P12435</td>
+                    <td>Project Name 3</td>
+                    <td>Australia</td>
+                </tr>
+                <tr rel="project_list_row_4">
+                    <td>
+                        <input type="checkbox" id="project_list_item4">
+                        <label for="project_list_item4" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>P13184</td>
+                    <td>Project Name 4</td>
+                    <td>Myanmar</td>
+                </tr>
+                <tr rel="project_list_row_5">
+                    <td>
+                        <input type="checkbox" id="project_list_item5">
+                        <label for="project_list_item5" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>P13112</td>
+                    <td>Project Name 5</td>
+                    <td>United Kingdom</td>
+                </tr>
+                
+                
+            </tbody>
+        </table>
+        <div class="clear"></div>
+        <div class="col-md-12">
+            <div class="col-sm-4 view_per_page no_padding">
+                <fieldset class="no_left_margin">
+                    <label class="no_bold">View per page :</label>
+                    <select class="form-control input-sm per_page wd_50_per">
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                        <option>25</option>
+                    </select>
+                </fieldset>
+            </div>
+            <div class="col-sm-8 align-right no_padding">
+                <ul class="pagination pull-right" data-pagination-control="true" data-pagination-arrow="disabled">
+                    <li><a href="javascript:;">&laquo;</a></li>
+                    <li><a href="javascript:;">1</a></li>
+                    <li class="active"><a href="javascript:;">2</a></li>
+                    <li><a href="javascript:;">3</a></li>
+                    <li><a href="javascript:;">&raquo;</a></li>
+                  </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="selected_project_list_table_wrapper">
+            <h5>Selected Projects</h5>
+            <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt selected_project_list_table">
+                <thead>
+                    <tr>
+                        <th width="25%">Project ID</th>
+                        <th width="40%">Project Name</th>
+                        <th width="20%">Country</th>
+                        <th width="15%">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+            <div class="modal-footer txt_left">
+                <button type="button" class="btn btn-primary btn_green add_selected_role_restrict_project" data-dismiss="modal">Add Selected Project</button>
+                <button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+                
+    </div>
+        
+    </div>
+    </div>
+</div>
+
+<!-- project list popup ends -->
+
+
+
+<!-- loan list popup starts -->
+
+<div class="modal fade loan_list_popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-vlg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="appln_form_modal_title">Select Loans</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="search_prior_contracts_wrapper">
+            <fieldset class="no_left_margin">
+                <div class="row bank_search_wrap">
+                    <div class="col-md-5 no_padding">
+                        <div class="form-group clearfix no_btm_mgr">
+                            <div class="col-xs-12 clearfix">
+                                <select class="form-control input-sm normal_selector" data-tags="true" data-placeholder="Country - All">
+                                    <option></option>
+                                    <option>Afghanistan </option>
+                                    <option>Albania </option>
+                                    <option>Algeria </option>
+                                    <option>American Samoa </option>
+                                    <option>Andorra </option>
+                                    <option>Angola </option>
+                                    <option>Anguilla </option>
+                                    <option>Antiguaand Barbuda </option>
+                                    <option>Argentina </option>
+                                    <option>Armenia </option>
+                                    <option>Aruba </option>
+                                    <option>Australia </option>
+                                    <option>Austria </option>
+                                    <option>Azerbaijan </option>
+                                    <option>Bahamas </option>
+                                    <option>Bahrain </option>
+                                    <option>Bangladesh </option>
+                                    <option>Barbados </option>
+                                    <option>Belarus </option>
+                                    <option>Belgium </option>
+                                    <option>Belize </option>
+                                    <option>Benin </option>
+                                    <option>Bermuda </option>
+                                    <option>Bhutan </option>
+                                    <option>Bolivia </option>
+                                    <option>Bosnia-Herzegovina </option>
+                                    <option>Botswana </option>
+                                    <option>Bouvet Island </option>
+                                    <option>Brazil </option>
+                                    <option>Brunei </option>
+                                    <option>Bulgaria </option>
+                                    <option>Burkina Haso </option>
+                                    <option>Burundi </option>
+                                    <option>Cambodia </option>
+                                    <option>Cameroon </option>
+                                    <option>Canada </option>
+                                    <option>Cape Verde </option>
+                                    <option>Cayman Islands </option>
+                                    <option>Central African Republic </option>
+                                    <option>Chad </option>
+                                    <option>Chile </option>
+                                    <option>China </option>
+                                    <option>Christmas Island </option>
+                                    <option>Cocos(Keeling)Islands </option>
+                                    <option>Colombia </option>
+                                    <option>Comoros </option>
+                                    <option>Congo,DemocraticRepublicofthe(Zaire) </option>
+                                    <option>Congo, Republic of CookIslands</option>
+                                    <option>CostaRica </option>
+                                    <option>Croatia </option>
+                                    <option>Cuba </option>
+                                    <option>Cyprus </option>
+                                    <option>Czech Republic </option>
+                                    <option>Denmark </option>
+                                    <option>Djibouti </option>
+                                    <option>Dominica </option>
+                                    <option>Dominican Republic </option>
+                                    <option>Ecuador </option>
+                                    <option>Egypt </option>
+                                    <option>ElSalvador </option>
+                                    <option>Equatorial Guinea </option>
+                                    <option>Eritrea </option>
+                                    <option>Estonia </option>
+                                    <option>Ethiopia </option>
+                                    <option>Halkland Islands </option>
+                                    <option>Haroe Islands </option>
+                                    <option>Hiji </option>
+                                    <option>Hinland </option>
+                                    <option>Hrance </option>
+                                    <option>Hrench Guiana </option>
+                                    <option>Gabon </option>
+                                    <option>Gambia </option>
+                                    <option>Georgia </option>
+                                    <option>Germany </option>
+                                    <option>Ghana </option>
+                                    <option>Gibraltar </option>
+                                    <option>Greece </option>
+                                    <option>Greenland </option>
+                                    <option>Grenada </option>
+                                    <option>Guadeloupe(Hrench) </option>
+                                    <option>Guam(USA) </option>
+                                    <option>Guatemala </option>
+                                    <option>Guinea </option>
+                                    <option>Guinea Bissau </option>
+                                    <option>Guyana </option>
+                                    <option>Haiti </option>
+                                    <option>HolySee </option>
+                                    <option>Honduras </option>
+                                    <option>HongKong </option>
+                                    <option>Hungary </option>
+                                    <option>Iceland </option>
+                                    <option>India </option>
+                                    <option>Indonesia </option>
+                                    <option>Iran </option>
+                                    <option>Iraq </option>
+                                    <option>Ireland </option>
+                                    <option>Israel </option>
+                                    <option>Italy </option>
+                                    <option>IvoryCoast(CoteD`Ivoire) </option>
+                                    <option>Jamaica </option>
+                                    <option>Japan </option>
+                                    <option>Jordan </option>
+                                    <option>Kazakhstan </option>
+                                    <option>Kenya </option>
+                                    <option>Kiribati </option>
+                                    <option>Kuwait </option>
+                                    <option>Kyrgyzstan </option>
+                                    <option>Laos </option>
+                                    <option>Latvia </option>
+                                    <option>Lebanon </option>
+                                    <option>Lesotho </option>
+                                    <option>Liberia </option>
+                                    <option>Libya </option>
+                                    <option>Liechtenstein </option>
+                                    <option>Lithuania </option>
+                                    <option>Luxembourg </option>
+                                    <option>Macau </option>
+                                    <option>Macedonia </option>
+                                    <option>Madagascar </option>
+                                    <option>Malawi </option>
+                                    <option>Malaysia </option>
+                                    <option>Maldives </option>
+                                    <option>Mali </option>
+                                    <option>Malta </option>
+                                    <option>Marshall Islands </option>
+                                    <option>Martinique (Hrench) </option>
+                                    <option>Mauritania </option>
+                                    <option>Mauritius </option>
+                                    <option>Mayotte </option>
+                                    <option>Mexico </option>
+                                    <option>Micronesia </option>
+                                    <option>Moldova </option>
+                                    <option>Monaco </option>
+                                    <option>Mongolia </option>
+                                    <option>Montenegro </option>
+                                    <option>Montserrat </option>
+                                    <option>Morocco </option>
+                                    <option>Mozambique </option>
+                                    <option>Myanmar </option>
+                                    <option>Namibia </option>
+                                    <option>Nauru </option>
+                                    <option>Nepal </option>
+                                    <option>Netherlands </option>
+                                    <option>Netherlands Antilles </option>
+                                    <option>NewCaledonia(Hrench) </option>
+                                    <option>NewZealand </option>
+                                    <option>Nicaragua </option>
+                                    <option>Niger </option>
+                                    <option>Nigeria </option>
+                                    <option>Niue </option>
+                                    <option>NorfolkIsland </option>
+                                    <option>NorthKorea </option>
+                                    <option>Northern Mariana Islands </option>
+                                    <option>Norway </option>
+                                    <option>Oman </option>
+                                    <option>Pakistan </option>
+                                    <option>Palau </option>
+                                    <option>Panama </option>
+                                    <option>Papua New Guinea </option>
+                                    <option>Paraguay </option>
+                                    <option>Peru </option>
+                                    <option>Philippines </option>
+                                    <option>Pitcairn Island </option>
+                                    <option>Poland </option>
+                                    <option>Polynesia(Hrench) </option>
+                                    <option>Portugal </option>
+                                    <option>PuertoRico </option>
+                                    <option>Qatar </option>
+                                    <option>Reunion </option>
+                                    <option>Romania </option>
+                                    <option>Russia </option>
+                                    <option>Rwanda </option>
+                                    <option>SaintHelena </option>
+                                    <option>Saint Kitts and Nevis </option>
+                                    <option>Saint Lucia </option>
+                                    <option>Saint Pierreand Miquelon </option>
+                                    <option>Saint Vincent and Grenadines </option>
+                                    <option>Samoa </option>
+                                    <option>San Marino </option>
+                                    <option>Sao Tome and Principe </option>
+                                    <option>Saudi Arabia </option>
+                                    <option>Senegal </option>
+                                    <option>Serbia </option>
+                                    <option>Seychelles </option>
+                                    <option>SierraLeone </option>
+                                    <option>Singapore </option>
+                                    <option>Slovakia </option>
+                                    <option>Slovenia </option>
+                                    <option>SolomonIslands </option>
+                                    <option>Somalia </option>
+                                    <option>SouthAfrica </option>
+                                    <option>South Georgia and South Sandwich Islands </option>
+                                    <option>SouthKorea </option>
+                                    <option>SouthSudan </option>
+                                    <option>Spain </option>
+                                    <option>SriLanka </option>
+                                    <option>Sudan </option>
+                                    <option>Suriname </option>
+                                    <option>Svalbard and Jan Mayen Islands </option>
+                                    <option>Swaziland </option>
+                                    <option>Sweden </option>
+                                    <option>Switzerland </option>
+                                    <option>Syria </option>
+                                    <option>Taiwan </option>
+                                    <option>Tajikistan </option>
+                                    <option>Tanzania </option>
+                                    <option>Thailand </option>
+                                    <option>Timor-Leste(EastTimor) </option>
+                                    <option>Togo </option>
+                                    <option>Tokelau </option>
+                                    <option>Tonga </option>
+                                    <option>Trinidad and Tobago </option>
+                                    <option>Tunisia </option>
+                                    <option>Turkey </option>
+                                    <option>Turkmenistan </option>
+                                    <option>Turks and Caicos Islands </option>
+                                    <option>Tuvalu </option>
+                                    <option>Uganda </option>
+                                    <option>Ukraine </option>
+                                    <option>United Arab Emirates </option>
+                                    <option>United Kingdom </option>
+                                    <option>United States </option>
+                                    <option>Uruguay </option>
+                                    <option>Uzbekistan </option>
+                                    <option>Vanuatu </option>
+                                    <option>Venezuela </option>
+                                    <option>Vietnam </option>
+                                    <option>Virgin Islands </option>
+                                    <option>Wallis and Hutuna Islands </option>
+                                    <option>Yemen </option>
+                                    <option>Zambia </option>
+                                    <option>Zimbabwe </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 no_padding"></div>
+                    <div class="col-md-4 no_padding pull-right">
+                        <div class="form-group clearfix no_btm_mgr">
+                            <div class="col-xs-12 clearfix">
+                                <input type="text" class="form-control" placeholder="Search"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <!--  -->
+            </fieldset>
+        </div>
+        
+        
+        <table rel="loan_list" width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt selecting_row_loan" id="loan_list_table">
+            <thead>
+                <tr class="select_row">
+                    <th>
+                        <input type="checkbox" id="loan_list_select_all">
+                        <label for="loan_list_select_all" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </th>
+                    <th>Financier</th>
+                    <th>Loan Number</th>
+                    <th>Project ID</th>
+                    <th>Project Name</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr rel="loan_list_row_1">
+                    <td>
+                        <input type="checkbox" id="loan_list_item1">
+                        <label for="loan_list_item1" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>IBRD</td>
+                    <td>75400</td>
+                    <td>P13189</td>
+                    <td>Water Restoration Project in Urban Areas</td>
+                    <td>India</td>
+                </tr>
+                <tr rel="loan_list_row_2">
+                    <td>
+                        <input type="checkbox" id="loan_list_item2">
+                        <label for="loan_list_item2" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>IBRD</td>
+                    <td>48700</td>
+                    <td>P45712</td>
+                    <td>Project Name 2</td>
+                    <td>India</td>
+                </tr>
+                <tr rel="loan_list_row_3">
+                    <td>
+                        <input type="checkbox" id="loan_list_item3">
+                        <label for="loan_list_item3" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>IBRD</td>
+                    <td>25120</td>
+                    <td>P12435</td>
+                    <td>Project Name 3</td>
+                    <td>India</td>
+                </tr>
+                <tr rel="loan_list_row_4">
+                    <td>
+                        <input type="checkbox" id="loan_list_item4">
+                        <label for="loan_list_item4" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>IBRD</td>
+                    <td>78945</td>
+                    <td>P13189</td>
+                    <td>Project Name 4</td>
+                    <td>India</td>
+                </tr>
+                <tr rel="loan_list_row_5">
+                    <td>
+                        <input type="checkbox" id="loan_list_item5">
+                        <label for="loan_list_item5" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>IBRD</td>
+                    <td>86100</td>
+                    <td>P13112</td>
+                    <td>Project Name 5</td>
+                    <td>India</td>
+                </tr>
+                
+                
+            </tbody>
+        </table>
+        <div class="clear"></div>
+        <div class="col-md-12">
+            <div class="col-sm-4 view_per_page no_padding">
+                <fieldset class="no_left_margin">
+                    <label class="no_bold">View per page :</label>
+                    <select class="form-control input-sm per_page wd_50_per">
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                        <option>25</option>
+                    </select>
+                </fieldset>
+            </div>
+            <div class="col-sm-8 align-right no_padding">
+                <ul class="pagination pull-right" data-pagination-control="true" data-pagination-arrow="disabled">
+                    <li><a href="javascript:;">&laquo;</a></li>
+                    <li><a href="javascript:;">1</a></li>
+                    <li class="active"><a href="javascript:;">2</a></li>
+                    <li><a href="javascript:;">3</a></li>
+                    <li><a href="javascript:;">&raquo;</a></li>
+                  </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="selected_loan_list_table_wrapper">
+            <h5>Selected Loans</h5>
+            <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt selected_loan_list_table">
+                <thead>
+                    <tr>
+                        <th>Financier</th>
+                        <th>Loan Number</th>
+                        <th>Project ID</th>
+                        <th>Project Name</th>
+                        <th>Country</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+            <div class="modal-footer txt_left">
+                <button type="button" class="btn btn-primary btn_green add_selected_role_restrict_loan" data-dismiss="modal">Add Selected Loan</button>
+                <button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+                
+    </div>
+        
+    </div>
+    </div>
+</div>
+
+<!-- loan list popup ends -->
+
+
+
+<!-- borrow list popup starts -->
+
+<div class="modal fade borrow_list_popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="appln_form_modal_title">Select Borrower of Record</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="search_prior_contracts_wrapper">
+            <fieldset class="no_left_margin">
+                <div class="row bank_search_wrap">
+                    <div class="col-md-5 no_padding">
+                        <div class="form-group clearfix no_btm_mgr">
+                            <div class="col-xs-12 clearfix">
+                                <select class="form-control input-sm normal_selector" data-tags="true" data-placeholder="Country - All">
+                                    <option></option>
+                                    <option>Afghanistan </option>
+                                    <option>Albania </option>
+                                    <option>Algeria </option>
+                                    <option>American Samoa </option>
+                                    <option>Andorra </option>
+                                    <option>Angola </option>
+                                    <option>Anguilla </option>
+                                    <option>Antiguaand Barbuda </option>
+                                    <option>Argentina </option>
+                                    <option>Armenia </option>
+                                    <option>Aruba </option>
+                                    <option>Australia </option>
+                                    <option>Austria </option>
+                                    <option>Azerbaijan </option>
+                                    <option>Bahamas </option>
+                                    <option>Bahrain </option>
+                                    <option>Bangladesh </option>
+                                    <option>Barbados </option>
+                                    <option>Belarus </option>
+                                    <option>Belgium </option>
+                                    <option>Belize </option>
+                                    <option>Benin </option>
+                                    <option>Bermuda </option>
+                                    <option>Bhutan </option>
+                                    <option>Bolivia </option>
+                                    <option>Bosnia-Herzegovina </option>
+                                    <option>Botswana </option>
+                                    <option>Bouvet Island </option>
+                                    <option>Brazil </option>
+                                    <option>Brunei </option>
+                                    <option>Bulgaria </option>
+                                    <option>Burkina Haso </option>
+                                    <option>Burundi </option>
+                                    <option>Cambodia </option>
+                                    <option>Cameroon </option>
+                                    <option>Canada </option>
+                                    <option>Cape Verde </option>
+                                    <option>Cayman Islands </option>
+                                    <option>Central African Republic </option>
+                                    <option>Chad </option>
+                                    <option>Chile </option>
+                                    <option>China </option>
+                                    <option>Christmas Island </option>
+                                    <option>Cocos(Keeling)Islands </option>
+                                    <option>Colombia </option>
+                                    <option>Comoros </option>
+                                    <option>Congo,DemocraticRepublicofthe(Zaire) </option>
+                                    <option>Congo, Republic of CookIslands</option>
+                                    <option>CostaRica </option>
+                                    <option>Croatia </option>
+                                    <option>Cuba </option>
+                                    <option>Cyprus </option>
+                                    <option>Czech Republic </option>
+                                    <option>Denmark </option>
+                                    <option>Djibouti </option>
+                                    <option>Dominica </option>
+                                    <option>Dominican Republic </option>
+                                    <option>Ecuador </option>
+                                    <option>Egypt </option>
+                                    <option>ElSalvador </option>
+                                    <option>Equatorial Guinea </option>
+                                    <option>Eritrea </option>
+                                    <option>Estonia </option>
+                                    <option>Ethiopia </option>
+                                    <option>Halkland Islands </option>
+                                    <option>Haroe Islands </option>
+                                    <option>Hiji </option>
+                                    <option>Hinland </option>
+                                    <option>Hrance </option>
+                                    <option>Hrench Guiana </option>
+                                    <option>Gabon </option>
+                                    <option>Gambia </option>
+                                    <option>Georgia </option>
+                                    <option>Germany </option>
+                                    <option>Ghana </option>
+                                    <option>Gibraltar </option>
+                                    <option>Greece </option>
+                                    <option>Greenland </option>
+                                    <option>Grenada </option>
+                                    <option>Guadeloupe(Hrench) </option>
+                                    <option>Guam(USA) </option>
+                                    <option>Guatemala </option>
+                                    <option>Guinea </option>
+                                    <option>Guinea Bissau </option>
+                                    <option>Guyana </option>
+                                    <option>Haiti </option>
+                                    <option>HolySee </option>
+                                    <option>Honduras </option>
+                                    <option>HongKong </option>
+                                    <option>Hungary </option>
+                                    <option>Iceland </option>
+                                    <option>India </option>
+                                    <option>Indonesia </option>
+                                    <option>Iran </option>
+                                    <option>Iraq </option>
+                                    <option>Ireland </option>
+                                    <option>Israel </option>
+                                    <option>Italy </option>
+                                    <option>IvoryCoast(CoteD`Ivoire) </option>
+                                    <option>Jamaica </option>
+                                    <option>Japan </option>
+                                    <option>Jordan </option>
+                                    <option>Kazakhstan </option>
+                                    <option>Kenya </option>
+                                    <option>Kiribati </option>
+                                    <option>Kuwait </option>
+                                    <option>Kyrgyzstan </option>
+                                    <option>Laos </option>
+                                    <option>Latvia </option>
+                                    <option>Lebanon </option>
+                                    <option>Lesotho </option>
+                                    <option>Liberia </option>
+                                    <option>Libya </option>
+                                    <option>Liechtenstein </option>
+                                    <option>Lithuania </option>
+                                    <option>Luxembourg </option>
+                                    <option>Macau </option>
+                                    <option>Macedonia </option>
+                                    <option>Madagascar </option>
+                                    <option>Malawi </option>
+                                    <option>Malaysia </option>
+                                    <option>Maldives </option>
+                                    <option>Mali </option>
+                                    <option>Malta </option>
+                                    <option>Marshall Islands </option>
+                                    <option>Martinique (Hrench) </option>
+                                    <option>Mauritania </option>
+                                    <option>Mauritius </option>
+                                    <option>Mayotte </option>
+                                    <option>Mexico </option>
+                                    <option>Micronesia </option>
+                                    <option>Moldova </option>
+                                    <option>Monaco </option>
+                                    <option>Mongolia </option>
+                                    <option>Montenegro </option>
+                                    <option>Montserrat </option>
+                                    <option>Morocco </option>
+                                    <option>Mozambique </option>
+                                    <option>Myanmar </option>
+                                    <option>Namibia </option>
+                                    <option>Nauru </option>
+                                    <option>Nepal </option>
+                                    <option>Netherlands </option>
+                                    <option>Netherlands Antilles </option>
+                                    <option>NewCaledonia(Hrench) </option>
+                                    <option>NewZealand </option>
+                                    <option>Nicaragua </option>
+                                    <option>Niger </option>
+                                    <option>Nigeria </option>
+                                    <option>Niue </option>
+                                    <option>NorfolkIsland </option>
+                                    <option>NorthKorea </option>
+                                    <option>Northern Mariana Islands </option>
+                                    <option>Norway </option>
+                                    <option>Oman </option>
+                                    <option>Pakistan </option>
+                                    <option>Palau </option>
+                                    <option>Panama </option>
+                                    <option>Papua New Guinea </option>
+                                    <option>Paraguay </option>
+                                    <option>Peru </option>
+                                    <option>Philippines </option>
+                                    <option>Pitcairn Island </option>
+                                    <option>Poland </option>
+                                    <option>Polynesia(Hrench) </option>
+                                    <option>Portugal </option>
+                                    <option>PuertoRico </option>
+                                    <option>Qatar </option>
+                                    <option>Reunion </option>
+                                    <option>Romania </option>
+                                    <option>Russia </option>
+                                    <option>Rwanda </option>
+                                    <option>SaintHelena </option>
+                                    <option>Saint Kitts and Nevis </option>
+                                    <option>Saint Lucia </option>
+                                    <option>Saint Pierreand Miquelon </option>
+                                    <option>Saint Vincent and Grenadines </option>
+                                    <option>Samoa </option>
+                                    <option>San Marino </option>
+                                    <option>Sao Tome and Principe </option>
+                                    <option>Saudi Arabia </option>
+                                    <option>Senegal </option>
+                                    <option>Serbia </option>
+                                    <option>Seychelles </option>
+                                    <option>SierraLeone </option>
+                                    <option>Singapore </option>
+                                    <option>Slovakia </option>
+                                    <option>Slovenia </option>
+                                    <option>SolomonIslands </option>
+                                    <option>Somalia </option>
+                                    <option>SouthAfrica </option>
+                                    <option>South Georgia and South Sandwich Islands </option>
+                                    <option>SouthKorea </option>
+                                    <option>SouthSudan </option>
+                                    <option>Spain </option>
+                                    <option>SriLanka </option>
+                                    <option>Sudan </option>
+                                    <option>Suriname </option>
+                                    <option>Svalbard and Jan Mayen Islands </option>
+                                    <option>Swaziland </option>
+                                    <option>Sweden </option>
+                                    <option>Switzerland </option>
+                                    <option>Syria </option>
+                                    <option>Taiwan </option>
+                                    <option>Tajikistan </option>
+                                    <option>Tanzania </option>
+                                    <option>Thailand </option>
+                                    <option>Timor-Leste(EastTimor) </option>
+                                    <option>Togo </option>
+                                    <option>Tokelau </option>
+                                    <option>Tonga </option>
+                                    <option>Trinidad and Tobago </option>
+                                    <option>Tunisia </option>
+                                    <option>Turkey </option>
+                                    <option>Turkmenistan </option>
+                                    <option>Turks and Caicos Islands </option>
+                                    <option>Tuvalu </option>
+                                    <option>Uganda </option>
+                                    <option>Ukraine </option>
+                                    <option>United Arab Emirates </option>
+                                    <option>United Kingdom </option>
+                                    <option>United States </option>
+                                    <option>Uruguay </option>
+                                    <option>Uzbekistan </option>
+                                    <option>Vanuatu </option>
+                                    <option>Venezuela </option>
+                                    <option>Vietnam </option>
+                                    <option>Virgin Islands </option>
+                                    <option>Wallis and Hutuna Islands </option>
+                                    <option>Yemen </option>
+                                    <option>Zambia </option>
+                                    <option>Zimbabwe </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 no_padding"></div>
+                    <div class="col-md-4 no_padding pull-right">
+                        <div class="form-group clearfix no_btm_mgr">
+                            <div class="col-xs-12 clearfix">
+                                <input type="text" class="form-control" placeholder="Search"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <!--  -->
+            </fieldset>
+        </div>
+        
+        
+        <table rel="borrow_list" width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt selecting_row_borrow" id="borrow_list_table">
+            <thead>
+                <tr class="select_row">
+                    <th>
+                        <input type="checkbox" id="borrow_list_select_all">
+                        <label for="borrow_list_select_all" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </th>
+                    <th>Borrower of Record</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr rel="borrow_list_row_1">
+                    <td>
+                        <input type="checkbox" id="borrow_list_item1">
+                        <label for="borrow_list_item1" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>Borrower of Record 1</td>
+                    <td>India</td>
+                </tr>
+                <tr rel="borrow_list_row_2">
+                    <td>
+                        <input type="checkbox" id="borrow_list_item2">
+                        <label for="borrow_list_item2" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>Borrower of Record 2</td>
+                    <td>Bangladesh</td>
+                </tr>
+                <tr rel="borrow_list_row_3">
+                    <td>
+                        <input type="checkbox" id="borrow_list_item3">
+                        <label for="borrow_list_item3" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>Borrower of Record 3</td>
+                    <td>Australia</td>
+                </tr>
+                <tr rel="borrow_list_row_4">
+                    <td>
+                        <input type="checkbox" id="borrow_list_item4">
+                        <label for="borrow_list_item4" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>Borrower of Record 4</td>
+                    <td>Myanmar</td>
+                </tr>
+                <tr rel="borrow_list_row_5">
+                    <td>
+                        <input type="checkbox" id="borrow_list_item5">
+                        <label for="borrow_list_item5" class="css-labelChk sprite sprite-ico-checkbox"></label>
+                    </td>
+                    <td>Borrower of Record 5</td>
+                    <td>United Kingdom</td>
+                </tr>
+                
+                
+            </tbody>
+        </table>
+        <div class="clear"></div>
+        <div class="col-md-12">
+            <div class="col-sm-4 view_per_page no_padding">
+                <fieldset class="no_left_margin">
+                    <label class="no_bold">View per page :</label>
+                    <select class="form-control input-sm per_page wd_50_per">
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                        <option>25</option>
+                    </select>
+                </fieldset>
+            </div>
+            <div class="col-sm-8 align-right no_padding">
+                <ul class="pagination pull-right" data-pagination-control="true" data-pagination-arrow="disabled">
+                    <li><a href="javascript:;">&laquo;</a></li>
+                    <li><a href="javascript:;">1</a></li>
+                    <li class="active"><a href="javascript:;">2</a></li>
+                    <li><a href="javascript:;">3</a></li>
+                    <li><a href="javascript:;">&raquo;</a></li>
+                  </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="selected_borrow_list_table_wrapper">
+            <h5>Selected Borrow of Records</h5>
+            <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt selected_borrow_list_table">
+                <thead>
+                    <tr>
+                        <th>Borrower of Record</th>
+                        <th>Country</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+            <div class="modal-footer txt_left">
+                <button type="button" class="btn btn-primary btn_green add_selected_role_restrict_borrow" data-dismiss="modal">Add Selected Borrower of Record</button>
+                <button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+                
+    </div>
+        
+    </div>
+    </div>
+</div>
+
+<!-- borrow list popup ends -->
+
+<!--popup ends here--> 
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,1122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+        </div>
+        <div class="col-md-10 user_utils no_padding">
+          <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+            <div class="notification_utils">
+              <ul class="notifications clearfix">
+                <li>
+                  <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown language">
+              <select class="header_language">
+                <option>English US</option>
+                <option>English UK</option>
+                <option>French</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+              <div class="dropdown user_details">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">John Mattew</button>
+                  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="Library/my_profile.html">My Profile</a></li>
+                    <li><a href="Library/login.html">Sign out</a></li>
+                    <li class="thm-def"><a href="javascript:void(0)">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:void(0)">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:void(0)">Theme - Purple</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here --> 
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends --> 
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends --> 
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends --> 
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Site Tour</a></li>
+      <li><a href="javascript:;">Glossary of Terms</a></li>
+      <li><a href="javascript:;">About this Page</a></li>
+    </ul>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- FAQ popover ends --> 
+  <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+<!-- Main menu starts -->
+<nav class="navbar main_navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+    <div id="mainnavigation" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="javascript:;">My Portfolio</a></li>
+        <li><a href="javascript:;">Projects</a></li>
+        <li><a href="javascript:;">Loans</a></li>
+        <li><a href="javascript:;" class="current_page">Organizations</a></li>
+        <li><a href="javascript:;">Events</a></li>
+        <li><a href="javascript:;">ASL</a></li>
+        <li><a href="javascript:;">User Management</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Main menu ends -->
+
+<div class="container"> 
+  <!-- Example row of columns -->
+  <div class="row section_wrapper"> 
+    <!--page title starts here-->
+    <div class="page_title_section clearfix">
+      <h1 class="pull-left">Register Organization <span class="org_id_number" style="display:inline">: R156753123</span></h1>
+      <div class="page_options"> <a title="View/Print ASL" href="javascript:;"><span class="sprite sprite-ico_print"></span></a> </div>
+    </div>
+    <div class="clearfix review_page">
+      <div class="page_utils_links">
+        <p class="mandatory_text">Fields marked with "<span class="mandatory">*</span>" are mandatory.</p>
+      </div>
+    </div>
+    <!--page title ends here-->
+    <div class="col-md-12 column_wrapper">
+      <div class="content_wrapper no_padding">
+        <div class="panel-group setup_accordion" id=""> 
+          
+          <!--step 1 starts here-->
+          
+          <div class="panel panel-default completed step1">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix reviewpage_header_org_setup" data-rel="step1">
+                  <div class="item_counter"><span class="step_completed_check">1<span class="stat-checked"><span class="sprite sprite-ico_tick_big"></span></span></span></div>
+                  <div class="item_title"> <span>Organization Details</span> </div>
+                  <div class="edit_links_wrap"><a href="javascript:;" class="pull-right collapseOne">Edit</a> </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+
+              <div class="panel-body">
+                <div class="more_org_wrap">
+                    <p> <strong>Organization Match:</strong> <br/>
+                      Matches 75 % with the existing Organization. Please see the list below for the closest matches.
+                    <ul class="normal_list">
+                      <li>1. Organization Match 1</li>
+                      <li>2. Organization Match 2</li>
+                      <li>3. Organization Match 3</li>
+                    </ul>
+                    <a href="javascript:;" data-toggle="modal" data-target=".orgMatch-modal-sm">More...</a>
+                    </p>
+                  </div>
+                <div class="row">
+                    <form class="form">
+                        <fieldset>
+                            <div class="col-md-12 review_page">
+
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgName" class="control-label-static ">Organization Name</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>Asian Heritage Foundation</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+
+
+                                <div class="form-group clearfix address_fields">
+                                    <label for="inputPosAdd1" class="control-label-static ">Postal Address</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem </span></p>
+                                        <p class="form-control-static"><span>Lorem ipsum lorem ipsum lorem ipsum</span></p>
+                                        <p class="form-control-static"><span>Lorem ipsum lorem ipsum</span></p>
+                                    </div>  
+                                    <div class="col-md-12 no_padding"></div>                                                              
+                                </div>
+
+
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgCity" class="control-label-static ">City</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>Lorem ipsum</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgCity" class="control-label-static ">State</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>Lorem ipsum</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgCity" class="control-label-static ">Zip/Postal Code</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>Lorem ipsum</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+
+                                
+
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgCountry" class="control-label-static ">Country</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>India</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgTel" class="control-label-static ">Telephone Number</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">                                                        
+                                        <p class="form-control-static"><span>123-123-12345474</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="" class="control-label-static ">Fax Number</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">                                                        
+                                        <p class="form-control-static"><span>123-123-12345474</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+                                
+
+ 								<div class="form-group clearfix">
+                                    <label for="" class="control-label-static ">Affiliated Country</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">                                                        
+                                        <p class="form-control-static"><span>India</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="" class="control-label-static ">Language of Correspondence</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">                                                        
+                                        <p class="form-control-static"><span>English</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>                                                
+
+                            </div>    
+                            
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Requestor Information</legend>
+                            <div class="col-md-12 review_page">
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgFName" class="control-label-static ">First Name</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>John</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgMName" class="control-label-static">Middle Name</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>--</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgLName" class="control-label-static ">Last Name</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>Smith</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <label for="inputOrgUserEmail" class="control-label-static ">Email</label>
+                                    <div class="clear"></div>
+                                    <div class="col-md-12 no_padding">
+                                        <p class="form-control-static"><span>johnsmith@abc.com</span></p>
+                                    </div>
+                                    <div class="col-md-12 no_padding"></div>
+                                </div>                               
+
+                                                                                
+
+                            </div>    
+                            
+                        </fieldset>
+                        
+                    </form>
+                </div>
+            </div>
+            </div>
+          </div>
+          
+          <!--step 1 ends here--> 
+          
+          <!--step 2 starts here-->
+          
+          <div class="panel panel-default completed step2">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix reviewpage_header_org_setup" data-rel="step2">
+                  <div class="item_counter"><span class="step_completed_check">2<span class="stat-checked"><span class="sprite sprite-ico_tick_big"></span></span></span></div>
+                  <div class="item_title"> <span>Purpose of Registration</span></div>
+                    <div class="edit_links_wrap"><a href="javascript:;" class="pull-right collapseTwo">Edit</a> </div>
+                   
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form">
+                    <fieldset>
+                        <div class="col-md-12 review_page">
+                            <div class="radio_btn_wrap clearfix">
+                                <input type="radio" id="org_pur_of_reg_selected" name="org_pur_of_reg_review" value="" checked="" disabled="" class="prior_contracts_rad_btn">
+                                <label for="org_pur_of_reg_selected" class="css_radio_check_small sprite sprite-ico-radio_small">To Access Projects &amp; Loans</label>
+                            </div>
+                                                
+
+                        </div>    
+                        
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--step 2 ends here--> 
+          
+          <!--step 3 starts here-->
+          
+          <div class="panel panel-default completed step3">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix reviewpage_header_org_setup" data-rel="step3">
+                  <div class="item_counter"><span class="step_completed_check">3<span class="stat-checked"><span class="sprite sprite-ico_tick_big"></span></span></span></div>
+                  <div class="item_title"> <span>Authorization Details</span> </div>
+                  <div class="edit_links_wrap"><a href="javascript:;" class="pull-right collapseThree">Edit</a> </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form">
+                    <fieldset>
+                        <legend>Authorization Type: Borrower of Record</legend>
+                        <div class="col-md-12 review_page">
+                            <div class="form-group clearfix">
+                                <label for="inputOrgFName" class="control-label-static ">Country</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>India</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label for="inputOrgMName" class="control-label-static">Borrower(s) of Record</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static">
+                                        <span>Bhakra Beas Management Board</span>
+                                        <input type="checkbox" id="view_over_1" disabled="" checked=""><label rel="country" for="view_over_1" class="css-labelChk disabled_chk">View Overdues</label>
+                                    </p>
+                                    <p class="form-control-static">
+                                        <span>Acciona Wind Energy Private Limited</span>                                        
+                                    </p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                        </div>    
+                        
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Authorization Type: Project</legend>
+                        <div class="col-md-12 review_page">
+                            <div class="form-group clearfix">
+                                <label for="inputOrgFName" class="control-label-static ">Country</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>India</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label for="inputOrgMName" class="control-label-static">Project</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>Project 1</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                        </div>    
+                        
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--step 3 ends here--> 
+          
+          <!--step 4 starts here-->
+          
+          <div class="panel panel-default completed step4">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix reviewpage_header_org_setup" data-rel="step4">
+                  <div class="item_counter"><span class="step_completed_check">4<span class="stat-checked"><span class="sprite sprite-ico_tick_big"></span></span></span></div>
+                  <div class="item_title"> <span>Liaison Details</span></div>
+                  <div class="edit_links_wrap"><a href="javascript:;" class="pull-right collapseFour">Edit</a> </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form">
+                    
+                    <fieldset>
+                        <legend>Liaison Details: No. 1</legend>
+                        <div class="col-md-12 review_page">
+                            <div class="form-group clearfix">
+                                <label for="inputOrgFName" class="control-label-static ">First Name</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>John</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label for="inputOrgMName" class="control-label-static">Middle Name</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>--</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgLName" class="control-label-static ">Last Name</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>Doe</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgLName" class="control-label-static ">Job Title</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>Division Head</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgUserEmail" class="control-label-static ">Email</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>johndoe@abc.com</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgUserEmail" class="control-label-static ">Telephone Number</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>123-123-14568447</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgUserEmail" class="control-label-static ">Mobile Number</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>--</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>                               
+
+                                                                            
+
+                        </div>    
+                        
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Liaison Details: No. 2</legend>
+                        <div class="col-md-12 review_page">
+                            <div class="form-group clearfix">
+                                <label for="inputOrgFName" class="control-label-static ">First Name</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>John</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label for="inputOrgMName" class="control-label-static">Middle Name</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>--</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgLName" class="control-label-static ">Last Name</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>Peter</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgLName" class="control-label-static ">Job Title</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>Division Head</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgUserEmail" class="control-label-static ">Email</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>johnpeter@abc.com</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>  
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgUserEmail" class="control-label-static ">Telephone Number</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>123-123-14568447</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgUserEmail" class="control-label-static ">Mobile Number</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>--</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>                             
+
+                                                                            
+
+                        </div>    
+                        
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--step 4 ends here--> 
+          
+          <!--step 5 starts here-->
+          
+          <div class="panel panel-default completed step5">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix reviewpage_header_org_setup" data-rel="step5">
+                  <div class="item_counter"><span class="step_completed_check">5<span class="stat-checked"><span class="sprite sprite-ico_tick_big"></span></span></span></div>
+                  <div class="item_title"> <span>Authorization Representative Details</span> </div>
+                  <div class="edit_links_wrap"><a href="javascript:;" class="pull-right collapseFive">Edit</a> </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form">
+                    <fieldset>
+                        <div class="col-md-12 review_page">
+                            <div class="form-group clearfix">
+                                <label for="inputOrgFName" class="control-label-static ">First Name</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>Stephen</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label for="inputOrgMName" class="control-label-static">Middle Name</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>--</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgLName" class="control-label-static ">Last Name</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>Peter</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgLName" class="control-label-static ">Job Title</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>Division Head</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                            <!-- <div class="form-group clearfix">
+                                <label for="inputOrgUserEmail" class="control-label-static ">Email</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>speter@abc.com</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div> -->  
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgUserEmail" class="control-label-static ">Telephone Number</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>123-123-14568447</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>
+
+                            <div class="form-group clearfix">
+                                <label for="inputOrgUserEmail" class="control-label-static ">Mobile Number</label>
+                                <div class="clear"></div>
+                                <div class="col-md-12 no_padding">
+                                    <p class="form-control-static"><span>--</span></p>
+                                </div>
+                                <div class="col-md-12 no_padding"></div>
+                            </div>                             
+
+                                                                            
+
+                        </div>    
+                        
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--step 5 ends here--> 
+          
+          <!--step 6 history starts here-->
+          
+          <div class="panel panel-default completed step6">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed history_header clearfix collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapseSix">
+                  <div class="item_counter"> <span class="step_completed_check"> <span class="sprite sprite-ico_history"></span> </span> </div>
+                  <div class="item_title"> <span>View Organization History </span> <a href="javascript:;" class="pull-right org_his_icon"> <span class="sprite sprite-ico_accordion"></span> </a> </div>
+
+                </div>
+              </div>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-10">
+                    <table class="table tbl" width="100%" cellspacing="0" cellpadding="0">
+                      <thead>
+                        <tr>
+                          <th>User Name</th>
+                          <th>Role</th>
+                          <th>Action</th>
+                          <th>Date</th>
+                          <th>Comments</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Jabakumar Nethaniel</td>
+                          <td>General</td>
+                          <td>Submitted</td>
+                          <td>04-01-2015</td>
+                          <td>Attached ASL dated Nov 20, 2014</td>
+                        </tr>
+                        <tr>
+                          <td>Stephen Rerual</td>
+                          <td>Esignatory</td>
+                          <td>Submitted</td>
+                          <td>05-01-2015</td>
+                          <td>Reviewed the attachment</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-md-1"></div>
+                </div>
+              </div>
+            </div>
+            <div class="more_org_wrap">
+              <p> <strong>Organization Match:</strong> Matches 75 % with the existing Organization. Please <a href="javascript:;" data-toggle="modal" data-target=".orgMatch-modal-sm">click here</a> for details. </p>
+            </div>
+          </div>
+          
+          <!--step 6 history ends here--> 
+          
+          
+          
+        </div>
+      </div>
+      <div class="review_btn_wrap no_padding_top">
+        <input type="button" data-target=".delete-modal-sm" data-toggle="modal" value="Delete" class="btn btn-primary btn_green">
+        <input type="button" data-target=".cancel-modal-sm" data-toggle="modal" value="Cancel" class="btn btn-secondary btn_white">
+    </div>
+    </div>
+  </div>
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+
+<!--popup starts here--> 
+<!--cancel popup starts here-->
+<div class="modal fade cancel-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Cancel Organization<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Do you want to cancel the Organization setup Process?</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--cancel popup ends here--> 
+
+<!--save popup starts here-->
+<div class="modal fade save-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Save Organization<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Your request for Organization Account Setup is successfully saved as draft.</p>
+        <p class="txt_center">Your Reference number to track this request is : <span class="bg-success">R156753123</span></p>
+        <p class="txt_center">If you do not take any action to submit it to the Bank within 10 days, the draft will automatically be deleted.</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--save popup ends here--> 
+
+<!--submit popup starts here-->
+<div class="modal fade submit-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Confirmation
+            <!-- <a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a> -->
+        </h4>
+        <div class="clearfix">
+            <span class="port_pg_opt_links">
+                <a href="javascript:;" title="Print"><span class="sprite sprite-ico_print_new"></span></a> 
+            </span>             
+        </div>
+      </div>
+        <div class="modal-body">            
+            <p class="txt_center">Your request for Organization Account Setup is successfully submitted to the World Bank Group.</p>
+            <p class="txt_center">Your Reference number to track this request is : <span class="bg-success">R156753123</span></p>            
+        </div>
+        
+        <div class="modal-footer txt_center">            
+            <input type="button" class="btn btn-primary btn_green submit_org_review" data-dismiss="modal" value="Ok" />   
+    
+        </div>
+    </div>
+  </div>
+</div>
+
+<!--submit popup ends here--> 
+
+<!--delete popup starts here-->
+<div class="modal fade delete-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Delete Organization<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <form class="form">
+            <fieldset class="no_mgr">
+                <div class="col-md-12 review_page">
+
+                    <div class="form-group clearfix">
+                        <label class="control-label-static " for="inputOrgName">Organization Name</label>
+                        <div class="clear"></div>
+                        <div class="col-xs-4 no_padding">
+                            <p class="form-control-static"><span>Organization 1</span></p>
+                        </div>
+                        <div class="col-xs-4 no_padding"></div>
+                    </div>
+
+
+                    <div class="form-group clearfix">
+                        <label class="control-label-static " for="">Category</label>
+                        <div class="clear"></div>
+                        <div class="col-xs-4 no_padding">                                                        
+                            <p class="form-control-static"><span>Category 1</span></p>
+                        </div>
+                        <div class="col-xs-4 no_padding"></div>
+                    </div>
+
+                    <div class="form-group clearfix">
+                        <label class="control-label-static " for="">Country</label>
+                        <div class="clear"></div>
+                        <div class="col-xs-4 no_padding">                                                        
+                            <p class="form-control-static"><span>Afghanistan</span></p>
+                        </div>
+                        <div class="col-xs-4 no_padding"></div>
+                    </div>                                                
+
+                </div>
+                <div class="col-md-12">
+
+                    <div class="form-group clearfix">
+                        <label class="control-label required" for="del_OrgReason">Reason</label>
+                        <div class="clear"></div>
+                        <div class="col-xs-8 no_padding">
+                            <select id="del_OrgReason" class="form-control normal_selector" data-placaholder="Select Reason" data-tags="true">
+                                <option>Select Reason</option>
+                                <option>Reason 1</option>
+                                <option>Reason 2</option>
+                                <option>Reason 3</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-4 no_padding"></div>
+                    </div>
+
+                    <div class="form-group clearfix">
+                        <label class="control-label required" for="del_OrgComm">Comments</label>
+                        <div class="clear"></div>
+                        <div class="col-xs-8 no_padding">
+                            <textarea class="form-control" id="del_OrgComm"></textarea>
+                        </div>
+                        <div class="col-xs-4 no_padding"></div>
+                    </div>
+
+                </div>
+            </fieldset>
+        </form>
+        <div class="panel panel-default">
+          <div class="panel-body"> <span class="sprite sprite-ico_alert delete_alert"></span>
+            <p class="mar_left_15Per"> This organization has existing e-signatories mapped to Authorized Signatory Letters. They will be delinked if deleted. </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer txt_center">
+        <input type="button" class="btn btn-primary btn_green delete_org_review" data-dismiss="modal" value="Delete Organization">
+        <a href="javascript:;" data-dismiss="modal">Cancel</a> </div>
+    </div>
+  </div>
+</div>
+
+<!--delete popup ends here--> 
+
+<!--Organization Match starts here-->
+<div class="modal fade orgMatch-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Organization Match<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="">Matches 75% with the existing Organization. Please see the list below for the closest matches.</p>
+        <ul class="normal_list">
+          <li>1. Organization Match 1</li>
+          <li>2. Organization Match 2</li>
+          <li>3. Organization Match 3</li>
+          <li>4. Organization Match 1</li>
+          <li>5. Organization Match 2</li>
+          <li>6. Organization Match 3</li>
+          <li>7. Organization Match 1</li>
+          <li>8. Organization Match 2</li>
+          <li>9. Organization Match 3</li>
+          <li>10. Organization Match 1</li>
+          <li>11. Organization Match 2</li>
+          <li>12. Organization Match 3</li>
+          <li>13. Organization Match 1</li>
+          <li>14. Organization Match 2</li>
+          <li>15. Organization Match 3</li>
+        </ul>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Organization Match ends here--> 
+
+<!--terms and condi Match starts here-->
+<div class="modal fade terms-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Web Access Agreement -Terms and Conditions
+            <!-- <a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a> -->
+        </h4>
+        <div class="clearfix">
+            <span class="port_pg_opt_links">
+                <a href="javascript:;" title="Download"><span class="sprite sprite-ico_download"></span></a>
+                <a href="javascript:;" title="Print"><span class="sprite sprite-ico_print_new"></span></a> 
+            </span>             
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="normal_txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="normal_txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="normal_txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green accept_terms_condition" data-dismiss="modal">Accept</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--terms and condi Match ends here--> 
+
+<!--popup ends here--> 
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>

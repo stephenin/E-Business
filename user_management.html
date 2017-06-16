@@ -1,0 +1,723 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness ASL</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/jquery.dataTables.css" rel="stylesheet"/>
+<link href="css/dataTables.bootstrap.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header>
+  <nav class="navbar navbar-inverse">
+	<div class="container">
+	  <div class="row">
+		<div class="col-md-2">
+		  <div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			<a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+		</div>
+		<div class="col-md-10 user_utils no_padding">
+		  <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+			<div class="notification_utils">
+			  <ul class="notifications clearfix">
+				<li>
+				  <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+				</li>
+				<li>
+				  <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+				</li>
+				<li>
+				  <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+				</li>
+				<li>
+				  <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+				</li>
+			  </ul>
+			</div>
+			<div class="dropdown language">
+			  <select class="header_language">
+				<option>Enlish US</option>
+				<option>Enlish UK</option>
+				<option>French</option>
+				<option>Spanish</option>
+			  </select>
+			</div>
+			<div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+			  <div class="dropdown user_details">
+				<div class="btn-group">
+				  <button type="button" class="btn btn-default">John Mattew</button>
+				  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="Library/my_profile.html">My Profile</a></li>
+					<li><a href="Library/login.html">Sign out</a></li>
+					<li class="thm-def"><a href="javascript:void(0)">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:void(0)">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:void(0)">Theme - Purple</a></li>
+				  </ul>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </nav>
+</header>
+<!-- Main menu starts -->
+<nav class="navbar main_navigation">
+  <div class="container">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+	</div>
+	<div id="mainnavigation" class="navbar-collapse collapse">
+	  <ul class="nav navbar-nav">
+		<li><a href="home.html">Home</a></li>
+		<li><a href="javascript:;">My Portfolio</a></li>
+		<li><a href="javascript:;">Projects</a></li>
+		<li><a href="javascript:;">Loans</a></li>
+		<li><a href="javascript:;">Organizations</a></li>
+		<li><a href="javascript:;">Events</a></li>
+		<li><a href="javascript:;">ASL</a></li>
+		<li><a href="javascript:;" class="current_page">User Management</a></li>
+	  </ul>
+	</div>
+  </div>
+</nav>
+<!-- Main menu ends -->
+
+<div class="container"> 
+  <!-- Example row of columns -->
+  <div class="row section_wrapper"> 
+	<!--page title starts here-->
+	<div class="page_title_section clearfix">
+	  <h1>User Management</h1>
+	  <input type="button" class="btn btn-primary btn_green" value="Add new User">
+	  <h3>Existing Users</h3>
+	</div>
+	<!--page title ends here-->
+	<div class="col-md-12 no_padding filters_section clearfix">
+	  <div class="col-lg-8 col-md-12 no_padding filter_by">
+		<form>
+		  <fieldset class="no_left_margin">
+			<label>Filter By:</label>
+			<select class="form-control filters_select input-sm">
+			  <option>Status - All</option>
+			  <option>Active</option>
+			  <option>In-Active</option>
+			</select>
+			<select class="filters_select form-control input-sm portfolio">
+			  <option>User Type - All</option>
+			  <option>Admin</option>
+			  <option>Authorized Representative</option>
+			  <option>champion</option>
+			  <option>Liaison</option>
+			  <option>Standard</option>
+			</select>
+			<select class="filters_select form-control input-sm portfolio">
+			  <option>Job Title - All</option>
+			  <option>Executive</option>
+			  <option>FM Assistant</option>
+			  <option>Finance Minister</option>
+			</select>
+			<select class="filters_select form-control input-sm portfolio">
+			  <option>Organization - All</option>
+			  <option>Organization - 1</option>
+			  <option>Organization - 2</option>
+			  <option>Organization - 3</option>
+			  <option>Organization - 4</option>
+			  <option>Organization - 5</option>
+			</select>
+		  </fieldset>
+		</form>
+	  </div>
+	  <div class="col-lg-4 col-lg-offset-0 col-md-6 col-md-offset-6 col-sm-9 col-sm-offset-3 no_right_pad organization_name_wrapper">
+		<div class="col-sm-2 text-right no_padding pull-right">
+		  <ul role="tablist" class="nav nav-tabs view_type" id="myTab">
+			<li role="presentation" class="active"> <a aria-expanded="true" aria-controls="table_view" data-toggle="tab" role="tab" id="tab-table_view" href="#table_view"> <span class="sprite sprite-ico_list"></span> </a> </li>
+			<li role="presentation"> <a aria-controls="tile_view" data-toggle="tab" id="tab-tile_view" role="tab" href="#tile_view"> <span class="sprite sprite-ico_tile"></span> </a> </li>
+		  </ul>
+		</div>
+		<div class="col-sm-10 no_padding pull-right">
+		  <div class="input-group srch_sec_wrap">
+			<input type="text" class="form-control fld_near_btn" placeholder="User Name">
+			<span class="input-group-btn">
+			<button class="btn btn-default search_btn" type="button"> <span class="sprite sprite-ico_search_white"></span> </button>
+			</span> </div>
+		</div>
+	  </div>
+	</div>
+	<div id="myTabContent" class="col-md-12 column_wrapper tab-content">
+	  <div id="tile_view" class="tab-pane fade view_type_wrap" role="tabpanel" aria-labelledby="tab-table_view">
+		<div class="row section_wrapper type_2">
+		  <div class="col-md-3 col-xs-6">
+			<div class="content_wrapper">
+			  <div class="date_status_wrap clearfix">
+				<div class="status pull-right">Active</div>
+			  </div>
+			  <div class="title_content_wrap"> <a class="tile_title" href="javascript:;">John Doe</a>
+				<p><span class="author_name">Executive</span><span class="date">14 Nov 2015</span></p>
+			  </div>
+			  <div class="tile_footer clearfix">
+				<div class="pull-left">Organization 1</div>
+				<div class="pull-right">Liaison</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-3 col-xs-6">
+			<div class="content_wrapper">
+			  <div class="date_status_wrap clearfix">
+				<div class="status pull-right">In-Active</div>
+			  </div>
+			  <div class="title_content_wrap"> <a class="tile_title" href="javascript:;">John Doe</a>
+				<p><span class="author_name">Finance Minister</span><span class="date">25 Oct 2015</span></p>
+			  </div>
+			  <div class="tile_footer clearfix">
+				<div class="pull-left">Organization 2</div>
+				<div class="pull-right">Admin</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-3 col-xs-6">
+			<div class="content_wrapper">
+			  <div class="date_status_wrap clearfix">
+				<div class="status pull-right">Active</div>
+			  </div>
+			  <div class="title_content_wrap"> <a class="tile_title" href="javascript:;">John Doe</a>
+				<p><span class="author_name">FM Assistant</span><span class="date">14 Nov 2015</span></p>
+			  </div>
+			  <div class="tile_footer clearfix">
+				<div class="pull-left">Organization 3</div>
+				<div class="pull-right">Standard</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-3 col-xs-6">
+			<div class="content_wrapper">
+			  <div class="date_status_wrap clearfix">
+				<div class="status pull-right">In-Active</div>
+			  </div>
+			  <div class="title_content_wrap"> <a class="tile_title" href="javascript:;">John Doe</a>
+				<p><span class="author_name">Executive</span><span class="date">25 Oct 2015</span></p>
+			  </div>
+			  <div class="tile_footer clearfix">
+				<div class="pull-left">Organization 4</div>
+				<div class="pull-right">champion</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="row section_wrapper type_2"><div class="col-md-3 col-xs-6">
+			<div class="content_wrapper">
+			  <div class="date_status_wrap clearfix">
+				<div class="status pull-right">Active</div>
+			  </div>
+			  <div class="title_content_wrap"> <a class="tile_title" href="javascript:;">John Doe</a>
+				<p><span class="author_name">Executive</span><span class="date">14 Nov 2015</span></p>
+			  </div>
+			  <div class="tile_footer clearfix">
+				<div class="pull-left">Organization 5</div>
+				<div class="pull-right">Authorized Representative</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-3 col-xs-6">
+			<div class="content_wrapper">
+			  <div class="date_status_wrap clearfix">
+				<div class="status pull-right">In-Active</div>
+			  </div>
+			  <div class="title_content_wrap"> <a class="tile_title" href="javascript:;">John Doe</a>
+				<p><span class="author_name">Finance Minister</span><span class="date">25 Oct 2015</span></p>
+			  </div>
+			  <div class="tile_footer clearfix">
+				<div class="pull-left">Organization 6</div>
+				<div class="pull-right">Admin</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-3 col-xs-6">
+			<div class="content_wrapper">
+			  <div class="date_status_wrap clearfix">
+				<div class="status pull-right">Active</div>
+			  </div>
+			  <div class="title_content_wrap"> <a class="tile_title" href="javascript:;">John Doe</a>
+				<p><span class="author_name">FM Assistant</span><span class="date">14 Nov 2015</span></p>
+			  </div>
+			  <div class="tile_footer clearfix">
+				<div class="pull-left">Organization 7</div>
+				<div class="pull-right">Standard</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-3 col-xs-6">
+			<div class="content_wrapper">
+			  <div class="date_status_wrap clearfix">
+				<div class="status pull-right">In-Active</div>
+			  </div>
+			  <div class="title_content_wrap"> <a class="tile_title" href="javascript:;">John Doe</a>
+				<p><span class="author_name">Executive</span><span class="date">25 Oct 2015</span></p>
+			  </div>
+			  <div class="tile_footer clearfix">
+				<div class="pull-left">Organization 8</div>
+				<div class="pull-right">champion</div>
+			  </div>
+			</div>
+		  </div></div>
+		<div class="row section_wrapper type_2"><div class="col-md-3 col-xs-6">
+			<div class="content_wrapper">
+			  <div class="date_status_wrap clearfix">
+				<div class="status pull-right">Active</div>
+			  </div>
+			  <div class="title_content_wrap"> <a class="tile_title" href="javascript:;">John Doe</a>
+				<p><span class="author_name">Executive</span><span class="date">14 Nov 2015</span></p>
+			  </div>
+			  <div class="tile_footer clearfix">
+				<div class="pull-left">Organization 9</div>
+				<div class="pull-right">Liaison</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-3 col-xs-6">
+			<div class="content_wrapper">
+			  <div class="date_status_wrap clearfix">
+				<div class="status pull-right">In-Active</div>
+			  </div>
+			  <div class="title_content_wrap"> <a class="tile_title" href="javascript:;">John Doe</a>
+				<p><span class="author_name">Finance Minister</span><span class="date">25 Oct 2015</span></p>
+			  </div>
+			  <div class="tile_footer clearfix">
+				<div class="pull-left">Organization 10</div>
+				<div class="pull-right">Authorized Representative</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-3 col-xs-6">
+			<div class="content_wrapper">
+			  <div class="date_status_wrap clearfix">
+				<div class="status pull-right">Active</div>
+			  </div>
+			  <div class="title_content_wrap"> <a class="tile_title" href="javascript:;">John Doe</a>
+				<p><span class="author_name">FM Assistant</span><span class="date">14 Nov 2015</span></p>
+			  </div>
+			  <div class="tile_footer clearfix">
+				<div class="pull-left">Organization 11</div>
+				<div class="pull-right">Standard</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-3 col-xs-6">
+			<div class="content_wrapper">
+			  <div class="date_status_wrap clearfix">
+				<div class="status pull-right">In-Active</div>
+			  </div>
+			  <div class="title_content_wrap"> <a class="tile_title" href="javascript:;">John Doe</a>
+				<p><span class="author_name">Executive</span><span class="date">25 Oct 2015</span></p>
+			  </div>
+			  <div class="tile_footer clearfix">
+				<div class="pull-left">Organization 12</div>
+				<div class="pull-right">champion</div>
+			  </div>
+			</div>
+		  </div></div>
+		<!-- tile pagination starts here -->
+		<div class="col-md-12 content_wrapper clearfix">
+		  <div class="col-sm-4 view_per_page_landing">
+			<fieldset class="no_left_margin">
+			  <label>View per page :</label>
+			  <select class="form-control input-sm per_page wd_25_per">
+				<option>10</option>
+				<option>15</option>
+				<option>20</option>
+				<option>25</option>
+			  </select>
+			</fieldset>
+		  </div>
+		  <div class="col-sm-8 align-right">
+			<ul class="pagination pull-right" data-pagination-control="true" data-pagination-arrow="disabled">
+			  <li><a href="javascript:;">&laquo;</a></li>
+			  <li><a href="javascript:;">1</a></li>
+			  <li><a href="javascript:;">2</a></li>
+			  <li class="active"><a href="javascript:;">3</a></li>
+			  <li><a href="javascript:;">4</a></li>
+			  <li><a href="javascript:;">5</a></li>
+			  <li><a href="javascript:;">6</a></li>
+			  <li><a href="javascript:;">7</a></li>
+			  <li><a href="javascript:;">8</a></li>
+			  <li><a href="javascript:;">9</a></li>
+			  <li><a href="javascript:;">&raquo;</a></li>
+			</ul>
+		  </div>
+		</div>
+		<!-- tile pagination starts here -->
+	  </div>
+	  <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+		<table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="dashboard_table">
+		  <thead>
+			<tr>
+				<th width="15%"><a href="javascript:;">User Name</a></th>
+				<th width="15%"><a href="javascript:;">Organization Name</a></th>
+				<th width="20%"><a href="javascript:;">User Type</a></th>
+				<th width="20%"><a href="javascript:;">Job Title</a></th>
+				<th width="18%"><a href="javascript:;">User Status</a></th>
+				<th width="12%"><a href="javascript:;">Last Updated</a></th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+				<td><a href="javascript:;">John Doe</a></td>
+				<td>Organization 01</td>
+				<td>Liaison</td>
+				<td>Executive</td>
+				<td>Active</td>
+				<td>14 Nov 2015</td>
+			</tr>
+			<tr>
+				<td><a href="javascript:;">John Doe</a></td>
+				<td>Organization 02</td>
+				<td>Admin</td>
+				<td>Finance Minister</td>
+				<td>Active</td>
+				<td>25 Oct 2015</td>
+			</tr>
+			<tr>
+				<td><a href="javascript:;">John Doe</a></td>
+				<td>Organization 03</td>
+				<td>Standard</td>
+				<td>FM Assistant</td>
+				<td>In-Active</td>
+				<td>14 Nov 2015</td>
+			</tr>
+			<tr>
+				<td><a href="javascript:;">John Doe</a></td>
+				<td>Organization 04</td>
+				<td>champion</td>
+				<td>Executive</td>
+				<td>In-Active</td>
+				<td>25 Oct 2015</td>
+			</tr>
+			<tr>
+				<td><a href="javascript:;">John Doe</a></td>
+				<td>Organization 05</td>
+				<td>Authorized Representative</td>
+				<td>Finance Minister</td>
+				<td>Active</td>
+				<td>14 Nov 2015</td>
+			</tr>
+			<tr>
+				<td><a href="javascript:;">John Doe</a></td>
+				<td>Organization 06</td>
+				<td>Standard</td>
+				<td>FM Assistant</td>
+				<td>In-Active</td>
+				<td>25 Oct 2015</td>
+			</tr>
+			<tr>
+				<td><a href="javascript:;">John Doe</a></td>
+				<td>Organization 07</td>
+				<td>Standard</td>
+				<td>Executive</td>
+				<td>Active</td>
+				<td>14 Nov 2015</td>
+			</tr>
+			<tr>
+				<td><a href="javascript:;">John Doe</a></td>
+				<td>Organization 08</td>
+				<td>Authorized Representative</td>
+				<td>Finance Minister</td>
+				<td>In-Active</td>
+				<td>25 Oct 2015</td>
+			</tr>
+			<tr>
+				<td><a href="javascript:;">John Doe</a></td>
+				<td>Organization 09</td>
+				<td>Liaison</td>
+				<td>FM Assistant</td>
+				<td>Active</td>
+				<td>14 Nov 2015</td>
+			</tr>
+			<tr>
+				<td><a href="javascript:;">John Doe</a></td>
+				<td>Organization 10</td>
+				<td>Standard</td>
+				<td>Executive</td>
+				<td>In-Active</td>
+				<td>25 Oct 2015</td>
+			</tr>
+			<tr>
+				<td><a href="javascript:;">John Doe</a></td>
+				<td>Organization 11</td>
+				<td>Liaison</td>
+				<td>Finance Minister</td>
+				<td>Active</td>
+				<td>14 Nov 2015</td>
+			</tr>
+			<tr>
+				<td><a href="javascript:;">John Doe</a></td>
+				<td>Organization 12</td>
+				<td>Liaison</td>
+				<td>FM Assistant</td>
+				<td>In-Active</td>
+				<td>25 Oct 2015</td>
+			</tr>
+		  </tbody>
+		</table>
+		<div class="clear"></div>
+		<div class="col-md-12 content_wrapper clearfix">
+		  <div class="col-sm-4 view_per_page_landing">
+			<fieldset class="no_left_margin">
+			  <label>View per page :</label>
+			  <select class="form-control input-sm per_page wd_25_per">
+				<option>10</option>
+				<option>15</option>
+				<option>20</option>
+				<option>25</option>
+			  </select>
+			</fieldset>
+		  </div>
+		  <div class="col-sm-8 align-right">
+			<ul class="pagination pull-right" data-pagination-control="true" data-pagination-arrow="disabled">
+			  <li><a href="javascript:;">&laquo;</a></li>
+			  <li><a href="javascript:;">1</a></li>
+			  <li><a href="javascript:;">2</a></li>
+			  <li class="active"><a href="javascript:;">3</a></li>
+			  <li><a href="javascript:;">4</a></li>
+			  <li><a href="javascript:;">5</a></li>
+			  <li><a href="javascript:;">6</a></li>
+			  <li><a href="javascript:;">7</a></li>
+			  <li><a href="javascript:;">8</a></li>
+			  <li><a href="javascript:;">9</a></li>
+			  <li><a href="javascript:;">&raquo;</a></li>
+			</ul>
+		  </div>
+		</div>
+		<div class="clear"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+
+<!--popup starts here--> 
+<!--cancel popup starts here-->
+<div class="modal fade cancel-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+		<h4 id="mySmallModalLabel" class="modal-title">Cancel Organization<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+	  </div>
+	  <div class="modal-body">
+		<p class="txt_center">Do you want to cancel the Organization setup Process?</p>
+	  </div>
+	  <div class="modal-footer txt_center">
+		<button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Yes</button>
+		<button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">No</button>
+	  </div>
+	</div>
+  </div>
+</div>
+<!--cancel popup ends here--> 
+
+<!--save popup starts here-->
+<div class="modal fade save-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+		<h4 id="mySmallModalLabel" class="modal-title">Save Organization<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+	  </div>
+	  <div class="modal-body">
+		<p class="txt_center">Your Organization request form is saved as draft.If you don't take any action to submit it to the Bank within 10 days, the draft will automatically be deleted</p>
+	  </div>
+	  <div class="modal-footer txt_center">
+		<button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Ok</button>
+	  </div>
+	</div>
+  </div>
+</div>
+
+<!--save popup ends here--> 
+
+<!--popup ends here--> 
+
+<!-- Pop over starts here --> 
+<!-- Pending Tasks popover starts -->
+<div id="popover_content_pending_tasks" class="hide">
+  <div class="filter_by">
+	<form>
+	  <fieldset class="no_left_margin">
+		<label>Filter By:</label>
+		<select class="form-control input-sm pending_task_list">
+		  <option>Type All (10)</option>
+		  <option>Withdrawal Application (2)</option>
+		  <option>ASL (3)</option>
+		  <option>Organization (4)</option>
+		  <option>User (1)</option>
+		</select>
+	  </fieldset>
+	</form>
+  </div>
+  <div class="spacer_10"></div>
+  <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+	<table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+	  <thead>
+		<tr>
+		  <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+		  <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+		  <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+		  <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>Withdrawal Application</td>
+		  <td>15-Nov-2015</td>
+		  <td><a href="javascript:;">INDHRI-12</a></td>
+		  <td>Pending WB Approval</td>
+		</tr>
+		<tr>
+		  <td>ASL</td>
+		  <td>10-Nov-2015</td>
+		  <td><a href="javascript:;">IBRD 47234</a></td>
+		  <td>Pending ASL Approval</td>
+		</tr>
+		<tr>
+		  <td>Organization</td>
+		  <td>05-Nov-2015</td>
+		  <td><a href="javascript:;">Finance Ministry, India</a></td>
+		  <td>Pending Liaison Approval</td>
+		</tr>
+		<tr>
+		  <td>User</td>
+		  <td>01-Nov-2015</td>
+		  <td><a href="javascript:;">Roger Doe Williams</a></td>
+		  <td>Pending Liaison Approval</td>
+		</tr>
+	  </tbody>
+	</table>
+  </div>
+  <div class="spacer_10"></div>
+  <input type="button" class='btn btn-primary btn_green' value="View All" />
+</div>
+<!-- Pending Tasks popover ends --> 
+<!-- Alerts popover starts -->
+<div id="popover_content_alerts" class="hide">
+  <div class="filter_by">
+	<form>
+	  <fieldset class="no_left_margin">
+		<label>Filter By:</label>
+		<select class="form-control input-sm pending_task_list">
+		  <option>All</option>
+		  <option>Debt Management</option>
+		  <option>Disbursement</option>
+		</select>
+	  </fieldset>
+	</form>
+  </div>
+  <div class="spacer_10"></div>
+  <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+	<table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+	  <thead>
+		<tr>
+		  <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+		  <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+		  <td>IBRD 98560</td>
+		</tr>
+		<tr>
+		  <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+		  <td>IBRD 47500</td>
+		</tr>
+		<tr>
+		  <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+		  <td>IDA 78630</td>
+		</tr>
+		<tr>
+		  <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+		  <td>IBRD 98560</td>
+		</tr>
+	  </tbody>
+	</table>
+  </div>
+  <div class="spacer_10"></div>
+  <input type="button" class='btn btn-primary btn_green' value="View All" />
+</div>
+<!-- alerts popover ends --> 
+<!-- dates popover starts -->
+<div id="popover_content_date" class="hide">
+  <div class="col-xs-5">
+	<div id="sandbox-container">
+	  <div></div>
+	</div>
+  </div>
+  <div class="col-xs-7">
+	<div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+	  <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+		<tbody>
+		  <tr>
+			<td class="width_35P">Dec 30, 2015</td>
+			<td>Bills are Due</td>
+		  </tr>
+		  <tr>
+			<td>Dec 30, 2015</td>
+			<td>3 Loans are closing</td>
+		  </tr>
+		  <tr>
+			<td>Dec 30, 2015</td>
+			<td>4 Loans with application deadline</td>
+		  </tr>
+		</tbody>
+	  </table>
+	</div>
+  </div>
+  <div class="spacer_10"></div>
+  <div class="spacer_10"></div>
+</div>
+<!-- dates popover ends --> 
+<!-- FAQ popover starts -->
+<div id="popover_content_faq" class="hide">
+  <div class="spacer_10"></div>
+  <ul class="quick_links">
+	<li><a href="javascript:;">Report an issue / View history</a></li>
+	<li><a href="javascript:;">Contact Us</a></li>
+  </ul>
+  <p>General
+  <p>
+  <ul class="quick_links">
+	<li><a href="javascript:;">Site Tour</a></li>
+	<li><a href="javascript:;">Glossary of Terms</a></li>
+	<li><a href="javascript:;">About this Page</a></li>
+  </ul>
+  <div class="spacer_10"></div>
+</div>
+<!-- FAQ popover ends --> 
+<!-- Pop over ends here --> 
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="js/dataTables.bootstrap.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.date_fld').datepicker();
+		$('#dashboard_table').dataTable();
+	});
+</script>
+</body>
+</html>

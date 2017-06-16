@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness ASL</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-5 no_padding">
+          <p class="ebsuiness_help">eBusiness Help</p>
+        </div>
+        <div class="col-xs-7 text-right ico_close">
+            <a href="javascript:;" onclick="window.close();"><img src="images/ico_close.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here --> 
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends --> 
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends --> 
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends --> 
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Site Tour</a></li>
+      <li><a href="javascript:;">Glossary of Terms</a></li>
+      <li><a href="javascript:;">About this Page</a></li>
+    </ul>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- FAQ popover ends --> 
+  <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+<!-- Main menu starts -->
+
+<!-- Main menu ends -->
+
+<div class="container no_padding">
+  <div class="row section_wrapper faq_search_wrapper">
+    <div class="col-md-12 no_padding">
+        <div class="col-xs-6 no_padding">
+          <input type="text" class="form-control search_field input-lg" placeholder="Search Online Help"/>
+        </div>
+        <div class="col-xs-4 no_padding text-right paddt10"><a href="javascript:;">Edit Content</a></div>
+        <div class="col-xs-2 no_padding text-right">
+          <span><a href="faq_content_postlogin.html"><img src="images/ico_faq_left.png" alt=""></a></span>
+          <span class="paddl20"><a href="javascript:;"><img src="images/ico_faq_right.png" alt=""></a></span>
+        </div>
+      
+    </div>
+  </div>
+    
+    <div class="row section_wrapper faq_search_wrapper faq_search_dashboard">
+      <div class="col-md-12 no_padding">
+        <div class="clearfix">
+            <div class="col-xs-1 no_padding">
+                <h1>Edit</h1>
+            </div>
+          <div class="col-xs-5 no_padding">
+                <div class="glossary_filter">
+                        <select class="form-control filters_select input-sm ">
+                          <option>MIGA</option>
+                          <option>WFA</option>
+                          <option>TRE</option>
+                          <option>DFI</option>
+                        </select>
+                        <select class="form-control filters_select input-sm ">
+                          <option value="Pre-Login">Pre-Login</option>
+                          <option value="About eBusiness">About eBusiness</option>
+                          <option value="Login">Login</option>
+                          <option value="Registration">Registration</option>
+                          <option value="Registration-Org Registration">Registration-Org Registration</option>
+                          <option value="Registration - New User Registration">Registration - New User Registration</option>
+                          <option value="Apply for Investment Guarantee">Apply for Investment Guarantee</option>
+                          <option value="Index of Content">Index of Content</option>
+                          <option selected="" value="List of Glossary">List of Glossary</option>
+                          <option value="All Loan Types">All Loan Types</option>
+                        </select>
+                       
+                </div>
+          </div>
+          <div class="col-xs-6 no_padding paddt10">
+            <div class="clearfix">
+             
+              <div class="clearfix pull-right">
+                  <label class="pull-left">Language: </label>
+                 <select class="form-control filters_select input-sm ">
+                    <option>English</option>
+                    <option>Germany</option>
+                    <option>Hindi</option>
+                  </select> 
+              </div>
+               <div class="port_pg_opt_links pull-right">  
+                <a href="faq.html" class="home_pos">
+                        <img src="images/ico_home.png" alt="">
+                    </a> 
+                <a href="javascript:;" title="Print"><span class="sprite sprite-ico_print_new"></span></a>
+                <a href="javascript:;" class="home_pos">
+                    <img src="images/ico_template.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="col-md-12 no_padding clearfix">
+        <label for="" class="pull-left link_page"> Link to page</label>
+       <select class="form-control filters_select input-sm  linkTopage">
+         <option value="Pre-Login">Pre-Login</option>
+            <option value="About eBusiness">About eBusiness</option>
+            <option value="Login">Login</option>
+            <option value="Registration">Registration</option>
+            <option value="Registration-Org Registration">Registration-Org Registration</option>
+            <option value="Registration - New User Registration">Registration - New User Registration</option>
+            <option value="Apply for Investment Guarantee">Apply for Investment Guarantee</option>
+            <option value="Index of Content">Index of Content</option>
+            <option value="List of Glossary">List of Glossary</option>
+            <option selected="" value="All Loan Types">All Loan Types</option>
+            <option value="FAQs">FAQs</option>
+            <option value="Related Links">Related Links</option>
+            <option value="Contact Us">Contact Us</option>
+       </select>
+       </div>
+      <div class="col-md-12 text-right no_padding">
+      <img src="images/ico_component.png" alt="" width="100%">
+      </div>
+
+    </div>
+
+   <!-- Example row of columns -->
+  <div class="row section_wrapper faqs no_margin mrgb20">
+    <div class="col-md-12 column_wrapper">
+      <div class="content_wrapper padd15" style="padding-left:40px;"> 
+        <div class="clearfix">
+          <h4 class="">Related Links</h4>
+          <!--<a href="javascript:;" class="pull-right"><span class="sprite sprite-ico_setting"></span></a>--> 
+           <div class="spacer_10"></div>
+
+           <table cellspacing="0" cellpadding="0" class="table table-bordered" border="0"  width="100%">
+             <tr>
+               <th width="20%">Glossary Term</th>
+               <th>Definition</th>
+             </tr>
+             <tr>
+               <td>Account Description</td>
+               <td>Information that includes Account Type, Tax-deferred, Tax Method, and Account Note. These items are primarily used to classify accounts for tax purposes.</td>
+             </tr>
+             <tr>
+               <td>Account Note</td>
+               <td>Descriptive text about an account that you can enter for your information, such as "for College."</td>
+             </tr>
+             <tr>
+               <td>All or None Order</td>
+               <td>In brokerage, order instruction, particularly for large orders, to execute the total quantity or none.</td>
+             </tr>
+             <tr>
+               <td>Asset</td>
+               <td>Something of value that you own. Appreciating assets, such as stocks, have the potential of increasing in value and/or producing income. Depreciating assets, such as a car, lose value over time. Assets minus liabilities (what you owe) equals net worth.</td>
+             </tr>
+             <tr>
+               <td>Average Cost</td>
+               <td>The average price plus commission.</td>
+             </tr>
+             <tr>
+               <td>Average Daily Volume</td>
+               <td>The consolidated trading volume for all exchanges averaged for the last 20 trading days.</td>
+             </tr>
+             <tr>
+               <td>Average Price</td>
+               <td>The total cost less total commission of all lots you own of a particular security divided by the total number of shares owned.</td>
+             </tr>
+             <tr>
+               <td>Average Proceed</td>
+               <td>The sum of net amounts received from all short open lots divided by the total number of shares short for that security. Average proceeds is for short investments what average cost is for long investments.</td>
+             </tr>
+             <tr>
+               <td>Baby Bond</td>
+               <td>One sold at face amount less than $1,000 to make it attractive to smaller investors.</td>
+             </tr>
+
+           </table>
+
+           
+           
+           
+
+           
+        </div>
+        
+      </div>
+      <div class="spacer_10"></div>
+      <div class="content_wrapper padd15">
+        <div class="row">
+          <form class="form" role="form">
+              <fieldset>
+                  <legend>Upload Documents</legend>
+
+                  <div class="radio_btn_wrap clearfix">
+                      <input class="upload_file_link_type" type="radio" value="" name="upload_file_type_selection" id="upload_file_type_true" checked="">
+                      <label class="css_radio_check_small sprite sprite-ico-radio_small" for="upload_file_type_true">File</label>
+                      <input class="upload_file_link_type" type="radio" value="" name="upload_file_type_selection" id="no_prior_contracts">
+                      <label class="css_radio_check_small sprite sprite-ico-radio_small" for="no_prior_contracts">Link</label>
+                  </div>
+
+
+                  <div class="upload_file_type">
+                     <div class="col-md-6 col-xs-10 no_padding">
+                          <div class="input-group file_upload_field_wrap">
+                              <input type="file" class="appln_form_document_upload" id="appln_form_documentation" />
+                              <input type="text" class="form-control file_upload" value="" /> 
+                              <span class="input-group-btn">
+                                  <span class="sprite sprite-ico_down_arrow browse_field_arrow"></span>
+                                  <button type="button" class="btn btn-primary btn_grey appln_form_document_upload_link">Browse</button> 
+                              </span> 
+                          </div>
+                          <br>
+                          <div>
+                            <p>Description</p>
+                            <input type="text" class="form-control search_field input-sm"/>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="upload_link_type">
+                    <div class="col-md-6 col-xs-10 no_padding">
+                          <div class="">
+                            <input type="text" class="form-control search_field input-sm"/>
+                          </div>
+                          <br>
+                          <div>
+                            <p>Description</p>
+                            <input type="text" class="form-control search_field input-sm"/>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="clear"></div>
+                  <div class="spacer_30"></div>
+                  
+
+
+
+
+              </fieldset>
+          </form>
+                                            </div>
+      </div>
+  <div class="spacer_30"></div>
+  <div class="review_btn_wrap no_padding">
+                    <input type="button" class='btn btn-primary btn_green' value="Save as draft" />
+                    <input type="button" class='btn btn-primary btn_green' value="Save & Publish" />
+                    <a href="javascript:;" class='btn btn-default'>Cancel</a> 
+                    </div>
+    </div>
+  </div>
+
+  
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>

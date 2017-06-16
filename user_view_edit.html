@@ -1,0 +1,459 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+        </div>
+        <div class="col-md-10 user_utils no_padding">
+          <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+            <div class="notification_utils">
+              <ul class="notifications clearfix">
+                <li>
+                  <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown language">
+              <select class="header_language">
+                <option>English US</option>
+                <option>English UK</option>
+                <option>French</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+              <div class="dropdown user_details">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">John Mattew</button>
+                  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="Library/my_profile.html">My Profile</a></li>
+                    <li><a href="Library/login.html">Sign out</a></li>
+                    <li class="thm-def"><a href="javascript:void(0)">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:void(0)">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:void(0)">Theme - Purple</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here --> 
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends --> 
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends --> 
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends --> 
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Site Tour</a></li>
+      <li><a href="javascript:;">Glossary of Terms</a></li>
+      <li><a href="javascript:;">About this Page</a></li>
+    </ul>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- FAQ popover ends --> 
+  <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+<!-- Main menu starts -->
+<nav class="navbar main_navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+    <div id="mainnavigation" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="javascript:;">My Portfolio</a></li>
+        <li><a href="javascript:;">Projects</a></li>
+        <li><a href="javascript:;">Loans</a></li>
+        <li><a href="javascript:;">Organizations</a></li>
+        <li><a href="javascript:;">Events</a></li>
+        <li><a href="javascript:;">ASL</a></li>
+        <li><a href="javascript:;" class="current_page">User Management</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Main menu ends -->
+
+<div class="container"> 
+  <!-- Example row of columns -->
+  <div class="row section_wrapper"> 
+    <!--page title starts here-->
+    <div class="page_title_section clearfix">
+      <h1 class="pull-left">View / Edit User</h1>
+      <div class="page_options"> <a title="View/Print ASL" href="javascript:;"><span class="sprite sprite-ico_print"></span></a> </div>
+    </div>
+    <div class="clearfix review_page">
+      <div class="page_utils_links">
+        <p class="mandatory_text">Fields marked with "<span class="mandatory">*</span>" are mandatory.</p>
+      </div>
+    </div>
+    <!--page title ends here-->
+    <div class="col-md-12 column_wrapper">
+      <div class="content_wrapper no_padding">
+        <div class="panel-group setup_accordion"> 
+          
+          <!--step 1 starts here-->
+          
+          <div class="panel panel-default completed step1">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix reviewpage_header_user" data-rel="step1">
+                  <div class="item_counter"><span class="step_completed_check">1<span class="stat-checked"><span class="sprite sprite-ico_tick_big"></span></span></span></div>
+                  <div class="item_title"> <span>Basic Details</span> <a href="javascript" class="pull-right collapseOne">Edit</a> </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form-horizontal">
+                    <fieldset>
+                      <div class="col-md-6 readonly">
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">User Name</label>
+                          <div class="col-xs-7 no_padding">
+                            <p class="form-control-static">John Smith</p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Organization Name</label>
+                          <div class="col-xs-7 no_padding">
+                            <p class="form-control-static">Asian Heritage Foundation</p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Country</label>
+                          <div class="col-xs-5 no_padding">
+                            <p class="form-control-static">India</p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Client type</label>
+                          <div class="col-xs-7 no_padding">
+                            <p class="form-control-static">RAMP</p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Access type</label>
+                          <div class="col-xs-7 no_padding">
+                            <p class="form-control-static">Events</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 readonly">
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Telephone Number</label>
+                          <div class="col-xs-7 no_padding">
+                            <p class="form-control-static">91-044-12345</p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Email</label>
+                          <div class="col-xs-7 no_padding">
+                            <p class="form-control-static">JohnSmith@abc.com</p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Mobile Number</label>
+                          <div class="col-xs-7 no_padding">
+                            <p class="form-control-static">91-044-12345</p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Job title</label>
+                          <div class="col-xs-7 no_padding">
+                            <p class="form-control-static">Executive VP</p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Department</label>
+                          <div class="col-xs-7 no_padding">
+                            <p class="form-control-static">Finance Department</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      <!--<hr/>
+                                            <div class="section_title clearfix">
+                                                <h5 class="pull-left">Requestor Information</h5>
+                                            </div>
+                                            <div class="col-md-6 readonly">
+                                              <div class="form-group">
+                                                  <label for="" class="control-label static_field col-xs-5">Name</label>
+                                                  <div class="col-xs-7 no_padding">
+                                                      <p class="form-control-static">John Smith</p>
+                                                  </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6 readonly">
+                                              <div class="form-group">
+                                                  <label for="" class="control-label static_field col-xs-5">Email</label>
+                                                  <div class="col-xs-7 no_padding">
+                                                      <p class="form-control-static">JohnSmith@abc.com</p>
+                                                  </div>
+                                              </div>
+                                            </div>-->
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--step 1 ends here-->
+          
+          <div class="review_btn_wrap">
+            <input type="button" data-target=".approveUser-modal-sm" data-toggle="modal" value="Approve" class="btn btn-primary btn_green">
+            <input type="button" data-target=".rejectUser-modal-sm" data-toggle="modal" value="Reject" class="btn btn-secondary btn_white">
+            <a data-target=".cancel-modal-sm" data-toggle="modal" href="javascript:;">Cancel</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+
+<!--popup starts here--> 
+<!--cancel popup starts here-->
+<div class="modal fade cancel-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Cancel User<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Do you want to cancel the User setup Process?</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--cancel popup ends here--> 
+
+<!--approve popup starts here-->
+<div class="modal fade approveUser-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Approve Confirmation<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">New user registration request is approved successfully.</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Approve popup ends here--> 
+
+<!--reject popup starts here-->
+<div class="modal fade rejectUser-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Reject User<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Do you want to reject the User?</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Approve popup ends here--> 
+
+<!--popup ends here--> 
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>

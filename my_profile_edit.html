@@ -1,0 +1,717 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness ASL</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+        </div>
+        <div class="col-md-10 user_utils no_padding">
+          <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+            <div class="notification_utils">
+              <ul class="notifications clearfix">
+                <li>
+                  <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown language">
+              <select class="header_language">
+                <option>English US</option>
+                <option>English UK</option>
+                <option>French</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+              <div class="dropdown user_details">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">John Mattew</button>
+                  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="Library/my_profile.html">My Profile</a></li>
+                    <li><a href="Library/login.html">Sign out</a></li>
+                    <li class="thm-def"><a href="javascript:void(0)">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:void(0)">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:void(0)">Theme - Purple</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here --> 
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends --> 
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends --> 
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends --> 
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Site Tour</a></li>
+      <li><a href="javascript:;">Glossary of Terms</a></li>
+      <li><a href="javascript:;">About this Page</a></li>
+    </ul>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- FAQ popover ends --> 
+  <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+<!-- Main menu starts -->
+<nav class="navbar main_navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+    <div id="mainnavigation" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="javascript:;">My Portfolio</a></li>
+        <li><a href="javascript:;">Projects</a></li>
+        <li><a href="javascript:;">Loans</a></li>
+        <li><a href="javascript:;">Organizations</a></li>
+        <li><a href="javascript:;">Events</a></li>
+        <li><a href="javascript:;">ASL</a></li>
+        <li><a href="javascript:;" class="current_page">User Management</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Main menu ends -->
+
+<div class="container"> 
+  <!-- Example row of columns -->
+  <div class="row section_wrapper"> 
+    <!--page title starts here-->
+    <div class="page_title_section clearfix">
+      <h1 class="pull-left">My Profile</h1>
+      <div class="page_utils_links">
+        <p class="mandatory_text">Fields marked with "<span class="mandatory">*</span>" are mandatory.</p>
+      </div>
+    </div>
+    <!--page title ends here-->
+    <div class="col-md-12 column_wrapper">
+      <div class="content_wrapper no_padding">
+        <div class="panel-group setup_accordion"> 
+          
+          <!--section 1 starts here-->
+          
+          <div class="panel panel-default completed section_1">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix">
+                  <div class="item_title full_width"> <span>Basic Details</span> </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form-horizontal">
+                    <fieldset>
+                      <div class="edit_fields_wrap">
+                        <div class="col-md-2">
+                          <div class="form-group">
+                            <div class="col-xs-12 no_padding">
+                              <p class="form-control-static user_profile_img"> <img src="images/user_default.png"/> <br/>
+                                <br/>
+                                <a href="javascript:;" class="upload_photo_link">Upload Photo</a>
+                                <input type="file" class="upload_photo hide" />
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-5">
+                          <div class="form-group">
+                            <label for="inputUserFN" class="control-label required col-xs-5">Name</label>
+                            <div class="col-xs-6 no_padding">
+                              <div class="col-xs-4 no_left_pad">
+                                <input type="text" class="form-control" id="inputUserFN" placeholder="First Name" value="John">
+                              </div>
+                              <div class="col-xs-4 no_padding">
+                                <input type="text" class="form-control" id="inputUserMN" placeholder="Middle Name">
+                              </div>
+                              <div class="col-xs-4 no_right_pad">
+                                <input type="text" class="form-control" id="inputUserLN" placeholder="Last Name" value="Smith">
+                              </div>
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputJobTitle" class="control-label required col-xs-5">Job Title</label>
+                            <div class="col-xs-6 no_padding">
+                              <input type="text" class="form-control" id="inputJobTitle" placeholder="Job Title" value="Minister of Finance">
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputMobile" class="control-label required col-xs-5">Mobile Number</label>
+                            <div class="col-xs-6 no_padding">
+                              <div class="col-xs-3 no_left_pad">
+                                <input type="text" class="form-control" id="inputMobile" placeholder="Country Code" value="312">
+                              </div>
+                              <div class="col-xs-3 no_padding">
+                                <input type="text" class="form-control" id="inputMobCity" placeholder="City Code" value="312">
+                              </div>
+                              <div class="col-xs-6 no_right_pad">
+                                <input type="text" class="form-control" id="inputMobNumber" placeholder="Mobile Number" value="4215">
+                              </div>
+                            </div>
+                            <div class="col-xs-1 no_padding"><span class="info_wrapper"> <a tabindex="0" class="info_links" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry."> <span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                          </div>
+                        </div>
+                        <div class="col-md-5">
+                          <div class="form-group">
+                            <label for="inputUserEmail" class="control-label required col-xs-5">Primary Email</label>
+                            <div class="col-xs-6 no_padding">
+                              <input type="text" class="form-control" id="inputUserEmail" placeholder="Email Address" value="JSmith@worldbankgroup.org">
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputUserEmail" class="control-label required col-xs-5">Alternative Email</label>
+                            <div class="col-xs-6 no_padding">
+                              <input type="text" class="form-control" id="inputUserEmail" placeholder="Email Address" value="JSmith@abc.com">
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputTele" class="control-label required col-xs-5">Telephone Number</label>
+                            <div class="col-xs-6 no_padding">
+                              <div class="col-xs-3 no_left_pad">
+                                <input type="text" class="form-control" id="inputTele" placeholder="Country Code" value="606">
+                              </div>
+                              <div class="col-xs-3 no_padding">
+                                <input type="text" class="form-control" id="inputTeleCity" placeholder="City Code" value="424">
+                              </div>
+                              <div class="col-xs-6 no_right_pad">
+                                <input type="text" class="form-control" id="inputTeleNumber" placeholder="Telephone Number" value="12345">
+                              </div>
+                            </div>
+                            <div class="col-xs-1 no_padding"><span class="info_wrapper"> <a tabindex="0" class="info_links" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry."> <span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                          </div>
+                        </div>
+                        <div class="clearfix"></div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--section 1 ends here--> 
+          
+          <!--section 2 starts here-->
+          
+          <div class="panel panel-default completed section_2">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix">
+                  <div class="item_title full_width"> <span>System Preferences</span> </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form-horizontal">
+                    <fieldset>
+                      <div class="edit_fields_wrap">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="inputUserFN" class="control-label required col-xs-5">Language</label>
+                            <div class="col-xs-6 no_padding">
+                              <select class="form-control">
+                                <option value="">English</option>
+                                <option value="">French</option>
+                                <option value="">Spanish</option>
+                              </select>
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputJobTitle" class="control-label required col-xs-5">Currency</label>
+                            <div class="col-xs-6 no_padding">
+                              <select class="form-control">
+                                <option value="">United States Dollar (USD)</option>
+                                <option value="">Indian Rupees (Rs)</option>
+                                <option value="">United Kingdom (Pound)</option>
+                              </select>
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputMobile" class="control-label required col-xs-5">Date Format</label>
+                            <div class="col-xs-6 no_padding">
+                              <input class="form-control date_fld" type="text" placeholder="12/11/2015" />
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="inputUserEmail" class="control-label required col-xs-5">Timezone</label>
+                            <div class="col-xs-6 no_padding">
+                              <select class="form-control">
+                                <option value="">UTC-5</option>
+                              </select>
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputUserEmail" class="control-label required col-xs-5">Time Format</label>
+                            <div class="col-xs-6 no_padding">
+                              <div class="radio_wrap">
+                                <input type="radio" id="hrs_12" name="hrs_format" checked>
+                                <label for="hrs_12" class="css_radio_check sprite sprite-ico-radio">2:30 am - 12-hr format</label>
+                              </div>
+                              <div class="radio_wrap">
+                                <input type="radio" id="hrs_24" name="hrs_format">
+                                <label for="hrs_24" class="css_radio_check sprite sprite-ico-radio">14:30 - 24-hr format</label>
+                              </div>
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputTele" class="control-label required col-xs-5">Telephone Number</label>
+                            <div class="col-xs-6 no_padding">
+                              <div class="col-xs-3 no_left_pad">
+                                <input type="text" class="form-control" id="inputTele" placeholder="Country Code" value="606">
+                              </div>
+                              <div class="col-xs-3 no_padding">
+                                <input type="text" class="form-control" id="inputTeleCity" placeholder="City Code" value="424">
+                              </div>
+                              <div class="col-xs-6 no_right_pad">
+                                <input type="text" class="form-control" id="inputTeleNumber" placeholder="Telephone Number" value="12345">
+                              </div>
+                            </div>
+                            <div class="col-xs-1 no_padding"><span class="info_wrapper"> <a tabindex="0" class="info_links" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry."> <span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                          </div>
+                        </div>
+                        <div class="clearfix"></div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--section 2 ends here--> 
+          
+          <!--section 3 starts here-->
+          
+          <div class="panel panel-default completed section_3">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix">
+                  <div class="item_title full_width"> <span>Landing Page Preferences</span> </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form-horizontal">
+                    <fieldset>
+                      <div class="edit_fields_wrap">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="inputUserFN" class="control-label required col-xs-5">Default Landing Page</label>
+                            <div class="col-xs-6 no_padding">
+                              <select class="form-control">
+                                <option value="">Home</option>
+                                <option value="">My Portfolio</option>
+                                <option value="">My Profile</option>
+                              </select>
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                        </div>
+                        <div class="clearfix"></div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--section 3 ends here--> 
+          
+          <!--section 4 starts here-->
+          
+          <div class="panel panel-default completed section_4">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix">
+                  <div class="item_title full_width"> <span>Subscriptions</span> </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form-horizontal">
+                    <fieldset>
+                      <div class="edit_fields_wrap">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="inputUserFN" class="control-label col-xs-5">Newsletter</label>
+                            <div class="col-xs-6 no_padding">
+                              <div class="check_wrap">
+                                <input type="checkbox" id="newsletter" name="hrs_format" checked>
+                                <label for="newsletter" class="css-labelChk sprite sprite-ico-checkbox">Subscribe for Newsletter</label>
+                              </div>
+                            </div>
+                            <div class="col-xs-1 no_padding"> <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""> <span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="inputUserFN" class="control-label col-xs-5">Alerts / Notifications</label>
+                            <div class="col-xs-6 no_padding">
+                              <div class="alert_type clearfix">
+                                <p class="sub_label">Alert Type 1</p>
+                                <div class="check_wrap">
+                                  <input type="checkbox" id="alert_1_email" name="alert_1" checked>
+                                  <label for="alert_1_email" class="css-labelChk sprite sprite-ico-checkbox">Email</label>
+                                </div>
+                                <div class="check_wrap">
+                                  <input type="checkbox" id="alert_1_mobile" name="alert_1">
+                                  <label for="alert_1_mobile" class="css-labelChk sprite sprite-ico-checkbox">Mobile</label>
+                                </div>
+                              </div>
+                              <div class="alert_type clearfix">
+                                <p class="sub_label">Alert Type 2</p>
+                                <div class="check_wrap">
+                                  <input type="checkbox" id="alert_2_email" name="alert_2" checked>
+                                  <label for="alert_1_email" class="css-labelChk sprite sprite-ico-checkbox">Email</label>
+                                </div>
+                                <div class="check_wrap">
+                                  <input type="checkbox" id="alert_2_mobile" name="alert_2" checked>
+                                  <label for="alert_1_mobile" class="css-labelChk sprite sprite-ico-checkbox">Mobile</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-1 no_padding"> <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""> <span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                          </div>
+                        </div>
+                        <div class="clearfix"></div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--section 4 ends here--> 
+          
+          <!--section 5 starts here-->
+          
+          <div class="panel panel-default completed section_5">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header_completed clearfix">
+                  <div class="item_title full_width"> <span>Login Credentials</span> </div>
+                </div>
+              </div>
+            </div>
+            <div id="" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form-horizontal">
+                    <fieldset>
+                      <div class="edit_fields_wrap">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="inputUserFN" class="control-label required col-xs-5">User Name</label>
+                            <div class="col-xs-6 no_padding">
+                              <input type="text" class="form-control" id="inputLoginUserName" placeholder="user Name" value="jsmith">
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 ">
+                          <div class="form-group pw_change_wrap">
+                            <label for="" class="control-label static_field col-xs-5">Password</label>
+                            <div class="col-xs-7 no_padding">
+                              <p class="form-control-static">********* <a href="javascript:;" class="pw_change_link">Change</a></p>
+                            </div>
+                          </div>
+                          <div class="form-group pw_wrapper">
+                            <label for="inputLoginPw" class="control-label required col-xs-5">Old Password</label>
+                            <div class="col-xs-6 no_padding">
+                              <input type="password" class="form-control" id="inputLoginPw" placeholder="password" value="********">
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                          <div class="form-group pw_wrapper">
+                            <label for="inputLoginNewPw" class="control-label required col-xs-5">New Password</label>
+                            <div class="col-xs-6 no_padding">
+                              <input type="password" class="form-control" id="inputLoginNewPw" placeholder="password" />
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                          <div class="form-group pw_wrapper">
+                            <label for="inputLoginReNewPw" class="control-label required col-xs-5">Retype New Password</label>
+                            <div class="col-xs-6 no_padding">
+                              <input type="password" class="form-control" id="inputLoginReNewPw" placeholder="password" />
+                            </div>
+                            <div class="col-xs-1 no_padding"></div>
+                          </div>
+                        </div>
+                        <div class="clearfix"></div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--section 5 ends here-->
+          
+          <div class="review_btn_wrap">
+            <input type="button" class="btn btn-primary btn_green" value="Save Changes" data-toggle="modal" data-target=".save-modal-sm">
+            <a href="javascript:;" data-toggle="modal" data-target=".cancel-modal-sm">Cancel</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+
+<!--popup starts here--> 
+<!--cancel popup starts here-->
+<div class="modal fade cancel-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Cancel Profile Update<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Do you want to cancel the changes to your profile ?</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--cancel popup ends here--> 
+
+<!--save popup starts here-->
+<div class="modal fade save-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Save Profile Update<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">The changes to your profile is saved sucessfully.</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--save popup ends here--> 
+
+<!--popup ends here--> 
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script> 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.date_fld').datepicker();
+
+        var pathname = window.location.href;
+        var item_arr = pathname.split('#');
+        var edit_password = item_arr[1];
+        //alert(edit_password);
+
+        if(edit_password == 'changePW'){
+            $('.pw_change_link').trigger('click');
+        }
+    });
+</script>
+</body>
+</html>

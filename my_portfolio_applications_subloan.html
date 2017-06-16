@@ -1,0 +1,918 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/jquery.dataTables.css" rel="stylesheet"/>
+<link href="css/dataTables.bootstrap.css" rel="stylesheet"/>
+<link href="css/slick.css" rel="stylesheet"/>
+<link href="css/slick-theme.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+        </div>
+        <div class="col-md-10 user_utils no_padding">
+          <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+            <div class="notification_utils">
+              <ul class="notifications clearfix">
+                <li>
+                  <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown language">
+              <select class="header_language">
+                <option>English US</option>
+                <option>English UK</option>
+                <option>French</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+              <div class="dropdown user_details">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">John Mattew</button>
+                  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="Library/my_profile.html">My Profile</a></li>
+                    <li><a href="Library/login.html">Sign out</a></li>
+                    <li class="thm-def"><a href="javascript:void(0)">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:void(0)">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:void(0)">Theme - Purple</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here --> 
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends --> 
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends --> 
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends --> 
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Site Tour</a></li>
+      <li><a href="javascript:;">Glossary of Terms</a></li>
+      <li><a href="javascript:;">About this Page</a></li>
+    </ul>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- FAQ popover ends --> 
+  <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+<!-- Main menu starts -->
+<nav class="navbar main_navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+    <div id="mainnavigation" class="navbar-collapse collapse no_right_pad">
+      <ul class="nav navbar-nav full_width">
+        <li><a href="javascript:;">Home</a></li>
+        <li><a href="javascript:;" class="current_page">My Portfolio</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Main menu ends -->
+<div class="container">
+  <div class="row section_wrapper">
+    <div class="col-md-12 no_padding">
+      <div class="clearfix">
+        <div class="col-md-6 no_padding">
+          <ol class="breadcrumb">
+            <li><a href="my_portfolio.html">My Portfolio</a></li>
+            <li><a href="my_portfolio.html">Loan Overview</a></li>
+            <li><a href="my_portfolio.html">Disbursement</a></li>
+            <li class="active">Category Schedule</li>
+          </ol>
+        </div>
+        <div class="col-md-6 no_padding">
+          <div class="portfolio_page_options clearfix"> <span class="search_field_wrap pull-right">
+            <input type="text" class="form-control search_field" placeholder="Search by Project or Loan ID"/>
+            <span class="sprite sprite-ico_search_field"></span> </span> <span class="port_pg_opt_links"> <a href="javascript:;" title="Export to Excel"><span class="sprite sprite-ico_export_xl"></span></a> <a href="javascript:;" title="Print"><span class="sprite sprite-ico_print_new"></span></a> </span> <span class="date_as_of">Data as of 05 May, 2015 10:51 EST</span> </div>
+        </div>
+      </div>
+      <div class="col-md-9 no_padding" >
+        <div class="loan_detail_title clearfix">
+          <h5> Loan: <span>IBRD 42260 (VSL - Variable Spread Loan) <span>|</span></span> Status: <span>Disbursing <span>|</span></span><br/>
+            Country: <span>Dominian Republic </span><br/>
+            <span class="loan_project_detail"><a href="javascript:;">P009979</a> - Coal Sector Rehabiliation Project</span> </h5>
+        </div>
+        <div class="tab-content subloan_tab_contents_wrapper">
+          <div id="subloan_1">
+            <div class="important_dates_timeline clearfix hide">
+              <div class="panel-group panel-subloan-green" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading timeline_accord " role="tab" id="headingOne">
+                    <h4 class="panel-title clearfix"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed"> <span class="sprite sprite-ico_accord_big_close"></span><span>Important Dates</span> </a> </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body important_times">
+                      <div class="row section_wrapper">
+                        <div class="col-md-12 column_wrapper">
+                          <div class="eliminate_vertical_gap">
+                            <div class="seven_stages stage_levels clearfix">
+                              <ul class="clearfix">
+                                <li> <span class="first_level"></span> <span class="sprite sprite-ico_stage_active"></span>
+                                  <p class="stage_desc"> <span class="stage_status">Approval</span> <span class="stage_date">Sep 09, 1997</span> </p>
+                                </li>
+                                <li> <span class="sprite sprite-ico_stage_active"></span>
+                                  <p class="stage_desc"> <span class="stage_status">Signing</span> <span class="stage_date">Mar 19, 1998</span> </p>
+                                </li>
+                                <li> <span class="sprite sprite-ico_stage_active"></span>
+                                  <p class="stage_desc"> <span class="stage_status">Commitment <br>
+                                    Charges</span> <span class="stage_date">May 18, 1998</span> </p>
+                                </li>
+                                <li> <span class="sprite sprite-ico_stage_active"></span>
+                                  <p class="stage_desc"> <span class="stage_status">Effective</span> <span class="stage_date">Jun 17, 1998</span> </p>
+                                </li>
+                                <li> <span class="sprite sprite-ico_stage_active"></span>
+                                  <p class="stage_desc"> <span class="stage_status">First Repayment</span> <span class="stage_date">May 15, 2003</span> </p>
+                                </li>
+                                <li> <span class="sprite sprite-ico_stage_inactive"></span>
+                                  <p class="stage_desc"> <span class="stage_status">Application Deadline <br>
+                                    &amp; Closing</span> <span class="stage_date">Jun 30, 2015</span> </p>
+                                </li>
+                                <li> <span class="last_level"></span> <span class="sprite sprite-ico_stage_inactive"></span>
+                                  <p class="stage_desc"> <span class="stage_status">Last Repayment</span> <span class="stage_date">Nov 15, 2017</span> </p>
+                                </li>
+                              </ul>
+                              <div class="stage_level_line"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Sub-loan panel tab content starts here -->
+            <div class="tab-content"> 
+              <!-- Sub-loan panel mapped to tab starts here -->
+              <div class="clearfix">
+                <div class="current_disb_tab clearfix"> 
+                  <!-- <ul class="clearfix">
+                                <li>Current (05-May-2015)</li>
+                                <li class="current_tab">Disbursements</li>
+                            </ul> -->
+                  <ul role="tablist" class="nav nav-tabs" id="myTab">
+                    <li role="presentation"> <a aria-controls="current_date" data-toggle="tab" role="tab" id="tab-current_date" href="#current_date">Loan Overview</a> </li>
+                    <li class="active" role="presentation"> <a aria-expanded="true" aria-controls="disbursements" data-toggle="tab" id="tab-disbursements" role="tab" href="#disbursements">Disbursements</a> </li>
+                  </ul>
+                </div>
+                <div id="myTabContent" class="tab-content">
+                  <div role="tabpanel" class="tab-pane fade content_wrapper" id="current_date" aria-labelledby="tab-current_date">
+                    <p class="bld_txt"> <strong>Current Date:</strong> <br/>
+                      <br/>
+                      <br/>
+                      Lorem ipsum set dolar... </p>
+                  </div>
+                  <div role="tabpanel" class="tab-pane fade active in" id="disbursements" aria-labelledby="tab-disbursements">
+                    <div class="subloan-nav">
+                      <ul class="subloan_carousel" id="myTabs" role="tablist">
+                        <li class="active" rel="subloan_1"><a href="javascript:;" >Subloan 001</a></li>
+                        <li rel="subloan_2"><a href="javascript:;">Subloan 002</a></li>
+                        <li rel="subloan_3"><a href="javascript:;">Subloan 003</a></li>
+                        <li rel="subloan_4"><a href="javascript:;">Subloan 004</a></li>
+                        <li rel="subloan_5"><a href="javascript:;">Subloan 005</a></li>
+                        <li rel="subloan_6"><a href="javascript:;">Subloan 006</a></li>
+                        <li rel="subloan_7"><a href="javascript:;">Subloan 007</a></li>
+                        <li rel="subloan_8"><a href="javascript:;">Subloan 008</a></li>
+                        <li rel="subloan_9"><a href="javascript:;">Subloan 009</a></li>
+                        <li rel="subloan_10"><a href="javascript:;">Subloan 010</a></li>
+                        <li rel="subloan_11"><a href="javascript:;">Subloan 011</a></li>
+                      </ul>
+                    </div>
+                    <div class="filters_section clearfix tab_feeds">
+                      <div class="tab_carousel"> <a href="javascript:;" class="nav_left_carousel"><span class="sprite sprite-car_larr"></span></a>
+                        <ul class="list-inline">
+                          <!-- <li><a href="javascript:;">Overview</a></li> -->
+                          <li class="active chg_cat_app" rel="application_wrap"><a href="javascript:;">Applications</a></li>
+                          <li><a href="javascript:;">Contracts</a></li>
+                          <li ><a href="javascript:;">Designated / UN Accounts</a></li>
+                          <li><a href="javascript:;">Special / UN Commitments</a></li>
+                          <li rel="category_summary_wrap" class="chg_cat_sum"><a href="javascript:;">Category Schedule</a></li>
+                          <li><a href="javascript:;">MDS</a></li>
+                        </ul>
+                        <a href="javascript:;" class="nav_right_carousel"><span class="sprite sprite-car_rarr"></span></a> </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="categor_details_header_section"> Category Details - 1A - GDS INCL SUPPLY &amp; INSTL - COMP 1 </div>
+                    <div class="content_wrapper clearfix table_adj">
+                      <div class="col-md-12 no_padding filters_section clearfix">
+                        <div class="cate_summary clearfix">
+                          <div class="col-sm-8 no_padding"><span class="cate_heading pull-left" id="tlt_dy">Transaction List</span> <span class="info_wrapper"> <a tabindex="0" class="info_links" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry."> <span class="sprite sprite-ico_info"></span> </a> </span></div>
+                          <div class="col-sm-4 no_padding opt_shw" style="visibility:hidden;">
+                            <p class="result_count">
+                              <label class="table_row_options">Show amounts in</label>
+                              <select class="filters_select form-control input-sm">
+                                <option>USD</option>
+                              </select>
+                            </p>
+                          </div>
+                        </div>
+                        <div class="disbursement_wrapper">
+                          <div class="filter_by application_wrap">
+                            <form>
+                              <fieldset class="no_left_margin">
+                                <label>Filter By:</label>
+                                <select class="form-control filters_select input-sm">
+                                  <option>Type All</option>
+                                  <option>Approved</option>
+                                  <option>Draft</option>
+                                  <option>Pending WB Approval</option>
+                                  <option>Pending WB Review</option>
+                                </select>
+                                <select class="form-control filters_select input-sm">
+                                  <option>Status All</option>
+                                  <option>Approved</option>
+                                  <option>Draft</option>
+                                  <option>Pending WB Approval</option>
+                                  <option>Pending WB Review</option>
+                                </select>
+                                <select class="filters_select form-control input-sm">
+                                  <option>Category</option>
+                                  <option>John Peter</option>
+                                  <option>Peter Kalyan</option>
+                                  <option>Julie Murugan</option>
+                                  <option>SudoKar</option>
+                                  <option>Diesel Will</option>
+                                </select>
+                                <div class="date_range"> 
+                                  <!-- <label>Date:</label> -->
+                                  <input class="form-control date_fld fld_near_btn input-sm" type="text" placeholder="Value Date" />
+                                  <span class="sprite sprite-ico_calender date_item2"></span> </div>
+                                <span class="search_field_wrap wd_20_per pull-right">
+                                <input type="text" placeholder="Search" class="form-control search_field">
+                                <span class="sprite sprite-ico_search_field"></span> </span>
+                              </fieldset>
+                            </form>
+                            <div class="clearfix common_table_header">
+                              <div class="application">Application</div>
+                              <div class="paid">Paid</div>
+                            </div>
+                            <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+                              <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt" id="disbursement_table">
+                                <thead>
+                                  <tr>
+                                    <th><a href="javascript:;">Browser Reference</a></th>
+                                    <th><a href="javascript:;">Type</a></th>
+                                    <th><a href="javascript:;">Status</a></th>
+                                    <th ><a href="javascript:;">Ccy</a></th>
+                                    <th class="txt_right"><a href="javascript:;">Amount</a></th>
+                                    <th style="width:75px !important"><a href="javascript:;">Category Summary</a></th>
+                                    <th ><a href="javascript:;">Ccy</a></th>
+                                    <th class="txt_right"><a href="javascript:;">Amount</a></th>
+                                    <th><a href="javascript:;">Date Received</a></th>
+                                    <th><a href="javascript:;">Value <br/>
+                                      Date</a></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td><a href="javascript:;">WA-219-WA-222</a></td>
+                                    <td>Reimb...</td>
+                                    <td class="approved_txt">Completed</td>
+                                    <td>EUR</td>
+                                    <td>402,883.09</td>
+                                    <td>Multiple</td>
+                                    <td>EUR</td>
+                                    <td>453,424.77</td>
+                                    <td>06-Oct-2015</td>
+                                    <td>06-Oct-2015</td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="javascript:;">WA-219-WA-223</a></td>
+                                    <td>Reimb...</td>
+                                    <td class="approved_txt">Completed</td>
+                                    <td>EUR</td>
+                                    <td>402,883.09</td>
+                                    <td>1A</td>
+                                    <td>EUR</td>
+                                    <td>453,424.77</td>
+                                    <td>06-Oct-2015</td>
+                                    <td>06-Oct-2015</td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="javascript:;">WA-219-WA-224</a></td>
+                                    <td>Reimb...</td>
+                                    <td class="approved_txt">Completed</td>
+                                    <td>EUR</td>
+                                    <td>402,883.09</td>
+                                    <td>1B</td>
+                                    <td>EUR</td>
+                                    <td>453,424.77</td>
+                                    <td>06-Oct-2015</td>
+                                    <td>06-Oct-2015</td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="javascript:;">WA-219-WA-225</a></td>
+                                    <td>Reimb...</td>
+                                    <td class="approved_txt">Completed</td>
+                                    <td>EUR</td>
+                                    <td>402,883.09</td>
+                                    <td>1C</td>
+                                    <td>EUR</td>
+                                    <td>453,424.77</td>
+                                    <td>06-Oct-2015</td>
+                                    <td>06-Oct-2015</td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="javascript:;">WA-219-WA-226</a></td>
+                                    <td>Reimb...</td>
+                                    <td class="approved_txt">Completed</td>
+                                    <td>EUR</td>
+                                    <td>402,883.09</td>
+                                    <td>1A</td>
+                                    <td>EUR</td>
+                                    <td>453,424.77</td>
+                                    <td>06-Oct-2015</td>
+                                    <td>06-Oct-2015</td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="javascript:;">WA-219-WA-227</a></td>
+                                    <td>Reimb...</td>
+                                    <td class="approved_txt">Completed</td>
+                                    <td>EUR</td>
+                                    <td>402,883.09</td>
+                                    <td>1B</td>
+                                    <td>EUR</td>
+                                    <td>453,424.77</td>
+                                    <td>06-Oct-2015</td>
+                                    <td>06-Oct-2015</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <div class="clear"></div>
+                              <div class="col-md-12 content_wrapper">
+                                <div class="col-sm-4 view_per_page">
+                                  <fieldset class="no_left_margin">
+                                    <label>View per page :</label>
+                                    <select class="form-control input-sm per_page wd_25_per">
+                                      <option>10</option>
+                                      <option>15</option>
+                                      <option>20</option>
+                                      <option>25</option>
+                                    </select>
+                                  </fieldset>
+                                </div>
+                                <div class="col-sm-8 align-right">
+                                  <ul class="pagination pull-right" data-pagination-control="true" data-pagination-arrow="disabled">
+                                    <li><a href="javascript:;">&laquo;</a></li>
+                                    <li><a href="javascript:;">1</a></li>
+                                    <li><a href="javascript:;">2</a></li>
+                                    <li class="active"><a href="javascript:;">3</a></li>
+                                    <li><a href="javascript:;">4</a></li>
+                                    <li><a href="javascript:;">5</a></li>
+                                    <li><a href="javascript:;">6</a></li>
+                                    <li><a href="javascript:;">7</a></li>
+                                    <li><a href="javascript:;">8</a></li>
+                                    <li><a href="javascript:;">9</a></li>
+                                    <li><a href="javascript:;">&raquo;</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="clear"></div>
+                            </div>
+                          </div>
+                          <div class="category_summary_wrap">
+                            <div class="cate_summary clearfix">
+                              <div class="col-sm-8 no_padding"><span class="cate_heading">Currency of Loan Committed: USD</span></div>
+                              <div class="col-sm-4 no_padding">
+                                <p class="result_count"> <span class="search_field_wrap pull-right wd_100_per">
+                                  <input type="text" class="form-control search_field" placeholder="Search">
+                                  <span class="sprite sprite-ico_search_field"></span> </span> </p>
+                              </div>
+                            </div>
+                            <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt" id="cate_summary_table">
+                              <thead>
+                                <tr>
+                                  <th><a href="javascript:;">Category</a></th>
+                                  <th><a href="javascript:;">Category Description</a></th>
+                                  <th class="txt_right"><a href="javascript:;">Allocated</a></th>
+                                  <th class="txt_right"><a href="javascript:;">Disbursed</a></th>
+                                  <th class="txt_right"><a href="javascript:;">Undisbursed</a></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><a href="javascript:;" class="cate_sum_detail_link">1-A</a></td>
+                                  <td>Designated Account</td>
+                                  <td class="txt_right">55,155,000.00</td>
+                                  <td class="txt_right">48,488,018.09</td>
+                                  <td class="txt_right">6,666,981,91</td>
+                                </tr>
+                                <tr>
+                                  <td><a href="javascript:;" class="cate_sum_detail_link">1-C</a></td>
+                                  <td>FRONT END FEE</td>
+                                  <td class="txt_right">33,013,000.00</td>
+                                  <td class="txt_right">8,693,179.10</td>
+                                  <td class="txt_right">24,319,820.90</td>
+                                </tr>
+                                <tr>
+                                  <td><a href="javascript:;" class="cate_sum_detail_link">2</a></td>
+                                  <td>Designated Account</td>
+                                  <td class="txt_right">3,394,000.00</td>
+                                  <td class="txt_right">2,344,595.99</td>
+                                  <td class="txt_right">1,049,404.01</td>
+                                </tr>
+                                <tr>
+                                  <td><a href="javascript:;" class="cate_sum_detail_link">4</a></td>
+                                  <td>UNALLOCATED</td>
+                                  <td class="txt_right">0.00</td>
+                                  <td class="txt_right">0.00</td>
+                                  <td class="txt_right">0.00</td>
+                                </tr>
+                                <tr>
+                                  <td><a href="javascript:;" class="cate_sum_detail_link">5</a></td>
+                                  <td>UNALLOCATED</td>
+                                  <td class="txt_right">667,000.00</td>
+                                  <td class="txt_right">0.00</td>
+                                  <td class="txt_right">667,000.00</td>
+                                </tr>
+                                <tr>
+                                  <td><a href="javascript:;" class="cate_sum_detail_link">DA-A</a></td>
+                                  <td>Designated Account</td>
+                                  <td class="txt_right">0.00</td>
+                                  <td class="txt_right">0.00</td>
+                                  <td class="txt_right">0.00</td>
+                                </tr>
+                                <tr>
+                                  <td><a href="javascript:;" class="cate_sum_detail_link">FEF</a></td>
+                                  <td>FRONT END FEE</td>
+                                  <td class="txt_right">1,075,000.00</td>
+                                  <td class="txt_right">1,075,000.00</td>
+                                  <td class="txt_right">0.00</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="category_summary_wrap_details_wrap">
+                            <div class="clearfix sub_sec_header no_pad_top">
+                              <div class="col-md-6 no_padding">Funds Available</div>
+                              <div class="col-md-6">In Process</div>
+                            </div>
+                            <div class="clearfix">
+                              <div class="col-md-6 no_left_pad">
+                                <fieldset class="no_left_margin">
+                                  <div class="col-md-12 no_left_pad left_alg"> 
+                                    <!--one group starts -->
+                                    <div class="form-group form-group-review">
+                                      <label class="control-label-static col-xs-12">Original </label>
+                                      <div class="col-xs-12">
+                                        <p class="form-control-static"><span>335,696,000.00</span></p>
+                                      </div>
+                                    </div>
+                                    <!--one group ends --> 
+                                    <!--one group starts -->
+                                    <div class="form-group form-group-review">
+                                      <label class="control-label-static col-xs-12">Cancelled</label>
+                                      <div class="col-xs-10">
+                                        <p class="form-control-static"><span><a href="javascript:void(0);">58,000,000.00</a></span></p>
+                                      </div>
+                                    </div>
+                                    <!--one group ends --> 
+                                    <!--one group starts -->
+                                    <div class="form-group form-group-review">
+                                      <label class="control-label-static col-xs-12">Disbursed</label>
+                                      <div class="col-xs-10">
+                                        <p class="form-control-static"><span><a href="javascript:void(0);">77,654,111.00</a></span> </p>
+                                      </div>
+                                    </div>
+                                    <!--one group ends --> 
+                                    <!--one group starts -->
+                                    <div class="form-group form-group-review">
+                                      <label class="control-label-static col-xs-12">Special Commitments </label>
+                                      <div class="col-xs-10">
+                                        <p class="form-control-static"><span>109,354,104.54</span> </p>
+                                      </div>
+                                    </div>
+                                    <!--one group ends --> 
+                                    <!--one group starts -->
+                                    <div class="form-group form-group-review">
+                                      <label class="control-label-static col-xs-12">Funds Available</label>
+                                      <div class="col-xs-10">
+                                        <p class="form-control-static"><span> 63,687,784.36</span> </p>
+                                      </div>
+                                    </div>
+                                    <!--one group ends --> 
+                                    
+                                  </div>
+                                </fieldset>
+                              </div>
+                              <div class="col-md-6 no_padding">
+                                <fieldset class="no_left_margin">
+                                  <div class="col-md-12 no_left_pad left_alg"> 
+                                    <!--one group starts -->
+                                    <div class="form-group form-group-review">
+                                      <label class="control-label-static col-xs-12">Withdrawal Applications</label>
+                                      <div class="col-xs-12">
+                                        <p class="form-control-static"><span>0.00</span></p>
+                                      </div>
+                                    </div>
+                                    <!--one group ends --> 
+                                    <!--one group starts -->
+                                    <div class="form-group form-group-review">
+                                      <label class="control-label-static col-xs-12">Special Commitments Issuance Application</label>
+                                      <div class="col-xs-10">
+                                        <p class="form-control-static"><span>0.00</span></p>
+                                      </div>
+                                    </div>
+                                    <!--one group ends --> 
+                                    <!--one group starts -->
+                                    <div class="form-group form-group-review">
+                                      <label class="control-label-static col-xs-12">Estimated Funds Available </label>
+                                      <div class="col-xs-10">
+                                        <p class="form-control-static"><span>63,687,784.36</span> </p>
+                                      </div>
+                                    </div>
+                                    <!--one group ends --> 
+                                    
+                                  </div>
+                                </fieldset>
+                              </div>
+                            </div>
+                            <div class="clearfix sub_sec_header">
+                              <div class="col-md-12 no_padding">Disbursement Percentage</div>
+                            </div>
+                            <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2">
+                              <thead>
+                                <tr>
+                                  <th width="30%">Effective Date</th>
+                                  <th width="30%">Type</th>
+                                  <th width="40%">Percentage</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>12-Jan-2015</td>
+                                  <td>Lorem Ipsum</td>
+                                  <td>40%</td>
+                                </tr>
+                                <tr>
+                                  <td>12-Jan-2015</td>
+                                  <td>Lorem Ipsum</td>
+                                  <td>60%</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div class="clearfix sub_sec_header">
+                              <div class="col-md-12 no_padding">SOE Thresholds</div>
+                            </div>
+                            <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2">
+                              <thead>
+                                <tr>
+                                  <th width="30%">Expenditure Type</th>
+                                  <th width="30%">Amount</th>
+                                  <th width="40%">Remarks</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Goods</td>
+                                  <td>USD 0.00</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>Transport</td>
+                                  <td>USD 0.00</td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div class="clearfix sub_sec_header">
+                              <div class="col-md-12 no_padding">Prior Review Thresholds</div>
+                            </div>
+                            <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2">
+                              <thead>
+                                <tr>
+                                  <th width="30%">Expenditure Type</th>
+                                  <th width="30%">Amount</th>
+                                  <th width="40%">Remarks</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Goods</td>
+                                  <td>USD 0.00</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>Transport</td>
+                                  <td>USD 0.00</td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Sub-loan panel mapped to tab ends here --> 
+              <!-- Sub-loan panel mapped to tab starts here --> 
+              
+              <!-- Sub-loan panel mapped to tab ends here --> 
+            </div>
+          </div>
+          <div id="subloan_2" class="content_wrapper clearfix"> <strong>Sub Loan 2</strong> <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            Lorem ipsum... </div>
+        </div>
+        <!-- Sub-loan panel tab content starts here --> 
+      </div>
+      <!-- left content area ends here --> 
+      <!-- right content area starts here -->
+      <div class="col-md-3 no_right_padding left_pad_8">
+        <div class="clearfix">
+          <div class="col-md-12 no_padding">
+            <section>
+              <div class="section_title">Alerts / Notifications</div>
+              <div class="content_wrapper">
+                <ul class="quick_links hightlighted">
+                  <li><a href="javascript:;">Lorem Ipsum Lorem Ipsum</a></li>
+                  <li><a href="javascript:;">Lorem Ipsum Lorem Ipsum</a></li>
+                  <li><a href="javascript:;">Lorem Ipsum Lorem Ipsum</a></li>
+                  <li><a href="javascript:;">Lorem Ipsum Lorem Ipsum</a></li>
+                  <li class="all_link"><a href="javascript:;">View All</a></li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <div class="col-md-12 no_padding">
+            <section>
+              <div class="section_title">Related Links</div>
+              <div class="content_wrapper">
+                <ul class="quick_links hightlighted">
+                  <li><a href="javascript:;">eForms</a></li>
+                  <li><a href="javascript:;">Applications</a></li>
+                  <li><a href="javascript:;">Contracts</a></li>
+                  <li><a href="javascript:;">Designated/UN Accounts</a></li>
+                  <li><a href="javascript:;">Category Schedule</a></li>
+                  <li><a href="javascript:;">Monthly Disbursement Summary</a></li>
+                  <li><a href="javascript:;">Forms</a></li>
+                  <li><a href="javascript:;">Policies &amp; Procedures</a></li>
+                  <li><a href="javascript:;">Project Overview</a></li>
+                  <li><a href="javascript:;">Procurement Bids</a></li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <div class="col-md-12 no_padding">
+            <section>
+              <div class="section_title">Reference</div>
+              <div class="content_wrapper">
+                <ul class="quick_links hightlighted">
+                  <li><a href="javascript:;">Trust Fund Internal Control</a></li>
+                  <li><a href="javascript:;">Framework</a></li>
+                  <li><a href="javascript:;">TF Internal Control Framework video</a></li>
+                  <li><a href="javascript:;">Download Adobe Acrobat reader</a></li>
+                  <li><a href="javascript:;">Suspended Firms</a></li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <div class="clear"></div>
+          <div class="col-md-12 no_padding">
+            <section>
+              <div class="section_title">Disbursements</div>
+              <div class="content_wrapper">
+                <ul class="quick_links hightlighted">
+                  <li><a href="javascript:;">Amortization Schedule</a></li>
+                  <li><a href="javascript:;">Loan History</a></li>
+                  <li><a href="javascript:;">Bills</a></li>
+                  <li><a href="javascript:;">Policies &amp; Procedures</a></li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <div class="col-md-12 no_padding">
+            <section>
+              <div class="section_title">Financial Products</div>
+              <div class="content_wrapper">
+                <ul class="quick_links hightlighted">
+                  <li><a href="javascript:;">IBRD</a></li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="js/dataTables.bootstrap.js"></script> 
+<script type="text/javascript" src="js/slick.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script> 
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.date_fld').datepicker();
+    $('#disbursement_table, #cate_summary_table').dataTable({
+        "bLengthChange": false,
+        "searching": false
+    });
+    
+    $('.subloan_carousel').slick({
+        slidesToShow: 6,
+        infinite:false,
+        responsive: [
+            {
+              breakpoint: 1200,
+              settings: {
+                slidesToShow: 5,
+              }
+            },
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 5,
+              }
+            }
+        ]
+    });
+
+});
+</script>
+</body>
+</html>

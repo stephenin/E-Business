@@ -1,0 +1,45 @@
+/* PA flow specific styles
+.form-horizontal .control-label { text-align:left; margin-bottom:5px;}
+.form-horizontal .col-xs-6 { padding-right:0px;}
+.form-horizontal .col-xs-1 { padding-left:0px;}
+fieldset{ margin-left:45px;}
+.select.filters_select, input.date_fld { width:100% !important;}
+.date_icon {right: 10%;}
+.form-group span.big_font {margin-right: 30px;}
+.radio_wrap > .info_wrapper {margin-right: 30px; margin-left:-30px;}
+.radio_wrap{ display:block; float:none}
+.section_title, .btn_wrap {padding: 0 20px; margin:20px 30px 0px 30px;}
+hr{border-top: 1px solid #eee; width:90%; margin-left:auto;margin-right:auto;margin-top: 15px;}
+.field_wrap {padding: 0 30px;}
+.auth_rep, .auth_broker, .auth_agent, .auth_finder, .auth_staff{margin-left:30px;}
+h5 {margin-right: 0px; font-size:16px; font-weight:bold; color:#575757}
+.panel-title{border-bottom: 1px solid #eee;}
+.mandatory_text {margin: 5px 5px;}
+.page_utils_links a{padding: 0 17px 0 5px;}
+.width200px{ width:200px;}
+.lblW  label { width:170px; margin: 10px 0px;}
+.big_font_chkbox {font-size: 14px;display: inline-block;}
+.form-group label{ color:#333333;font-size:13px;}
+.form-control-static {font-size: 13px;line-height: 15px;color: #575757; padding-top:0px; min-height:25px;font-family: 'OpenSans'; margin-bottom:10px;}
+.form-control-static span{background-color:#eef9fd; width:auto; padding:5px 10px; display:inline-block;}
+ul.form-control-static li{background-color:#eef9fd; width:auto; display:inline-block; clear:both; float:left; margin:10px 0px;}
+.form-group-review{ margin-bottom:0px;}
+.item_header_completed { background-color:#fff;}
+.revised-info{ background:#dff0d8;}
+.radio_wrap > .info_wrapper{ margin-left:0px;}
+.sprite-ico-radio{ float:left;}
+.form-group-review label{ color:#888888}
+.void_rgt_pad{ padding-right:0px;}
+.right_margin_neg_40{margin-right:-50px ;}
+
+
+
+
+
+
+
+/*New Styles
+.hyp-link{ clear:both;}
+label.control-label-static{color: #333333;font-size: 13px; font-family: 'OpenSans'; font-weight:bold; color:#575757;}
+.control-label-static.required:after { content:"*"; color: #b32525; margin: 0 0 0 5px }
+.control-label-static.static_field:after { content:":"; color: #575757; margin: 0 0 0 5px }*/

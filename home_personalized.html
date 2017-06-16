@@ -1,0 +1,417 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness ASL</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/jquery.dataTables.css" rel="stylesheet"/>
+<link href="css/dataTables.bootstrap.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+        </div>
+        <div class="col-md-10 user_utils no_padding">
+          <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+            <div class="notification_utils">
+              <ul class="notifications clearfix">
+                <li>
+                  <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown language">
+              <select class="header_language">
+                <option>English US</option>
+                <option>English UK</option>
+                <option>French</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+              <div class="dropdown user_details">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">John Mattew</button>
+                  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="Library/my_profile.html">My Profile</a></li>
+                    <li><a href="Library/login.html">Sign out</a></li>
+                    <li class="thm-def"><a href="javascript:;">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:;">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:;">Theme - Purple</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here --> 
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends --> 
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends --> 
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends --> 
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Site Tour</a></li>
+      <li><a href="javascript:;">Glossary of Terms</a></li>
+      <li><a href="javascript:;">About this Page</a></li>
+    </ul>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- FAQ popover ends --> 
+  <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+<!-- Main menu starts -->
+<nav class="navbar main_navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+    <div id="mainnavigation" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="javascript:;" class="current_page">Home</a></li>
+        <li><a href="javascript:;">My Portfolio</a></li>
+        <li><a href="javascript:;">Country Analytics</a></li>
+        <li><a href="javascript:;">Knowledge</a></li>
+        <li><a href="javascript:;">Reference</a></li>
+        <li><a href="javascript:;">Account Management</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Main menu ends -->
+
+<div class="container home_page"> 
+  <!-- Example row of columns -->
+
+  <div class="row section_wrapper clearfix">
+    
+    <div class="col-md-9 no_padding">
+        
+        <div class="col-md-12 column_wrapper clearfix mar_btm_5">
+          <div class="content_wrapper">
+            <div class="clearfix">
+              <h4 class="pull-left">Pending Tasks</h4>
+              <a href="javascript:;" class="pull-right"><span class="sprite sprite-ico_setting"></span></a> 
+            </div>
+
+            <div class="home_task_wrap row">
+                <div class="col-sm-3">
+                    <select class="normal_selector">
+                        <option>Type: All(10)</option>
+                        <option>Withdrawal Application(2)</option>
+                        <option>ASL(3)</option>
+                        <option>Organization(4)</option>
+                        <option>User(1)</option>
+                    </select>
+                </div>
+                <div class="clear"></div>
+                <div class="col-md-12">
+                    <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2" id="pending_tasks_tbl">
+                        <thead>
+                            <tr>
+                              <th width="25%" class="sorting_desc">Type</th>
+                              <th width="20%" class="sorting">Date</th>
+                              <th width="30%" class="sorting">Description</th>
+                              <th width="35%" class="sorting">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <td>Project</td>
+                              <td>15- Nov- 2015</td>
+                              <td><a href="javascript:;">DEI form is pending submission for Project - Universal Hospitals</a></td>
+                              <td>Pending</td>
+                            </tr>
+                            <tr>
+                              <td>Project</td>
+                              <td>14- Nov- 2015</td>
+                              <td><a href="javascript:;">DEI form is pending submission for Project - Societe Telecommunications Congolaise</a></td>
+                              <td>Pending</td>
+                            </tr>
+                            <tr>
+                              <td>Contract</td>
+                              <td>13- Nov- 2015</td>
+                              <td><a href="javascript:;">Compliance documents due for Contract 13175-02</a></td>
+                              <td>Active</td>
+                            </tr>
+                            <tr>
+                              <td>Contract</td>
+                              <td>12- Nov- 2015</td>
+                              <td><a href="javascript:;">Compliance documents due for Contract 12185-01</a></td>
+                              <td>Active</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pull-right all_link"><a href="javascript:;">View All</a></div>
+                </div>
+
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        
+        <div class="col-md-12 column_wrapper clearfix mar_btm_5">
+          <div class="content_wrapper">
+            <div class="clearfix">
+                <h4 class="pull-left">Calendar of Events</h4>
+                    <a href="javascript:;" class="pull-right"><span class="sprite sprite-ico_setting"></span></a> 
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="eventCalendar_wrapper"></div>
+              </div>
+              <div class="col-md-6">
+                <div class="events_wrapper">
+                  <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt no-footer">       
+                    <tbody>
+                      <tr>
+                        <td class="event_desc"><span class="bld_txt normal_txt">June 15, 2016</span></td>
+                        <td class="cal_event">Contract 12185-01 Premium due</td>
+                      </tr>
+                      <tr>
+                        <td class="event_desc"><span class="bld_txt normal_txt">June 22, 2016</span></td>
+                        <td class="cal_event">Contract 13175-02 Compliance documents due</td>
+                      </tr>
+                      <tr>
+                        <td class="event_desc"><span class="bld_txt normal_txt">June 30, 2016</span></td>
+                        <td class="cal_event">Contract 13185-02 Compliance documents due</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>      
+    </div>
+    <div class="col-md-3 no_right_padding left_pad_8">
+        <div class="clearfix">
+            <div class="col-md-12 no_padding">
+                <section>
+                  <div class="section_title">Alerts / Notifications</div>
+                  <div class="content_wrapper">
+                    <select class="normal_selector">
+                        <option>All</option>
+                        <option>Debt Management</option>
+                        <option>Disbusements</option>
+                    </select>
+                    <ul class="quick_links hightlighted alert_notify">
+                      <li><a href="javascript:;"><span class="bld_txt">Contract 12185-01</span> Premium due in 2 month(s)</a></li>
+                      <li><a href="javascript:;"><span class="bld_txt">Contract 13175-02</span> Compliance documents due in 2 weeks</a></li>
+                      <li><a href="javascript:;"><span class="bld_txt">Contract 13185-01</span> Compliance documents due in 1 month</a></li>
+                      <li><a href="javascript:;"><span class="bld_txt">Contract 12185-01</span> Premium due in 2 month(s)</a></li>
+                      <li class="all_link"><a href="javascript:;">View All</a></li>
+                    </ul>
+                  </div>
+                </section>
+            </div>
+
+            <div class="col-md-12 no_padding">
+                <section>
+                  <div class="section_title">Quick Links</div>
+                  <div class="content_wrapper">
+                    <ul class="quick_links hightlighted">
+                      <li><a href="javascript:;">Apply Preliminary Application for GuaranteeProcurement</a></li>
+                      <li><a href="javascript:;">Apply Definitive Application for Guarantee</a></li>
+                      <li><a href="javascript:;">Submit DEI form</a></li>
+                    </ul>
+                  </div>
+                </section>
+            </div>
+
+
+        </div>
+    </div>
+
+  </div>
+  
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="js/dataTables.bootstrap.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script> 
+<script>
+$(document).ready(function() {
+    $('#pending_tasks_tbl').dataTable({
+        "bLengthChange": false,
+        "searching": false,
+        "order": [[ 0, "desc" ]]
+    });
+    $('.eventCalendar_wrapper').eventCalendar();
+});
+</script>
+</body>
+</html>

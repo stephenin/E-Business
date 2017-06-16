@@ -1,0 +1,1451 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness ASL</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+        </div>
+        <div class="col-md-10 user_utils no_padding">
+          <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+            <div class="notification_utils">
+              <ul class="notifications clearfix">
+                <li>
+                  <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown language">
+              <select class="header_language">
+                <option>English US</option>
+                <option>English UK</option>
+                <option>French</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+              <div class="dropdown user_details">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">John Mattew</button>
+                  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="Library/my_profile.html">My Profile</a></li>
+                    <li><a href="Library/login.html">Sign out</a></li>
+                    <li class="thm-def"><a href="javascript:void(0)">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:void(0)">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:void(0)">Theme - Purple</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here --> 
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends --> 
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends --> 
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends --> 
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Site Tour</a></li>
+      <li><a href="javascript:;">Glossary of Terms</a></li>
+      <li><a href="javascript:;">About this Page</a></li>
+    </ul>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- FAQ popover ends --> 
+  <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+<div class="spacer_30"></div>
+<div class="container"> 
+  <!-- Example row of columns -->
+  <div class="row section_wrapper"> 
+    <!--page title starts here-->
+    <div class="page_title_section clearfix">
+      <h1 class="">User Role Management</h1>
+    </div>
+    <!--page title ends here-->
+    <div class="search_type_wrap">
+      <form>
+        <fieldset>
+          <div class="col-sm-12 clearfix no_padding">
+            <div class="col-sm-3 search_select_wrap">
+              <select class="form-control normalSelect">
+                <option>All Business Unit </option>
+                <option>User</option>
+                <option>Roles </option>
+              </select>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control srch_text" placeholder="John Peter (478432)">
+              <button class="btn btn-primary btn_green" type="button"> <span class="sprite sprite-ico_search_white"></span> </button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_30"></div>
+    <div class="col-md-12 col-xs-12 no_padding">
+      <div class="content_wrapper no_padding">
+        <p class="role_title">Assign Roles for John Peter (478432), ITBIZ</p>
+        <div class="row clearfix">
+          <div class="col-xs-12">
+            <form class="form-horizontal">
+              <fieldset>
+                <div class="role_wrap">
+                  <div class="form-group role_option_wrap">
+                    <input id="role_superUser" type="checkbox" value="1">
+                    <label for="role_superUser" class="css-labelChk sprite sprite-ico-checkbox" rel="SuperUser">Super user</label>
+                    <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""><span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                  <div class="form-group role_option_wrap">
+                    <input id="role_wfaAdmin" type="checkbox" value="1">
+                    <label for="role_wfaAdmin" class="css-labelChk sprite sprite-ico-checkbox" rel="WFAeBusinessadministrator">WFA eBusiness administrator</label>
+                    <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""><span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                  <div class="form-group role_option_wrap">
+                    <input id="role_roleApprover" type="checkbox" value="1">
+                    <label for="role_roleApprover" class="css-labelChk sprite sprite-ico-checkbox" rel="Roleapprover">Role approver</label>
+                    <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""><span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                  <div class="form-group role_option_wrap">
+                    <input id="role_accMgmt" type="checkbox" value="1">
+                    <label for="role_accMgmt" class="css-labelChk sprite sprite-ico-checkbox" rel="AccountManagementteam">Account Management team</label>
+                    <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""><span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                  <div class="form-group role_option_wrap">
+                    <div class="col-md-4 cols clearfix">
+                      <input id="role_WBApp_CD" type="checkbox" value="1">
+                      <label for="role_WBApp_CD" class="css-labelChk sprite sprite-ico-checkbox" rel="WBapprover">WB approver (Country Director)</label>
+                      <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""><span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                    <div class="col-md-6 cols wb_approver_wrap clearfix">
+                      <div class="country__select">
+                        <select class="form-control Select2_multiple" multiple id="WBapprover_country">
+                          <option selected="">All Country</option>
+                          <option>Afghanistan </option>
+                          <option>Albania </option>
+                          <option>Algeria </option>
+                          <option>American Samoa </option>
+                          <option>Andorra </option>
+                          <option>Angola </option>
+                          <option>Anguilla </option>
+                          <option>Antiguaand Barbuda </option>
+                          <option>Argentina </option>
+                          <option>Armenia </option>
+                          <option>Aruba </option>
+                          <option>Australia </option>
+                          <option>Austria </option>
+                          <option>Azerbaijan </option>
+                          <option>Bahamas </option>
+                          <option>Bahrain </option>
+                          <option>Bangladesh </option>
+                          <option>Barbados </option>
+                          <option>Belarus </option>
+                          <option>Belgium </option>
+                          <option>Belize </option>
+                          <option>Benin </option>
+                          <option>Bermuda </option>
+                          <option>Bhutan </option>
+                          <option>Bolivia </option>
+                          <option>Bosnia-Herzegovina </option>
+                          <option>Botswana </option>
+                          <option>Bouvet Island </option>
+                          <option>Brazil </option>
+                          <option>Brunei </option>
+                          <option>Bulgaria </option>
+                          <option>Burkina Haso </option>
+                          <option>Burundi </option>
+                          <option>Cambodia </option>
+                          <option>Cameroon </option>
+                          <option>Canada </option>
+                          <option>Cape Verde </option>
+                          <option>Cayman Islands </option>
+                          <option>Central African Republic </option>
+                          <option>Chad </option>
+                          <option>Chile </option>
+                          <option>China </option>
+                          <option>Christmas Island </option>
+                          <option>Cocos(Keeling)Islands </option>
+                          <option>Colombia </option>
+                          <option>Comoros </option>
+                          <option>Congo,DemocraticRepublicofthe(Zaire) </option>
+                          <option>Congo, Republic of CookIslands</option>
+                          <option>CostaRica </option>
+                          <option>Croatia </option>
+                          <option>Cuba </option>
+                          <option>Cyprus </option>
+                          <option>Czech Republic </option>
+                          <option>Denmark </option>
+                          <option>Djibouti </option>
+                          <option>Dominica </option>
+                          <option>Dominican Republic </option>
+                          <option>Ecuador </option>
+                          <option>Egypt </option>
+                          <option>ElSalvador </option>
+                          <option>Equatorial Guinea </option>
+                          <option>Eritrea </option>
+                          <option>Estonia </option>
+                          <option>Ethiopia </option>
+                          <option>Halkland Islands </option>
+                          <option>Haroe Islands </option>
+                          <option>Hiji </option>
+                          <option>Hinland </option>
+                          <option>Hrance </option>
+                          <option>Hrench Guiana </option>
+                          <option>Gabon </option>
+                          <option>Gambia </option>
+                          <option>Georgia </option>
+                          <option>Germany </option>
+                          <option>Ghana </option>
+                          <option>Gibraltar </option>
+                          <option>Greece </option>
+                          <option>Greenland </option>
+                          <option>Grenada </option>
+                          <option>Guadeloupe(Hrench) </option>
+                          <option>Guam(USA) </option>
+                          <option>Guatemala </option>
+                          <option>Guinea </option>
+                          <option>Guinea Bissau </option>
+                          <option>Guyana </option>
+                          <option>Haiti </option>
+                          <option>HolySee </option>
+                          <option>Honduras </option>
+                          <option>HongKong </option>
+                          <option>Hungary </option>
+                          <option>Iceland </option>
+                          <option>India </option>
+                          <option>Indonesia </option>
+                          <option>Iran </option>
+                          <option>Iraq </option>
+                          <option>Ireland </option>
+                          <option>Israel </option>
+                          <option>Italy </option>
+                          <option>IvoryCoast(CoteD`Ivoire) </option>
+                          <option>Jamaica </option>
+                          <option>Japan </option>
+                          <option>Jordan </option>
+                          <option>Kazakhstan </option>
+                          <option>Kenya </option>
+                          <option>Kiribati </option>
+                          <option>Kuwait </option>
+                          <option>Kyrgyzstan </option>
+                          <option>Laos </option>
+                          <option>Latvia </option>
+                          <option>Lebanon </option>
+                          <option>Lesotho </option>
+                          <option>Liberia </option>
+                          <option>Libya </option>
+                          <option>Liechtenstein </option>
+                          <option>Lithuania </option>
+                          <option>Luxembourg </option>
+                          <option>Macau </option>
+                          <option>Macedonia </option>
+                          <option>Madagascar </option>
+                          <option>Malawi </option>
+                          <option>Malaysia </option>
+                          <option>Maldives </option>
+                          <option>Mali </option>
+                          <option>Malta </option>
+                          <option>Marshall Islands </option>
+                          <option>Martinique (Hrench) </option>
+                          <option>Mauritania </option>
+                          <option>Mauritius </option>
+                          <option>Mayotte </option>
+                          <option>Mexico </option>
+                          <option>Micronesia </option>
+                          <option>Moldova </option>
+                          <option>Monaco </option>
+                          <option>Mongolia </option>
+                          <option>Montenegro </option>
+                          <option>Montserrat </option>
+                          <option>Morocco </option>
+                          <option>Mozambique </option>
+                          <option>Myanmar </option>
+                          <option>Namibia </option>
+                          <option>Nauru </option>
+                          <option>Nepal </option>
+                          <option>Netherlands </option>
+                          <option>Netherlands Antilles </option>
+                          <option>NewCaledonia(Hrench) </option>
+                          <option>NewZealand </option>
+                          <option>Nicaragua </option>
+                          <option>Niger </option>
+                          <option>Nigeria </option>
+                          <option>Niue </option>
+                          <option>NorfolkIsland </option>
+                          <option>NorthKorea </option>
+                          <option>Northern Mariana Islands </option>
+                          <option>Norway </option>
+                          <option>Oman </option>
+                          <option>Pakistan </option>
+                          <option>Palau </option>
+                          <option>Panama </option>
+                          <option>Papua New Guinea </option>
+                          <option>Paraguay </option>
+                          <option>Peru </option>
+                          <option>Philippines </option>
+                          <option>Pitcairn Island </option>
+                          <option>Poland </option>
+                          <option>Polynesia(Hrench) </option>
+                          <option>Portugal </option>
+                          <option>PuertoRico </option>
+                          <option>Qatar </option>
+                          <option>Reunion </option>
+                          <option>Romania </option>
+                          <option>Russia </option>
+                          <option>Rwanda </option>
+                          <option>SaintHelena </option>
+                          <option>Saint Kitts and Nevis </option>
+                          <option>Saint Lucia </option>
+                          <option>Saint Pierreand Miquelon </option>
+                          <option>Saint Vincent and Grenadines </option>
+                          <option>Samoa </option>
+                          <option>San Marino </option>
+                          <option>Sao Tome and Principe </option>
+                          <option>Saudi Arabia </option>
+                          <option>Senegal </option>
+                          <option>Serbia </option>
+                          <option>Seychelles </option>
+                          <option>SierraLeone </option>
+                          <option>Singapore </option>
+                          <option>Slovakia </option>
+                          <option>Slovenia </option>
+                          <option>SolomonIslands </option>
+                          <option>Somalia </option>
+                          <option>SouthAfrica </option>
+                          <option>South Georgia and South Sandwich Islands </option>
+                          <option>SouthKorea </option>
+                          <option>SouthSudan </option>
+                          <option>Spain </option>
+                          <option>SriLanka </option>
+                          <option>Sudan </option>
+                          <option>Suriname </option>
+                          <option>Svalbard and Jan Mayen Islands </option>
+                          <option>Swaziland </option>
+                          <option>Sweden </option>
+                          <option>Switzerland </option>
+                          <option>Syria </option>
+                          <option>Taiwan </option>
+                          <option>Tajikistan </option>
+                          <option>Tanzania </option>
+                          <option>Thailand </option>
+                          <option>Timor-Leste(EastTimor) </option>
+                          <option>Togo </option>
+                          <option>Tokelau </option>
+                          <option>Tonga </option>
+                          <option>Trinidad and Tobago </option>
+                          <option>Tunisia </option>
+                          <option>Turkey </option>
+                          <option>Turkmenistan </option>
+                          <option>Turks and Caicos Islands </option>
+                          <option>Tuvalu </option>
+                          <option>Uganda </option>
+                          <option>Ukraine </option>
+                          <option>United Arab Emirates </option>
+                          <option>United Kingdom </option>
+                          <option>United States </option>
+                          <option>Uruguay </option>
+                          <option>Uzbekistan </option>
+                          <option>Vanuatu </option>
+                          <option>Venezuela </option>
+                          <option>Vietnam </option>
+                          <option>Virgin Islands </option>
+                          <option>Wallis and Hutuna Islands </option>
+                          <option>Yemen </option>
+                          <option>Zambia </option>
+                          <option>Zimbabwe </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group role_option_wrap">
+                    <div class="col-md-4 clearfix cols">
+                      <input id="role_CDBack" type="checkbox" value="1">
+                      <label for="role_CDBack" class="css-labelChk sprite sprite-ico-checkbox" rel="CountryDirectorbackup">Country Director backup</label>
+                      <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""><span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                    <div class="col-md-5 clearfix cols CDBack_wrap">
+                      <div class="country__select">
+                        <select class="form-control Select2_multiple" multiple id="CountryDirectorbackup_country">
+                          <option selected="">All Country</option>
+                          <option>Afghanistan </option>
+                          <option>Albania </option>
+                          <option>Algeria </option>
+                          <option>American Samoa </option>
+                          <option>Andorra </option>
+                          <option>Angola </option>
+                          <option>Anguilla </option>
+                          <option>Antiguaand Barbuda </option>
+                          <option>Argentina </option>
+                          <option>Armenia </option>
+                          <option>Aruba </option>
+                          <option>Australia </option>
+                          <option>Austria </option>
+                          <option>Azerbaijan </option>
+                          <option>Bahamas </option>
+                          <option>Bahrain </option>
+                          <option>Bangladesh </option>
+                          <option>Barbados </option>
+                          <option>Belarus </option>
+                          <option>Belgium </option>
+                          <option>Belize </option>
+                          <option>Benin </option>
+                          <option>Bermuda </option>
+                          <option>Bhutan </option>
+                          <option>Bolivia </option>
+                          <option>Bosnia-Herzegovina </option>
+                          <option>Botswana </option>
+                          <option>Bouvet Island </option>
+                          <option>Brazil </option>
+                          <option>Brunei </option>
+                          <option>Bulgaria </option>
+                          <option>Burkina Haso </option>
+                          <option>Burundi </option>
+                          <option>Cambodia </option>
+                          <option>Cameroon </option>
+                          <option>Canada </option>
+                          <option>Cape Verde </option>
+                          <option>Cayman Islands </option>
+                          <option>Central African Republic </option>
+                          <option>Chad </option>
+                          <option>Chile </option>
+                          <option>China </option>
+                          <option>Christmas Island </option>
+                          <option>Cocos(Keeling)Islands </option>
+                          <option>Colombia </option>
+                          <option>Comoros </option>
+                          <option>Congo,DemocraticRepublicofthe(Zaire) </option>
+                          <option>Congo, Republic of CookIslands</option>
+                          <option>CostaRica </option>
+                          <option>Croatia </option>
+                          <option>Cuba </option>
+                          <option>Cyprus </option>
+                          <option>Czech Republic </option>
+                          <option>Denmark </option>
+                          <option>Djibouti </option>
+                          <option>Dominica </option>
+                          <option>Dominican Republic </option>
+                          <option>Ecuador </option>
+                          <option>Egypt </option>
+                          <option>ElSalvador </option>
+                          <option>Equatorial Guinea </option>
+                          <option>Eritrea </option>
+                          <option>Estonia </option>
+                          <option>Ethiopia </option>
+                          <option>Halkland Islands </option>
+                          <option>Haroe Islands </option>
+                          <option>Hiji </option>
+                          <option>Hinland </option>
+                          <option>Hrance </option>
+                          <option>Hrench Guiana </option>
+                          <option>Gabon </option>
+                          <option>Gambia </option>
+                          <option>Georgia </option>
+                          <option>Germany </option>
+                          <option>Ghana </option>
+                          <option>Gibraltar </option>
+                          <option>Greece </option>
+                          <option>Greenland </option>
+                          <option>Grenada </option>
+                          <option>Guadeloupe(Hrench) </option>
+                          <option>Guam(USA) </option>
+                          <option>Guatemala </option>
+                          <option>Guinea </option>
+                          <option>Guinea Bissau </option>
+                          <option>Guyana </option>
+                          <option>Haiti </option>
+                          <option>HolySee </option>
+                          <option>Honduras </option>
+                          <option>HongKong </option>
+                          <option>Hungary </option>
+                          <option>Iceland </option>
+                          <option>India </option>
+                          <option>Indonesia </option>
+                          <option>Iran </option>
+                          <option>Iraq </option>
+                          <option>Ireland </option>
+                          <option>Israel </option>
+                          <option>Italy </option>
+                          <option>IvoryCoast(CoteD`Ivoire) </option>
+                          <option>Jamaica </option>
+                          <option>Japan </option>
+                          <option>Jordan </option>
+                          <option>Kazakhstan </option>
+                          <option>Kenya </option>
+                          <option>Kiribati </option>
+                          <option>Kuwait </option>
+                          <option>Kyrgyzstan </option>
+                          <option>Laos </option>
+                          <option>Latvia </option>
+                          <option>Lebanon </option>
+                          <option>Lesotho </option>
+                          <option>Liberia </option>
+                          <option>Libya </option>
+                          <option>Liechtenstein </option>
+                          <option>Lithuania </option>
+                          <option>Luxembourg </option>
+                          <option>Macau </option>
+                          <option>Macedonia </option>
+                          <option>Madagascar </option>
+                          <option>Malawi </option>
+                          <option>Malaysia </option>
+                          <option>Maldives </option>
+                          <option>Mali </option>
+                          <option>Malta </option>
+                          <option>Marshall Islands </option>
+                          <option>Martinique (Hrench) </option>
+                          <option>Mauritania </option>
+                          <option>Mauritius </option>
+                          <option>Mayotte </option>
+                          <option>Mexico </option>
+                          <option>Micronesia </option>
+                          <option>Moldova </option>
+                          <option>Monaco </option>
+                          <option>Mongolia </option>
+                          <option>Montenegro </option>
+                          <option>Montserrat </option>
+                          <option>Morocco </option>
+                          <option>Mozambique </option>
+                          <option>Myanmar </option>
+                          <option>Namibia </option>
+                          <option>Nauru </option>
+                          <option>Nepal </option>
+                          <option>Netherlands </option>
+                          <option>Netherlands Antilles </option>
+                          <option>NewCaledonia(Hrench) </option>
+                          <option>NewZealand </option>
+                          <option>Nicaragua </option>
+                          <option>Niger </option>
+                          <option>Nigeria </option>
+                          <option>Niue </option>
+                          <option>NorfolkIsland </option>
+                          <option>NorthKorea </option>
+                          <option>Northern Mariana Islands </option>
+                          <option>Norway </option>
+                          <option>Oman </option>
+                          <option>Pakistan </option>
+                          <option>Palau </option>
+                          <option>Panama </option>
+                          <option>Papua New Guinea </option>
+                          <option>Paraguay </option>
+                          <option>Peru </option>
+                          <option>Philippines </option>
+                          <option>Pitcairn Island </option>
+                          <option>Poland </option>
+                          <option>Polynesia(Hrench) </option>
+                          <option>Portugal </option>
+                          <option>PuertoRico </option>
+                          <option>Qatar </option>
+                          <option>Reunion </option>
+                          <option>Romania </option>
+                          <option>Russia </option>
+                          <option>Rwanda </option>
+                          <option>SaintHelena </option>
+                          <option>Saint Kitts and Nevis </option>
+                          <option>Saint Lucia </option>
+                          <option>Saint Pierreand Miquelon </option>
+                          <option>Saint Vincent and Grenadines </option>
+                          <option>Samoa </option>
+                          <option>San Marino </option>
+                          <option>Sao Tome and Principe </option>
+                          <option>Saudi Arabia </option>
+                          <option>Senegal </option>
+                          <option>Serbia </option>
+                          <option>Seychelles </option>
+                          <option>SierraLeone </option>
+                          <option>Singapore </option>
+                          <option>Slovakia </option>
+                          <option>Slovenia </option>
+                          <option>SolomonIslands </option>
+                          <option>Somalia </option>
+                          <option>SouthAfrica </option>
+                          <option>South Georgia and South Sandwich Islands </option>
+                          <option>SouthKorea </option>
+                          <option>SouthSudan </option>
+                          <option>Spain </option>
+                          <option>SriLanka </option>
+                          <option>Sudan </option>
+                          <option>Suriname </option>
+                          <option>Svalbard and Jan Mayen Islands </option>
+                          <option>Swaziland </option>
+                          <option>Sweden </option>
+                          <option>Switzerland </option>
+                          <option>Syria </option>
+                          <option>Taiwan </option>
+                          <option>Tajikistan </option>
+                          <option>Tanzania </option>
+                          <option>Thailand </option>
+                          <option>Timor-Leste(EastTimor) </option>
+                          <option>Togo </option>
+                          <option>Tokelau </option>
+                          <option>Tonga </option>
+                          <option>Trinidad and Tobago </option>
+                          <option>Tunisia </option>
+                          <option>Turkey </option>
+                          <option>Turkmenistan </option>
+                          <option>Turks and Caicos Islands </option>
+                          <option>Tuvalu </option>
+                          <option>Uganda </option>
+                          <option>Ukraine </option>
+                          <option>United Arab Emirates </option>
+                          <option>United Kingdom </option>
+                          <option>United States </option>
+                          <option>Uruguay </option>
+                          <option>Uzbekistan </option>
+                          <option>Vanuatu </option>
+                          <option>Venezuela </option>
+                          <option>Vietnam </option>
+                          <option>Virgin Islands </option>
+                          <option>Wallis and Hutuna Islands </option>
+                          <option>Yemen </option>
+                          <option>Zambia </option>
+                          <option>Zimbabwe </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3 clearfix cols CDBack_wrap">
+                      <div class="">
+                        <div class="date_range">
+                          <label>Effective:</label>
+                          <input type="text" placeholder="From" class="form-control date_fld input-sm" id="CountryDirectorbackup_dateFrom">
+                          <span class="sprite sprite-ico_calender date_item"></span> </div>
+                        <div class="date_range">
+                          <label>Expiry:</label>
+                          <input type="text" placeholder="From" class="form-control date_fld input-sm" id="CountryDirectorbackup_dateTo">
+                          <span class="sprite sprite-ico_calender date_item"></span> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group role_option_wrap">
+                    <div class="col-md-4 cols clearfix">
+                      <input id="role_WBReview" type="checkbox" value="1">
+                      <label for="role_WBReview" class="css-labelChk sprite sprite-ico-checkbox" rel="WBreviewer">WB reviewer (CC Champion)</label>
+                      <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""><span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                    <div class="col-md-6 cols wb_review_wrap clearfix">
+                      <div class="country__select">
+                        <select class="form-control Select2_multiple" multiple id="WBreviewer_country">
+                          <option selected="">All Country</option>
+                          <option>Afghanistan </option>
+                          <option>Albania </option>
+                          <option>Algeria </option>
+                          <option>American Samoa </option>
+                          <option>Andorra </option>
+                          <option>Angola </option>
+                          <option>Anguilla </option>
+                          <option>Antiguaand Barbuda </option>
+                          <option>Argentina </option>
+                          <option>Armenia </option>
+                          <option>Aruba </option>
+                          <option>Australia </option>
+                          <option>Austria </option>
+                          <option>Azerbaijan </option>
+                          <option>Bahamas </option>
+                          <option>Bahrain </option>
+                          <option>Bangladesh </option>
+                          <option>Barbados </option>
+                          <option>Belarus </option>
+                          <option>Belgium </option>
+                          <option>Belize </option>
+                          <option>Benin </option>
+                          <option>Bermuda </option>
+                          <option>Bhutan </option>
+                          <option>Bolivia </option>
+                          <option>Bosnia-Herzegovina </option>
+                          <option>Botswana </option>
+                          <option>Bouvet Island </option>
+                          <option>Brazil </option>
+                          <option>Brunei </option>
+                          <option>Bulgaria </option>
+                          <option>Burkina Haso </option>
+                          <option>Burundi </option>
+                          <option>Cambodia </option>
+                          <option>Cameroon </option>
+                          <option>Canada </option>
+                          <option>Cape Verde </option>
+                          <option>Cayman Islands </option>
+                          <option>Central African Republic </option>
+                          <option>Chad </option>
+                          <option>Chile </option>
+                          <option>China </option>
+                          <option>Christmas Island </option>
+                          <option>Cocos(Keeling)Islands </option>
+                          <option>Colombia </option>
+                          <option>Comoros </option>
+                          <option>Congo,DemocraticRepublicofthe(Zaire) </option>
+                          <option>Congo, Republic of CookIslands</option>
+                          <option>CostaRica </option>
+                          <option>Croatia </option>
+                          <option>Cuba </option>
+                          <option>Cyprus </option>
+                          <option>Czech Republic </option>
+                          <option>Denmark </option>
+                          <option>Djibouti </option>
+                          <option>Dominica </option>
+                          <option>Dominican Republic </option>
+                          <option>Ecuador </option>
+                          <option>Egypt </option>
+                          <option>ElSalvador </option>
+                          <option>Equatorial Guinea </option>
+                          <option>Eritrea </option>
+                          <option>Estonia </option>
+                          <option>Ethiopia </option>
+                          <option>Halkland Islands </option>
+                          <option>Haroe Islands </option>
+                          <option>Hiji </option>
+                          <option>Hinland </option>
+                          <option>Hrance </option>
+                          <option>Hrench Guiana </option>
+                          <option>Gabon </option>
+                          <option>Gambia </option>
+                          <option>Georgia </option>
+                          <option>Germany </option>
+                          <option>Ghana </option>
+                          <option>Gibraltar </option>
+                          <option>Greece </option>
+                          <option>Greenland </option>
+                          <option>Grenada </option>
+                          <option>Guadeloupe(Hrench) </option>
+                          <option>Guam(USA) </option>
+                          <option>Guatemala </option>
+                          <option>Guinea </option>
+                          <option>Guinea Bissau </option>
+                          <option>Guyana </option>
+                          <option>Haiti </option>
+                          <option>HolySee </option>
+                          <option>Honduras </option>
+                          <option>HongKong </option>
+                          <option>Hungary </option>
+                          <option>Iceland </option>
+                          <option>India </option>
+                          <option>Indonesia </option>
+                          <option>Iran </option>
+                          <option>Iraq </option>
+                          <option>Ireland </option>
+                          <option>Israel </option>
+                          <option>Italy </option>
+                          <option>IvoryCoast(CoteD`Ivoire) </option>
+                          <option>Jamaica </option>
+                          <option>Japan </option>
+                          <option>Jordan </option>
+                          <option>Kazakhstan </option>
+                          <option>Kenya </option>
+                          <option>Kiribati </option>
+                          <option>Kuwait </option>
+                          <option>Kyrgyzstan </option>
+                          <option>Laos </option>
+                          <option>Latvia </option>
+                          <option>Lebanon </option>
+                          <option>Lesotho </option>
+                          <option>Liberia </option>
+                          <option>Libya </option>
+                          <option>Liechtenstein </option>
+                          <option>Lithuania </option>
+                          <option>Luxembourg </option>
+                          <option>Macau </option>
+                          <option>Macedonia </option>
+                          <option>Madagascar </option>
+                          <option>Malawi </option>
+                          <option>Malaysia </option>
+                          <option>Maldives </option>
+                          <option>Mali </option>
+                          <option>Malta </option>
+                          <option>Marshall Islands </option>
+                          <option>Martinique (Hrench) </option>
+                          <option>Mauritania </option>
+                          <option>Mauritius </option>
+                          <option>Mayotte </option>
+                          <option>Mexico </option>
+                          <option>Micronesia </option>
+                          <option>Moldova </option>
+                          <option>Monaco </option>
+                          <option>Mongolia </option>
+                          <option>Montenegro </option>
+                          <option>Montserrat </option>
+                          <option>Morocco </option>
+                          <option>Mozambique </option>
+                          <option>Myanmar </option>
+                          <option>Namibia </option>
+                          <option>Nauru </option>
+                          <option>Nepal </option>
+                          <option>Netherlands </option>
+                          <option>Netherlands Antilles </option>
+                          <option>NewCaledonia(Hrench) </option>
+                          <option>NewZealand </option>
+                          <option>Nicaragua </option>
+                          <option>Niger </option>
+                          <option>Nigeria </option>
+                          <option>Niue </option>
+                          <option>NorfolkIsland </option>
+                          <option>NorthKorea </option>
+                          <option>Northern Mariana Islands </option>
+                          <option>Norway </option>
+                          <option>Oman </option>
+                          <option>Pakistan </option>
+                          <option>Palau </option>
+                          <option>Panama </option>
+                          <option>Papua New Guinea </option>
+                          <option>Paraguay </option>
+                          <option>Peru </option>
+                          <option>Philippines </option>
+                          <option>Pitcairn Island </option>
+                          <option>Poland </option>
+                          <option>Polynesia(Hrench) </option>
+                          <option>Portugal </option>
+                          <option>PuertoRico </option>
+                          <option>Qatar </option>
+                          <option>Reunion </option>
+                          <option>Romania </option>
+                          <option>Russia </option>
+                          <option>Rwanda </option>
+                          <option>SaintHelena </option>
+                          <option>Saint Kitts and Nevis </option>
+                          <option>Saint Lucia </option>
+                          <option>Saint Pierreand Miquelon </option>
+                          <option>Saint Vincent and Grenadines </option>
+                          <option>Samoa </option>
+                          <option>San Marino </option>
+                          <option>Sao Tome and Principe </option>
+                          <option>Saudi Arabia </option>
+                          <option>Senegal </option>
+                          <option>Serbia </option>
+                          <option>Seychelles </option>
+                          <option>SierraLeone </option>
+                          <option>Singapore </option>
+                          <option>Slovakia </option>
+                          <option>Slovenia </option>
+                          <option>SolomonIslands </option>
+                          <option>Somalia </option>
+                          <option>SouthAfrica </option>
+                          <option>South Georgia and South Sandwich Islands </option>
+                          <option>SouthKorea </option>
+                          <option>SouthSudan </option>
+                          <option>Spain </option>
+                          <option>SriLanka </option>
+                          <option>Sudan </option>
+                          <option>Suriname </option>
+                          <option>Svalbard and Jan Mayen Islands </option>
+                          <option>Swaziland </option>
+                          <option>Sweden </option>
+                          <option>Switzerland </option>
+                          <option>Syria </option>
+                          <option>Taiwan </option>
+                          <option>Tajikistan </option>
+                          <option>Tanzania </option>
+                          <option>Thailand </option>
+                          <option>Timor-Leste(EastTimor) </option>
+                          <option>Togo </option>
+                          <option>Tokelau </option>
+                          <option>Tonga </option>
+                          <option>Trinidad and Tobago </option>
+                          <option>Tunisia </option>
+                          <option>Turkey </option>
+                          <option>Turkmenistan </option>
+                          <option>Turks and Caicos Islands </option>
+                          <option>Tuvalu </option>
+                          <option>Uganda </option>
+                          <option>Ukraine </option>
+                          <option>United Arab Emirates </option>
+                          <option>United Kingdom </option>
+                          <option>United States </option>
+                          <option>Uruguay </option>
+                          <option>Uzbekistan </option>
+                          <option>Vanuatu </option>
+                          <option>Venezuela </option>
+                          <option>Vietnam </option>
+                          <option>Virgin Islands </option>
+                          <option>Wallis and Hutuna Islands </option>
+                          <option>Yemen </option>
+                          <option>Zambia </option>
+                          <option>Zimbabwe </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group role_option_wrap">
+                    <div class="col-md-4 clearfix cols">
+                      <input id="role_CCChamp" type="checkbox" value="1">
+                      <label for="role_CCChamp" class="css-labelChk sprite sprite-ico-checkbox" rel="CCChampionbackup">CC Champion backup</label>
+                      <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""><span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                    <div class="col-md-5 clearfix cols CCBack_wrap">
+                      <div class="country__select">
+                        <select class="form-control Select2_multiple" multiple id="CCChampionbackup_country">
+                          <option selected="">All Country</option>
+                          <option>Afghanistan </option>
+                          <option>Albania </option>
+                          <option>Algeria </option>
+                          <option>American Samoa </option>
+                          <option>Andorra </option>
+                          <option>Angola </option>
+                          <option>Anguilla </option>
+                          <option>Antiguaand Barbuda </option>
+                          <option>Argentina </option>
+                          <option>Armenia </option>
+                          <option>Aruba </option>
+                          <option>Australia </option>
+                          <option>Austria </option>
+                          <option>Azerbaijan </option>
+                          <option>Bahamas </option>
+                          <option>Bahrain </option>
+                          <option>Bangladesh </option>
+                          <option>Barbados </option>
+                          <option>Belarus </option>
+                          <option>Belgium </option>
+                          <option>Belize </option>
+                          <option>Benin </option>
+                          <option>Bermuda </option>
+                          <option>Bhutan </option>
+                          <option>Bolivia </option>
+                          <option>Bosnia-Herzegovina </option>
+                          <option>Botswana </option>
+                          <option>Bouvet Island </option>
+                          <option>Brazil </option>
+                          <option>Brunei </option>
+                          <option>Bulgaria </option>
+                          <option>Burkina Haso </option>
+                          <option>Burundi </option>
+                          <option>Cambodia </option>
+                          <option>Cameroon </option>
+                          <option>Canada </option>
+                          <option>Cape Verde </option>
+                          <option>Cayman Islands </option>
+                          <option>Central African Republic </option>
+                          <option>Chad </option>
+                          <option>Chile </option>
+                          <option>China </option>
+                          <option>Christmas Island </option>
+                          <option>Cocos(Keeling)Islands </option>
+                          <option>Colombia </option>
+                          <option>Comoros </option>
+                          <option>Congo,DemocraticRepublicofthe(Zaire) </option>
+                          <option>Congo, Republic of CookIslands</option>
+                          <option>CostaRica </option>
+                          <option>Croatia </option>
+                          <option>Cuba </option>
+                          <option>Cyprus </option>
+                          <option>Czech Republic </option>
+                          <option>Denmark </option>
+                          <option>Djibouti </option>
+                          <option>Dominica </option>
+                          <option>Dominican Republic </option>
+                          <option>Ecuador </option>
+                          <option>Egypt </option>
+                          <option>ElSalvador </option>
+                          <option>Equatorial Guinea </option>
+                          <option>Eritrea </option>
+                          <option>Estonia </option>
+                          <option>Ethiopia </option>
+                          <option>Halkland Islands </option>
+                          <option>Haroe Islands </option>
+                          <option>Hiji </option>
+                          <option>Hinland </option>
+                          <option>Hrance </option>
+                          <option>Hrench Guiana </option>
+                          <option>Gabon </option>
+                          <option>Gambia </option>
+                          <option>Georgia </option>
+                          <option>Germany </option>
+                          <option>Ghana </option>
+                          <option>Gibraltar </option>
+                          <option>Greece </option>
+                          <option>Greenland </option>
+                          <option>Grenada </option>
+                          <option>Guadeloupe(Hrench) </option>
+                          <option>Guam(USA) </option>
+                          <option>Guatemala </option>
+                          <option>Guinea </option>
+                          <option>Guinea Bissau </option>
+                          <option>Guyana </option>
+                          <option>Haiti </option>
+                          <option>HolySee </option>
+                          <option>Honduras </option>
+                          <option>HongKong </option>
+                          <option>Hungary </option>
+                          <option>Iceland </option>
+                          <option>India </option>
+                          <option>Indonesia </option>
+                          <option>Iran </option>
+                          <option>Iraq </option>
+                          <option>Ireland </option>
+                          <option>Israel </option>
+                          <option>Italy </option>
+                          <option>IvoryCoast(CoteD`Ivoire) </option>
+                          <option>Jamaica </option>
+                          <option>Japan </option>
+                          <option>Jordan </option>
+                          <option>Kazakhstan </option>
+                          <option>Kenya </option>
+                          <option>Kiribati </option>
+                          <option>Kuwait </option>
+                          <option>Kyrgyzstan </option>
+                          <option>Laos </option>
+                          <option>Latvia </option>
+                          <option>Lebanon </option>
+                          <option>Lesotho </option>
+                          <option>Liberia </option>
+                          <option>Libya </option>
+                          <option>Liechtenstein </option>
+                          <option>Lithuania </option>
+                          <option>Luxembourg </option>
+                          <option>Macau </option>
+                          <option>Macedonia </option>
+                          <option>Madagascar </option>
+                          <option>Malawi </option>
+                          <option>Malaysia </option>
+                          <option>Maldives </option>
+                          <option>Mali </option>
+                          <option>Malta </option>
+                          <option>Marshall Islands </option>
+                          <option>Martinique (Hrench) </option>
+                          <option>Mauritania </option>
+                          <option>Mauritius </option>
+                          <option>Mayotte </option>
+                          <option>Mexico </option>
+                          <option>Micronesia </option>
+                          <option>Moldova </option>
+                          <option>Monaco </option>
+                          <option>Mongolia </option>
+                          <option>Montenegro </option>
+                          <option>Montserrat </option>
+                          <option>Morocco </option>
+                          <option>Mozambique </option>
+                          <option>Myanmar </option>
+                          <option>Namibia </option>
+                          <option>Nauru </option>
+                          <option>Nepal </option>
+                          <option>Netherlands </option>
+                          <option>Netherlands Antilles </option>
+                          <option>NewCaledonia(Hrench) </option>
+                          <option>NewZealand </option>
+                          <option>Nicaragua </option>
+                          <option>Niger </option>
+                          <option>Nigeria </option>
+                          <option>Niue </option>
+                          <option>NorfolkIsland </option>
+                          <option>NorthKorea </option>
+                          <option>Northern Mariana Islands </option>
+                          <option>Norway </option>
+                          <option>Oman </option>
+                          <option>Pakistan </option>
+                          <option>Palau </option>
+                          <option>Panama </option>
+                          <option>Papua New Guinea </option>
+                          <option>Paraguay </option>
+                          <option>Peru </option>
+                          <option>Philippines </option>
+                          <option>Pitcairn Island </option>
+                          <option>Poland </option>
+                          <option>Polynesia(Hrench) </option>
+                          <option>Portugal </option>
+                          <option>PuertoRico </option>
+                          <option>Qatar </option>
+                          <option>Reunion </option>
+                          <option>Romania </option>
+                          <option>Russia </option>
+                          <option>Rwanda </option>
+                          <option>SaintHelena </option>
+                          <option>Saint Kitts and Nevis </option>
+                          <option>Saint Lucia </option>
+                          <option>Saint Pierreand Miquelon </option>
+                          <option>Saint Vincent and Grenadines </option>
+                          <option>Samoa </option>
+                          <option>San Marino </option>
+                          <option>Sao Tome and Principe </option>
+                          <option>Saudi Arabia </option>
+                          <option>Senegal </option>
+                          <option>Serbia </option>
+                          <option>Seychelles </option>
+                          <option>SierraLeone </option>
+                          <option>Singapore </option>
+                          <option>Slovakia </option>
+                          <option>Slovenia </option>
+                          <option>SolomonIslands </option>
+                          <option>Somalia </option>
+                          <option>SouthAfrica </option>
+                          <option>South Georgia and South Sandwich Islands </option>
+                          <option>SouthKorea </option>
+                          <option>SouthSudan </option>
+                          <option>Spain </option>
+                          <option>SriLanka </option>
+                          <option>Sudan </option>
+                          <option>Suriname </option>
+                          <option>Svalbard and Jan Mayen Islands </option>
+                          <option>Swaziland </option>
+                          <option>Sweden </option>
+                          <option>Switzerland </option>
+                          <option>Syria </option>
+                          <option>Taiwan </option>
+                          <option>Tajikistan </option>
+                          <option>Tanzania </option>
+                          <option>Thailand </option>
+                          <option>Timor-Leste(EastTimor) </option>
+                          <option>Togo </option>
+                          <option>Tokelau </option>
+                          <option>Tonga </option>
+                          <option>Trinidad and Tobago </option>
+                          <option>Tunisia </option>
+                          <option>Turkey </option>
+                          <option>Turkmenistan </option>
+                          <option>Turks and Caicos Islands </option>
+                          <option>Tuvalu </option>
+                          <option>Uganda </option>
+                          <option>Ukraine </option>
+                          <option>United Arab Emirates </option>
+                          <option>United Kingdom </option>
+                          <option>United States </option>
+                          <option>Uruguay </option>
+                          <option>Uzbekistan </option>
+                          <option>Vanuatu </option>
+                          <option>Venezuela </option>
+                          <option>Vietnam </option>
+                          <option>Virgin Islands </option>
+                          <option>Wallis and Hutuna Islands </option>
+                          <option>Yemen </option>
+                          <option>Zambia </option>
+                          <option>Zimbabwe </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3 clearfix cols CCBack_wrap">
+                      <div class="">
+                        <div class="date_range">
+                          <label>Effective:</label>
+                          <input type="text" placeholder="From" class="form-control date_fld input-sm" id="CCChampionbackup_dateFrom">
+                          <span class="sprite sprite-ico_calender date_item"></span> </div>
+                        <div class="date_range">
+                          <label>Expiry:</label>
+                          <input type="text" placeholder="From" class="form-control date_fld input-sm" id="CCChampionbackup_dateTo">
+                          <span class="sprite sprite-ico_calender date_item"></span> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group role_option_wrap">
+                    <input id="role_ASLapp" type="checkbox" value="1">
+                    <label for="role_ASLapp" class="css-labelChk sprite sprite-ico-checkbox" rel="ASLapprover">ASL approver</label>
+                    <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""><span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                  <div class="form-group role_option_wrap">
+                    <input id="role_eSign" type="checkbox" value="1">
+                    <label for="role_eSign" class="css-labelChk sprite sprite-ico-checkbox" rel="eSignatoryadmin">eSignatory admin</label>
+                    <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""><span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                  <div class="form-group role_option_wrap">
+                    <input id="role_trainASLapp" type="checkbox" value="1">
+                    <label for="role_trainASLapp" class="css-labelChk sprite sprite-ico-checkbox" rel="TrainingASLapprover">Training ASL approver</label>
+                    <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""><span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                  <div class="form-group role_option_wrap">
+                    <input id="role_traineSign" type="checkbox" value="1">
+                    <label for="role_traineSign" class="css-labelChk sprite sprite-ico-checkbox" rel="TrainingeSignatoryadmin">Training eSignatory admin</label>
+                    <span class="info_wrapper"> <a data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry." title="" data-trigger="focus" data-toggle="popover" role="button" class="info_links" tabindex="0" data-original-title=""><span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                </div>
+              </fieldset>
+            </form>
+            <div class="col-md-12 col-xs-12 no_padding">
+              <div class="content_wrapper no_padding">
+                <p class="role_title">Preview Roles</p>
+                <div class="row clearfix">
+                  <div class="col-xs-12 col-sm-1"></div>
+                  <div class="col-xs-12 col-sm-5 mar_20">
+                    <table width="100%" cellspacing="0" cellpadding="0" class="tbl table table-bordered">
+                      <thead>
+                        <tr>
+                          <th width="10%">Current Role</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Super User - Role Requestor</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-xs-12 col-sm-5 mar_20">
+                    <table width="100%" cellspacing="0" cellpadding="0" class="tbl table table-bordered" id="proposedRole_table">
+                      <thead>
+                        <tr>
+                          <th width="10%">Proposed Role</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Super User - Role Requestor</td>
+                        </tr>
+                        <tr>
+                          <td>Country Director - India, Africa</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-xs-12 col-sm-1"></div>
+                </div>
+                <div class="user_history"> <a href="javascript:;" data-toggle="collapse" data-target="#toggleUserHistory" class="user_history_link collapsed"> <span class="sprite sprite-ico_acc_icon arrow"></span> View user history - John Peter <span class="sprite sprite-ico_history_grey history_icon"></span> </a> </div>
+                <div id="toggleUserHistory" class="collapse user_history_contents">
+                  <table width="100%" cellspacing="0" cellpadding="0" class="tbl table">
+                    <thead>
+                      <tr>
+                        <th width="10%">Request Date</th>
+                        <th width="10%">Role Assigned</th>
+                        <th width="10%">Requested by</th>
+                        <th width="30%">Requestor Comments</th>
+                        <th width="10%">Approval Date</th>
+                        <th width="10%">Approved by</th>
+                        <th width="20%">Approver Comments</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>06/04/2015 12:00:00 EST</td>
+                        <td>Admin</td>
+                        <td>Bala</td>
+                        <td>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </td>
+                        <td>06/05/2015 03:34:45 EST</td>
+                        <td>Julie</td>
+                        <td>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</td>
+                      </tr>
+                      <tr>
+                        <td>06/06/2015 12:00:00 EST</td>
+                        <td>Admin</td>
+                        <td>Nyan</td>
+                        <td>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </td>
+                        <td>13:24:25 EST</td>
+                        <td>Marie</td>
+                        <td>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="btn_wrap">
+                  <input type="button" value="Approve" class=" btn btn-primary btn_green" data-target=".save-modal-sm" data-toggle="modal">
+                  <a data-target=".cancel-modal-sm" data-toggle="modal" href="javascript:;">Cancel</a> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+<!--popup starts here--> 
+<!--cancel popup starts here-->
+<div class="modal fade cancel-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Cancel Role Assigns for John Peter<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Do you want to cancel the Role Assign Process?</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--cancel popup ends here--> 
+
+<!--save popup starts here-->
+<div class="modal fade save-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Save Role Assigns for John Peter<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Your Role Assigns for John Peter is saved as draft.</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--save popup ends here--> 
+
+<!--popup ends here--> 
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script> 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.normalSelect').select2({
+            minimumResultsForSearch: Infinity
+        });
+        $('.Select2_multiple').select2();
+        $('.date_fld').datepicker();
+
+        /*country multiple select width adjust*/
+        $('.country__select .Select2_multiple').next().addClass('multiple_select_width');
+    });
+</script>
+</body>
+</html>

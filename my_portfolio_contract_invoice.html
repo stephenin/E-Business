@@ -1,0 +1,1078 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/jquery.dataTables.css" rel="stylesheet"/>
+<link href="css/dataTables.bootstrap.css" rel="stylesheet"/>
+<link href="css/slick.css" rel="stylesheet"/>
+<link href="css/slick-theme.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+        </div>
+        <div class="col-md-10 user_utils no_padding">
+          <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+            <div class="notification_utils">
+              <ul class="notifications clearfix">
+                <li>
+                  <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown language">
+              <select class="header_language">
+                <option>English US</option>
+                <option>English UK</option>
+                <option>French</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+              <div class="dropdown user_details">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">John Mattew</button>
+                  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="Library/my_profile.html">My Profile</a></li>
+                    <li><a href="Library/login.html">Sign out</a></li>
+                    <li class="thm-def"><a href="javascript:void(0)">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:void(0)">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:void(0)">Theme - Purple</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here --> 
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends --> 
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends --> 
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends --> 
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Site Tour</a></li>
+      <li><a href="javascript:;">Glossary of Terms</a></li>
+      <li><a href="javascript:;">About this Page</a></li>
+    </ul>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- FAQ popover ends --> 
+  <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+<!-- Main menu starts -->
+<nav class="navbar main_navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+    <div id="mainnavigation" class="navbar-collapse collapse no_right_pad">
+      <ul class="nav navbar-nav full_width">
+        <li><a href="javascript:;">Home</a></li>
+        <li><a href="javascript:;" class="current_page">My Portfolio</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Main menu ends -->
+
+<div class="container">
+  <div class="row section_wrapper">
+    <div class="col-md-12 no_padding">
+      <div class="clearfix">
+        <div class="col-md-5 col-sm-3 no_padding"></div>
+        <div class="col-md-7 col-sm-9 no_padding">
+          <div class="portfolio_page_options clearfix"> <span class="search_field_wrap pull-right right_search_field_wrap">
+            <input type="text" class="form-control search_field" placeholder="Search by Project or Loan ID"/>
+            <span class="sprite sprite-ico_search_field"></span> </span> <span class="port_pg_opt_links">  <a href="javascript:;" title="Print"><span class="sprite sprite-ico_print_new"></span></a> <a href="javascript:;" title="Email" data-target=".EmailReport-modal-sm" data-toggle="modal"><span class="sprite sprite-ico_email"></span></a><a href="javascript:;" title="Export to Excel"><span class="sprite sprite-ico_export_xl"></span></a> </span> <span class="date_as_of">Data as of 05 May, 2015 10:51 EST</span> </div>
+        </div>
+      </div>
+
+      <div class="col-md-9 no_padding appl_view_con">
+        <div class="loan_detail_title clearfix">
+          <h5> Contract: <span>12315-01 (Traitex International SA) <span>|</span></span> Status: <span>Active <span>|</span> </span><br/> Host Country: <span>Afghanistan </span>
+            <span class="loan_project_detail"><span class="bold_txt">Project Name:</span> <a href="javascript:;">11193</a> - Afghan Industrial Cashmere Scouring &amp; Disinfecting Facility</span> </h5>
+        </div>
+        <div class="current_disb_tab clearfix">
+            <ul role="tablist" class="nav nav-tabs" id="myTab">
+                <li class="active" role="presentation"> 
+                    <a aria-expanded="true" aria-controls="contract_data" data-toggle="tab" role="tab" id="tab-contract_data" href="#contract_data">Contract Overview</a>
+                </li>
+                <li role="presentation">
+                    <a aria-controls="invoice_tab" data-toggle="tab" id="tab-invoice_tab" role="tab" href="#invoice_tab">Invoice</a>
+                </li>
+                <li role="presentation">
+                    <a aria-controls="document_tab" data-toggle="tab" role="tab" id="tab-document_tab" href="#document_tab">Documents</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="myTabContent" class="tab-content portfl_page">
+            <!-- Contract Overview Tab - starts here -->
+            <div role="tabpanel" class="tab-pane fade active in " id="contract_data" aria-labelledby="tab-contract_data">
+              <div class="section_wrapper  content_wrapper clearfix">
+                <div class="tab_wrapper">
+                  <div class="row">                  
+                    <form class="form-horizontal">
+                      <fieldset>
+                        <div class="col-md-6 readonly">
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Project Enterprise</label>
+                            <div class="col-xs-7 no_padding">
+                              <p class="bld_txt">Traitex (Industry)</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Contract Type</label>
+                            <div class="col-xs-7 no_padding">
+                              <p class="bld_txt">Equity</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Renewal Period</label>
+                            <div class="col-xs-5 no_padding">
+                              <p class="bld_txt">Annually</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Guarantee Period</label>
+                            <div class="col-xs-5 no_padding">
+                              <p class="bld_txt">10 Years 00 Months 00 Days</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Host Country</label>
+                            <div class="col-xs-5 no_padding">
+                              <p class="bld_txt">Belgium</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Investor Country</label>
+                            <div class="col-xs-5 no_padding">
+                              <p class="bld_txt">Afghanistan</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 readonly clearfix">
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Currency</label>
+                            <div class="col-xs-7 no_padding">
+                              <p class="bld_txt">United States Dollars</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Initial MAL</label>
+                            <div class="col-xs-7 no_padding">
+                              <p class="bld_txt">1,192,500</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Effective Date</label>
+                            <div class="col-xs-7 no_padding">
+                              <span class="bld_txt">28-Jun-2013</span>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Expiration Date</label>
+                            <div class="col-xs-7 no_padding">
+                              <span class="bld_txt">27-Jun-2023</span>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Termination Effective Date</label>
+                            <div class="col-xs-7 no_padding">
+                              <span class="bld_txt">-</span>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Guarantee Holder</label>
+                            <div class="col-xs-7 no_padding">
+                              <span class="bld_txt">Traitex International SA</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="clearfix"></div>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section_wrapper content_wrapper clearfix">
+                <div class="tab_wrapper">
+                  <div class="acc_wrap">
+                    <div class="acc_title clearfix">
+                      <p class="pull-left">Contact Information</p>
+                    </div>
+                  </div>
+
+                  <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2" id="contact_info_tbl">
+                    <thead>
+                      <tr>
+                        <th width="15%" class="sorting_desc">Name</th>
+                        <th width="15%" class="sorting">Title</th>
+                        <th width="15%" class="sorting">Organization</th>
+                        <th width="15%" class="sorting">Country</th>
+                        <th width="25%" class="sorting">Email ID</th>
+                        <th width="15%" class="sorting">Telephone</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Lasmane</td>
+                        <td>Senior Operations Officer</td>
+                        <td>MIGA</td>
+                        <td>United States</td>
+                        <td>Glasmane@worldbank.org</td>
+                        <td>458-0486</td>
+                      </tr>
+                      <tr>
+                        <td>Dominique Godin</td>
+                        <td>Investor</td>
+                        <td>&nbsp;</td>
+                        <td>Belgium</td>
+                        <td>compta@traitex.be</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="pull-right all_link loan_project_detail"><a href="javascript:;">View All</a></div>
+                </div>
+              </div>
+
+              <div class="section_wrapper content_wrapper clearfix">
+                <div class="tab_wrapper">
+                  <div class="acc_wrap">
+                    <div class="acc_title clearfix">
+                      <p class="pull-left">Contract Period Timeline</p>
+                      <div class="pull-right">
+                        <label class="table_row_options">Show amounts in</label>
+                        <select class="filters_select form-control input-sm">
+                          <option>USD</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carou_con row">
+                  <div class="pull-left bak_con col-md-1 col-sm-1">
+                    <ul class="highlight_carousel_right">
+                      <li>
+                          <span class="first_level"></span>
+                          <span class="sprite sprite-ico_stage_active"></span>
+                          <p class="stage_desc">
+                              <span class="stage_status">Contract <br>Effective Date</span>
+                              <span class="stage_date">28-Jun-2013</span>
+                          </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="eliminate_vertical_gap col-md-10 col-sm-10">
+                    <div class="seven_stages stage_levels">
+                        <ul class="highlight_carousel">                            
+                            <li>
+                                <span class="sprite sprite-ico_stage_active"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Dec-2013</span></a>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="sprite sprite-ico_stage_active"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Jun-2014</span></a>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="sprite sprite-ico_stage_active"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Dec-2014</span></a>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="sprite sprite-ico_stage_active"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Jun-2015</span></a>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="sprite sprite-ico_stage_active"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Dec-2015</span></a>
+                                </p>
+                            </li>
+                              
+                            <!-- Repetition -->
+                            <li>
+                                <span class="first_level"></span>
+                                <span class="sprite sprite-ico_stage_inactive"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Jun-2016</span></a>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="sprite sprite-ico_stage_inactive"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Dec-2016</span></a>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="sprite sprite-ico_stage_inactive"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Jun-2017</span></a>
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="stage_level_line"></div>
+                    </div>
+                  </div>
+                  <div class="pull-right bak_con col-md-1 col-sm-1">
+                    <ul class="highlight_carousel_right">
+                    <li>
+                        <span class="last_level"></span>
+                        <span class="sprite sprite-ico_stage_inactive"></span>
+                        <p class="stage_desc">
+                            <span class="stage_status">Contract <br>Close</span>
+                            <span class="stage_date">27-Jun-2023</span>
+                        </p>
+                    </li>
+                    </ul>
+                  </div>
+                  </div>
+                  <div class="row">                  
+                    <form class="form-horizontal mar_top_30">
+                      <fieldset>
+                        <div class="col-md-6 readonly">
+                          <div class="form-group spacer_39">
+                            <h4 class="col-md-12">Contract Amounts</h4>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Outstanding MAL</label>
+                            <div class="col-xs-7 no_padding">
+                              <p class="bld_txt">1,192,500.00</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Amount of Guarantee</label>
+                            <div class="col-xs-7 no_padding">
+                              <p class="bld_txt">315,000.00</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Standby Option Amount</label>
+                            <div class="col-xs-5 no_padding">
+                              <p class="bld_txt">877,500.00</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Future Interest Amount</label>
+                            <div class="col-xs-5 no_padding">
+                              <p class="bld_txt">0.00</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Annual Premium</label>
+                            <div class="col-xs-5 no_padding">
+                              <p class="bld_txt">10,697.63</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 readonly clearfix">
+                          <div class="form-group spacer_39 ipad_margin_top">
+                            <h4 class="col-md-12">Contract Period Dates<span class="pull-right view_inv_link"><a href="javascript:;">View Invoice</a></span></h4>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Start Date</label>
+                            <div class="col-xs-7 no_padding">
+                              <p class="bld_txt">28-Dec-2013</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">End Date</label>
+                            <div class="col-xs-7 no_padding">
+                              <p class="bld_txt">27-Jun-2014</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="" class="control-label static_field col-xs-5">Duration</label>
+                            <div class="col-xs-7 no_padding">
+                              <span class="bld_txt">182</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="clearfix"></div>
+                      </fieldset>
+                    </form>
+                  </div>
+
+                  <div class="row mar_top_30 clearfix">
+                    <div class="col-md-12">
+                      <div class="acc_wrap">
+                        <div class="acc_title clearfix">
+                          <p class="pull-left">Election of Coverage</p>
+                        </div>
+                      </div>
+                      <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2" id="election_coverage_tbl">
+                        <thead>
+                          <tr>
+                            <th width="20%">Amount Type</th>
+                            <th width="15%">Transfer Restriction</th>
+                            <th width="10%">Expropriation</th>
+                            <th width="15%">War &amp; Civil Disturbance</th>
+                            <th width="15%">Breach of Contract</th>
+                            <th width="25%">Non-Honoring Financial Obligations</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Current</td>
+                            <td>315,000.00</td>
+                            <td>315,000.00</td>
+                            <td>315,000.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                          </tr>
+                          <tr>
+                            <td>Standby</td>
+                            <td>315,000.00</td>
+                            <td>315,000.00</td>
+                            <td>315,000.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Contract Overview Tab - ends here -->
+
+            <!-- Invoice Tab - starts here -->
+            <div role="tabpanel" class="tab-pane fade content_wrapper" id="invoice_tab" aria-labelledby="tab-invoice_tab">
+              <div class="tab_wrapper">
+                <div class="acc_wrap">
+                  <div class="acc_title clearfix">
+                    <p class="pull-left">Contract Period Timeline</p>
+                    <div class="pull-right">
+                      <label class="table_row_options">Show amounts in</label>
+                      <select class="filters_select form-control input-sm">
+                        <option>USD</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="carou_con row">
+                  <div class="pull-left bak_con col-md-1 col-sm-1">
+                    <ul class="highlight_carousel_right">
+                      <li>
+                          <span class="first_level"></span>
+                          <span class="sprite sprite-ico_stage_active"></span>
+                          <p class="stage_desc">
+                              <span class="stage_status">Contract <br>Effective Date</span>
+                              <span class="stage_date">28-Jun-2013</span>
+                          </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="eliminate_vertical_gap col-md-10 col-sm-10">
+                    <div class="seven_stages stage_levels">
+                        <ul class="highlight_carousel">
+                            
+                            <li>
+                                <span class="sprite sprite-ico_stage_active"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Dec-2013</span></a>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="sprite sprite-ico_stage_active"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Jun-2014</span></a>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="sprite sprite-ico_stage_active"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Dec-2014</span></a>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="sprite sprite-ico_stage_active"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Jun-2015</span></a>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="sprite sprite-ico_stage_active"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Dec-2015</span></a>
+                                </p>
+                            </li>
+                              
+                            <!-- Repetition -->
+                            <li>
+                                <span class="first_level"></span>
+                                <span class="sprite sprite-ico_stage_inactive"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Jun-2016</span></a>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="sprite sprite-ico_stage_inactive"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Dec-2016</span></a>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="sprite sprite-ico_stage_inactive"></span>
+                                <p class="stage_desc"><a href="javascript:;" class="carousal_link">
+                                    <span class="stage_status">Contract <br>Period Start</span>
+                                    <span class="stage_date">28-Jun-2017</span></a>
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="stage_level_line"></div>
+                    </div>
+                  </div>
+                  <div class="pull-right bak_con col-md-1 col-sm-1">
+                    <ul class="highlight_carousel_right">
+                    <li>
+                        <span class="last_level"></span>
+                        <span class="sprite sprite-ico_stage_inactive"></span>
+                        <p class="stage_desc">
+                            <span class="stage_status">Contract <br>Close</span>
+                            <span class="stage_date">27-Jun-2023</span>
+                        </p>
+                    </li>
+                    </ul>
+                  </div>
+                  </div>
+                <!-- <div class="eliminate_vertical_gap">
+                  <div class="seven_stages stage_levels">
+                      <ul class="highlight_carousel">
+                          <li>
+                              <span class="first_level"></span>
+                              <span class="sprite sprite-ico_stage_active"></span>
+                              <p class="stage_desc">
+                                  <span class="stage_status">Contract <br>Effective Date</span>
+                                  <span class="stage_date">28-Jun-2013</span>
+                              </p>
+                          </li>
+                          <li>
+                              <span class="sprite sprite-ico_stage_active"></span>
+                              <p class="stage_desc">
+                                  <span class="stage_status">Contract <br>Period Start</span>
+                                  <span class="stage_date">28-Dec-2013</span>
+                              </p>
+                          </li>
+                          <li>
+                              <span class="sprite sprite-ico_stage_active"></span>
+                              <p class="stage_desc">
+                                  <span class="stage_status">Contract <br>Period Start</span>
+                                  <span class="stage_date">28-Jun-2014</span>
+                              </p>
+                          </li>
+                          <li>
+                              <span class="sprite sprite-ico_stage_active"></span>
+                              <p class="stage_desc">
+                                  <span class="stage_status">Contract <br>Period Start</span>
+                                  <span class="stage_date">28-Dec-2014</span>
+                              </p>
+                          </li>
+                          <li>
+                              <span class="sprite sprite-ico_stage_active"></span>
+                              <p class="stage_desc">
+                                  <span class="stage_status">Contract <br>Period Start</span>
+                                  <span class="stage_date">28-Jun-2014</span>
+                              </p>
+                          </li>
+                          <li>
+                              <span class="sprite sprite-ico_stage_active"></span>
+                              <p class="stage_desc">
+                                  <span class="stage_status">Contract <br>Period Start</span>
+                                  <span class="stage_date">28-Dec-2015</span>
+                              </p>
+                          </li>
+                          <li>
+                              <span class="last_level"></span>
+                              <span class="sprite sprite-ico_stage_inactive"></span>
+                              <p class="stage_desc">
+                                  <span class="stage_status">Contract <br>Close</span>
+                                  <span class="stage_date">27-Jun-2023</span>
+                              </p>
+                          </li>
+                          
+                          <li>
+                              <span class="first_level"></span>
+                              <span class="sprite sprite-ico_stage_inactive"></span>
+                              <p class="stage_desc">
+                                  <span class="stage_status">Contract <br>Effective Date</span>
+                                  <span class="stage_date">28-Jun-2013</span>
+                              </p>
+                          </li>
+                          <li>
+                              <span class="sprite sprite-ico_stage_inactive"></span>
+                              <p class="stage_desc">
+                                  <span class="stage_status">Contract <br>Period Start</span>
+                                  <span class="stage_date">28-Dec-2013</span>
+                              </p>
+                          </li>
+                          <li>
+                              <span class="sprite sprite-ico_stage_inactive"></span>
+                              <p class="stage_desc">
+                                  <span class="stage_status">Contract <br>Period Start</span>
+                                  <span class="stage_date">28-Jun-2014</span>
+                              </p>
+                          </li>
+                      </ul>
+                      <div class="stage_level_line"></div>
+                  </div>
+                </div> -->
+
+                <div class="row">                  
+                  <form class="form-horizontal mar_top_30">
+                    <fieldset>                    
+                      <div class="col-md-12 readonly spacer_39">
+                        <div class="form-group">
+                          <span class="col-xs-12">Invoice for Contract Period: <span class="bld_txt">28-Dec-2015 to 27-Jun-2016</span></span>
+                        </div>
+                      </div>
+                      <div class="col-md-12 readonly spacer_39">
+                        <div class="form-group">
+                          <h4 class="col-md-7 col-sm-7">MIG/CNT/12315-01/2015/00198</h4>
+                          <span class="pull-right col-md-5 col-md-pull-1 col-sm-5 col-sm-pull-1 all_link text-right"><a href="javascript:;">View All</a></span>
+                        </div>
+                      </div>
+                      <div class="col-md-12 spacer_39 clearfix">
+                        <div class="form-group">
+                          <span class="bld_txt col-md-7 col-sm-7">Invoice Details</span>
+                          <span class="pull-right col-md-5 col-md-pull-1 col-sm-5 col-sm-pull-1 text-right">Status : Closed</span>
+                        </div>
+                      </div>
+                      <div class="col-md-7 readonly">
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Premium Due Date</label>
+                          <div class="col-xs-7 no_padding">
+                            <p class="bld_txt">17-Nov-15</p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Currency</label>
+                          <div class="col-xs-7 no_padding">
+                            <p class="bld_txt">USD</p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Amount Due</label>
+                          <div class="col-xs-5 no_padding">
+                            <p class="bld_txt">5,334.16</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-5 readonly clearfix">
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Bank Name &amp; Address</label>
+                          <div class="col-xs-7 no_padding">
+                            <p class="bld_txt">
+                              <span class="edit_fields_wrap">WELLS FARGO BANK, N.A.</span>
+                              <span class="edit_fields_wrap">375, PARK AVENUE:</span>
+                              <span class="edit_fields_wrap">NEW YORK, NY - 10152</span>
+                            </p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">SWIFT Code</label>
+                          <div class="col-xs-7 no_padding">
+                            <p class="bld_txt">PNBPUS3NNYC</p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="control-label static_field col-xs-5">Bank Account</label>
+                          <div class="col-xs-7 no_padding">
+                            <span class="bld_txt">2000192003515</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 readonly">
+                        <div class="form-group">
+                          <label class="control-label grey_txt col-xs-12">Note: When making payment please quote this as reference number: 12315-01</label>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- Invoice Tab - ends here -->
+
+            <!-- Document Tab - starts here -->
+            <div role="tabpanel" class="tab-pane fade content_wrapper" id="document_tab" aria-labelledby="tab-document_tab">
+                <p class="bld_txt">
+                    <strong>Document overview :</strong>
+                    <br/><br/><br/>
+                    Lorem ipsum set dolar...
+                </p>
+            </div>
+            <!-- Document Tab - ends here -->
+        </div>
+
+      </div>
+
+
+      <div class="col-md-3 no_right_padding left_pad_8 pt20">
+        <div class="clearfix">
+          <div class="col-md-12 no_padding">
+            <section>
+              <div class="section_title">Alerts / Notifications</div>
+              <div class="content_wrapper">
+                <ul class="quick_links hightlighted">
+                  <li><a href="javascript:;">Lorem Ipsum Lorem Ipsum</a></li>
+                  <li><a href="javascript:;">Lorem Ipsum Lorem Ipsum</a></li>
+                  <li><a href="javascript:;">Lorem Ipsum Lorem Ipsum</a></li>
+                  <li><a href="javascript:;">Lorem Ipsum Lorem Ipsum</a></li>
+                  <li class="all_link"><a href="javascript:;">View All</a></li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <div class="col-md-12 no_padding">
+            <section>
+              <div class="section_title">Related Links</div>
+              <div class="content_wrapper">
+                <ul class="quick_links hightlighted">
+                  <li><a href="javascript:;">eForms</a></li>
+                  <li><a href="javascript:;">Applications</a></li>
+                  <li><a href="javascript:;">Contracts</a></li>
+                  <li><a href="javascript:;">Designated/UN Accounts</a></li>
+                  <li><a href="javascript:;">Category Schedule</a></li>
+                  <li><a href="javascript:;">Monthly Disbursement Summary</a></li>
+                  <li><a href="javascript:;">Forms</a></li>
+                  <li><a href="javascript:;">Policies &amp; Procedures</a></li>
+                  <li><a href="javascript:;">Project Overview</a></li>
+                  <li><a href="javascript:;">Procurement Bids</a></li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <div class="col-md-12 no_padding">
+            <section>
+              <div class="section_title">Reference</div>
+              <div class="content_wrapper">
+                <ul class="quick_links hightlighted">
+                  <li><a href="javascript:;">Trust Fund Internal Control</a></li>
+                  <li><a href="javascript:;">Framework</a></li>
+                  <li><a href="javascript:;">TF Internal Control Framework video</a></li>
+                  <li><a href="javascript:;">Download Adobe Acrobat reader</a></li>
+                  <li><a href="javascript:;">Suspended Firms</a></li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <div class="clear"></div>
+          <div class="col-md-12 no_padding">
+            <section>
+              <div class="section_title">Disbursements</div>
+              <div class="content_wrapper">
+                <ul class="quick_links hightlighted">
+                  <li><a href="javascript:;">Amortization Schedule</a></li>
+                  <li><a href="javascript:;">Loan History</a></li>
+                  <li><a href="javascript:;">Bills</a></li>
+                  <li><a href="javascript:;">Policies &amp; Procedures</a></li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <div class="col-md-12 no_padding">
+            <section>
+              <div class="section_title">Financial Products</div>
+              <div class="content_wrapper">
+                <ul class="quick_links hightlighted">
+                  <li><a href="javascript:;">IBRD</a></li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Email Report  popup starts here-->
+<div class="modal fade EmailReport-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content ">
+      <div class="modal-header modal_content_space">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Email Report<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body modal_content_space">
+        <form class="form-horizontal">
+          <fieldset class="no_left_margin">
+            <div class="col-md-12">
+            <div class="form-group clearfix">
+              <label class="control-label col-xs-4 no_padding required">Recipient's email address :</label>
+              <span class="field_help_text">(Add multiple email addresses separated by commas,)</span>
+              <div class="clear"></div>
+              <div class="col-xs-12 no_padding">
+                <input type="text" class="form-control fld_near_btn">
+              </div>
+            </div>
+            <div class="form-group clearfix">
+              <label class="control-label col-xs-12 no_padding">Subject :</label>
+              <div class="col-xs-12 no_padding">
+                <input type="text" class="form-control fld_near_btn">
+              </div>
+            </div>
+            <div class="form-group clearfix">
+              <label class="control-label col-xs-12 no_padding">Attachment :</label>
+              <div class="col-xs-12 no_padding"> <span class="sprite sprite-ico_export_xlLarge"></span>
+                <p class="file_name_text">File-Name.xls</p>
+              </div>
+            </div>
+            <div class="form-group clearfix">
+              <label class="control-label col-xs-12 no_padding">Message :</label>
+              <div class="col-xs-12 no_padding">
+                <textarea class="form-control" rows="5" id="email_comment"></textarea>
+              </div>
+            </div>
+          </fieldset>
+          <div class="modal-footer btn_wrap pop_btn_wrap no_padding">
+            <input type="button" class="btn btn-primary btn_green" data-dismiss="modal" value="Send">
+            <a href="javascript:;" data-dismiss="modal">Cancel</a> </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Email Report popup ends here-->
+
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="js/dataTables.bootstrap.js"></script> 
+<script type="text/javascript" src="js/slick.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script> 
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.highlight_carousel').slick({
+      infinite: false,
+      slidesToShow: 5,
+      slidesToScroll: 5
+      
+    });
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
+      activatedTabElement = e.target; // activated tab
+      activatedTabId = activatedTabElement.getAttribute('href');
+      $(activatedTabId +" .highlight_carousel").resize();
+      $('.highlight_carousel').slick('setPosition');
+    });
+
+    $(".slick-slide").hover(function() {
+      $(this).css({'border' : '1px solid #7aaa15'});
+      $(this).find(".stage_status").css({'color' : '#afcc73'});
+    },
+    function(){
+        $(this).css({"border-top": "1px solid #ebebeb", "border-bottom": "1px solid #ebebeb", "border-left": "1px solid #fff", "border-right": "1px solid #fff"});
+        $(this).find(".stage_status").css({'color' : '#0d79e7'});
+    });
+
+    $('#contact_info_tbl').dataTable({
+        "bLengthChange": false,
+        "searching": false,
+        "order": [[ 0, "desc" ]]
+    });
+});
+</script>
+</body>
+</html>

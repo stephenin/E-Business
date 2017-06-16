@@ -1,0 +1,375 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness ASL</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body class="login_page_body">
+<header>
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="home.html"><span class="sprite sprite-logo"></span></a> </div>
+        </div>
+        <div class="col-md-10 user_utils no_padding">
+          <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+            <div class="notification_utils">
+              <ul class="notifications clearfix">
+                <li>
+                  <p class=""><a href="javascript:;" class="sprite sprite-ico_flag header_utility" title="FAQs">FAQs</a></p>
+                  <div class="popover_wrap small"> <span class="sprite sprite-ico_tooltiparrow_white"></span>
+                    <div class="popover_content">
+                      <p class="tooltip_title">Help</p>
+                      <ul class="normal_list">
+                        <li><a href="javascript:;">Report an issue / View history</a></li>
+                        <li><a href="javascript:;">Contact Us</a></li>
+                      </ul>
+                    </div>
+                    <div class="popover_content">
+                      <p class="tooltip_title">General</p>
+                      <ul class="normal_list">
+                        <li><a href="javascript:;">Site Tour</a></li>
+                        <li><a href="javascript:;">Glossary of Terms</a></li>
+                        <li><a href="javascript:;">About this Page</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="search"> <a href="javascript:;"><span class="sprite sprite-ico_search"></span></a> </div>
+            <div class="dropdown language">
+              <select class="header_language">
+                <option>Enlish US</option>
+                <option>Enlish UK</option>
+                <option>French</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div class="user_name"> <span class="sprite sprite-ico_user_img"></span> <span class="select2 select2-container select2-container--default" style="width: auto;"> <span class="selection"> <span class="select2-selection select2-selection--single"> <span class="select2-selection__rendered">Welcome</span> <span role="presentation" class="select2-selection__arrow"> <b role="presentation"></b> </span> </span> </span> </span> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- Main menu starts --> 
+
+<!-- Main menu ends -->
+<div class="spacer_50"></div>
+<div class="container"> 
+  
+  <!-- row of columns -->
+  <div class="row section_wrapper type_2">
+    <div class="col-md-4 form_section">
+      <div class="col-md-12 col-xs-6 no_padding">
+        <div class="content_wrapper no_padding login_page">
+          <form>
+            <fieldset>
+              <legend>LOGIN</legend>
+              <div class="form-group login_form">
+                <label for="inputLoginId">Login Id</label>
+                <input type="text" class="form-control" id="inputLoginId" placeholder="Login Id">
+              </div>
+              <div class="form-group login_form">
+                <label for="inputLoginPw">Password</label>
+                <input type="text" class="form-control" id="inputLoginPw" placeholder="Password">
+              </div>
+              <div class="btn_wrap">
+                <div class="col-md-4">
+                  <input type="button" value="Sign In" class="btn btn-primary btn_black" />
+                </div>
+                <div class="col-md-8">
+                  <div class="form-group login_form_small">
+                    <input type="checkbox" id="remember_userid"/>
+                    <label class="" for="remember_userid">Remember my User Id</label>
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <p class="forgot_links"> <a href="javascript:;">Forgot User ID?</a> | <a href="javascript:;">Forgot Password?</a> </p>
+              </div>
+              <div class="dotted_line"></div>
+              <div class="new_user_wrap">
+                <p class="small_txt"> <strong>New user?</strong><br/>
+                  Click 'Sign Up' below to register </p>
+                <input type="button" value="Sign Up" class="btn btn-primary btn_black">
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <div class="col-xs-1 col-md-hidden"></div>
+      <div class="col-md-12 col-xs-5 no_padding">
+        <div class="content_wrapper no_padding login_page">
+          <div class="new_user_wrap">
+            <p class="small_txt"> <strong>New Organization?</strong><br/>
+              Click to register your Organization </p>
+            <input type="button" value="Register Organization" class="btn btn-primary btn_black create_org" />
+            <p class="forgot_links"> <a href="javascript:;">Retrieve Saved form</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="col-md-12 col-xs-12 no_padding">
+        <div class="content_wrapper news_announce">
+          <p class="content_title">News / Announcements</p>
+          <div class="carousel slide login_carousel" id="myCarousel">
+            <div class="carousel-inner">
+              <div class="item active">
+                <div class="col-xs-4">
+                  <div class="item">
+                    <div class="carousel_img"><img src="images/newsbg1.png"></div>
+                    <div class="carousel_desc">
+                      <p class="date">Oct 09, 2014</p>
+                      <p>World Bank Proposes a New Higher Education Financing Model for Latvia</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="col-xs-4">
+                  <div class="item">
+                    <div class="carousel_img"><img src="images/newsbg2.png"></div>
+                    <div class="carousel_desc">
+                      <p class="date">Oct 08, 2014</p>
+                      <p>Knowledge Sharing Matters-Within the Bank and For Our Clients</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="col-xs-4">
+                  <div class="item">
+                    <div class="carousel_img"><img src="images/newsbg1.png"></div>
+                    <div class="carousel_desc">
+                      <p class="date">Oct 08, 2014</p>
+                      <p>World Bank Proposes a New Higher Education Financing Model for Latvia</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="col-xs-4">
+                  <div class="item">
+                    <div class="carousel_img"><img src="images/newsbg4.png"></div>
+                    <div class="carousel_desc">
+                      <p class="date">Oct 08, 2014</p>
+                      <p>World Bank Proposes a New Higher Education Financing Model for Latvia</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="col-xs-4">
+                  <div class="item">
+                    <div class="carousel_img"><img src="images/newsbg2.png"></div>
+                    <div class="carousel_desc">
+                      <p class="date">Oct 08, 2014</p>
+                      <p>Knowledge Sharing Matters-Within the Bank and For Our Clients</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="col-xs-4">
+                  <div class="item">
+                    <div class="carousel_img"><img src="images/newsbg1.png"></div>
+                    <div class="carousel_desc">
+                      <p class="date">Oct 08, 2014</p>
+                      <p>World Bank Proposes a New Higher Education Financing Model for Latvia</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="sprite sprite-ico_prev"></i></a> <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="sprite sprite-ico_next"></i></a> </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-xs-12 no_padding">
+        <div class="spacer_30"></div>
+        <div class="hor_line"></div>
+        <div class="content_wrapper login_pad">
+          <p class="content_sub_title">MIGA</p>
+          <div class="contents"> MIGA is a member of the World Bank Group. Our mission is to promote Foreign Direct Investment (FDI) into developing countries to help support economic growth, reduce poverty, and improve people's lives.
+            <div id="toggleMigaContent" class="collapse"> <strong>Our strategy</strong> <br>
+              <br>
+              <p> MIGA's operational strategy plays to our foremost strength in the marketplace - attracting investors and private insurers into difficult operating environments. We focus on insuring investments in the areas where we can make the greatest difference. </p>
+              <ul class="bull_list">
+                <li>Countries eligible for assistance from the International Development Association (the world's poorest countries)</li>
+                <li>Fragile and conflict-affected environments</li>
+                <li>Transformational Projects – large scale and significant investments, with the potential for bringing about transformational change in the host country</li>
+                <li>Energy Efficiency and Climate Change - complex energy and infrastructure projects that improve energy capacity as well as transportation projects that have a positive impact on pollution control (such as mass transport)</li>
+                <li>Middle Income Countries where we can have strong impact</li>
+              </ul>
+              <p> MIGA offers comparative advantages in all of these areasâ€”from our unique package of products and ability to restore the business community's confidence, to our ongoing collaboration with the public and private insurance market to increase the amount of insurance available to investors. </p>
+              <p> As a multilateral development agency, MIGA only supports investments that are developmentally sound and meet high social and environmental standards. MIGA applies a comprehensive set of social and environmental performance standards to all projects and offers extensive expertise in working with investors to ensure compliance to these standards. </p>
+            </div>
+            <a href="javascript:;" data-toggle="collapse" data-target="#toggleMigaContent" class="more_Content">More...</a>
+            <div class="btn_wrap">
+              <input type="button" class="btn btn-primary btn_white guaMiga_link" value="Apply for an Investment Guarantee">
+              <a href="javascript:;">Retrieve or Track Application</a> </div>
+          </div>
+        </div>
+        <div class="hor_line"></div>
+        <div class="content_wrapper">
+          <p class="content_sub_title">TRE - TCC - Collaborating with official sector partners in building investment management capacity.</p>
+          <div class="contents">
+            <p> With more than 60 years of experience in financing the International Bank for Reconstruction and Development (IBRD) and investing its reserves and pension fund, the World Bank Treasury has developed substantial expertise in asset and liability management. During this time, it has achieved a global reputation as a prudent and innovative borrower, investor and risk manager. Treasury also develops innovative lending products to meet World Bank clients' requests for customized financing - loans, derivatives, market hedges and other instruments - for their developmental programs. </p>
+            <div id="toggleTREContent" class="collapse">
+              <p> The World Bank Treasury has been a driving force in financial markets, pushing frontiers on risk management and effective portfolio practices and now manages over $150 billion in assets across a diversified client base. </p>
+              <p> Treasury provides advisory services and training to official sector investment managers to help countries efficiently manage foreign currency reserves and other investment portfolios. The focus is on building a governance and risk management framework that balances return objectives with prudent risk management and controls. Over the years Treasury has made sizable investments in knowledge transfer to help clients build internal investment management capacity. Treasury's approach to capacity building services is tailored, multi-faceted and hands-on. </p>
+            </div>
+            <a href="javascript:;" data-toggle="collapse" data-target="#toggleTREContent" class="more_Content">More...</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row section_wrapper type_2">
+    <div class="col-md-8">
+      <div class="spacer_30"></div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+</div>
+
+<!--popup starts here--> 
+<!--cancel popup starts here-->
+<div class="modal fade cancel-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Cancel Organization<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Do you want to cancel the Organization setup Process?</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--cancel popup ends here--> 
+
+<!--save popup starts here-->
+<div class="modal fade save-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Save Organization<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Your Organization request form is saved as draft.If you don't take any action to submit it to the Bank within 10 days, the draft will automatically be deleted</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--save popup ends here--> 
+<!--investment guarantee popup starts here-->
+<div class="modal fade investment_guarantee" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-md ext-modal-dialog" style="width:88%">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+      <h4 id="mySmallModalLabel" class="modal-title">Apply for an Investment Guarantee<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+    </div>
+    <div class="modal-body">
+      <div class="clearfix">
+        <p class="txt_center">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem</p>
+        <br />
+        <p class="txt_center">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem</p>
+        <br />
+        <p class="txt_center">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem</p>
+        <br />
+      </div>
+    </div>
+    <hr>
+    <div class="table-div">
+      <div class="row-div">
+        <div class="td-div-left bdr-right txt_center">lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum <br />
+          <br />
+          <div class="modal-footer txt_center btn_wrap">
+            <input type="button" class="btn btn-primary btn_white" data-dismiss="modal" value="Submit a Preliminary Application">
+          </div>
+        </div>
+        <div class="td-div-right txt_center">lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum <br />
+          <br />
+          <div class="modal-footer txt_center btn_wrap">
+            <input type="button" class="btn btn-primary btn_white investSetup_link" data-dismiss="modal" value="Submit a Definitive Application">
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <span aria-label="Close" data-dismiss="modal" class="extClose"><img src="images/lbox.png" width="22" height="22" alt=""></span>
+  </div>
+</div>
+
+<!-- investment guarantee popup ends here--> 
+<!--popup ends here--> 
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script> 
+<script type="text/javascript">
+    $(document).ready(function(){
+         $("#myCarousel").carousel({
+             interval : false
+        });
+
+        $('.carousel .item').each(function(){
+            var next = $(this).next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+
+            if (next.next().length>0) {
+                next.next().children(':first-child').clone().appendTo($(this));
+            }
+            else {
+                $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+            }
+        });
+    });
+    </script> 
+</script>
+</body>
+</html>

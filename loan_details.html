@@ -1,0 +1,691 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness ASL</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/jquery.dataTables.css" rel="stylesheet"/>
+<link href="css/dataTables.bootstrap.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+        </div>
+        <div class="col-md-10 user_utils no_padding">
+          <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+            <div class="notification_utils">
+              <ul class="notifications clearfix">
+                <li>
+                  <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown language">
+              <select class="header_language">
+                <option>English US</option>
+                <option>English UK</option>
+                <option>French</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+              <div class="dropdown user_details">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">John Mattew</button>
+                  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="Library/my_profile.html">My Profile</a></li>
+                    <li><a href="Library/login.html">Sign out</a></li>
+                    <li class="thm-def"><a href="javascript:void(0)">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:void(0)">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:void(0)">Theme - Purple</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here --> 
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends --> 
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends --> 
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends --> 
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Site Tour</a></li>
+      <li><a href="javascript:;">Glossary of Terms</a></li>
+      <li><a href="javascript:;">About this Page</a></li>
+    </ul>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- FAQ popover ends --> 
+  <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+<!-- Main menu starts -->
+<nav class="navbar main_navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+        <div id="mainnavigation" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="javascript:;">Home</a></li>
+                <li><a href="javascript:;" class="current_page">My Portfolio</a></li>
+                <li><a href="javascript:;">Country Analytics</a></li>
+                <li><a href="javascript:;">Knowledge</a></li>
+                <li><a href="javascript:;">Reference</a></li>
+                <li><a href="javascript:;">Account Management</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Main menu ends -->
+
+<div class="container"> 
+
+    <div class="row section_wrapper">
+        <div class="col-md-12 no_padding">
+            <div class="clearfix">
+                <div class="col-sm-6 no_padding">
+                    <ol class="breadcrumb">
+                        <li><a href="my_portfolio.html">My Portfolio</a></li>
+                        <li class="active">Loan detail</li>
+                    </ol>
+                </div>
+                <div class="col-sm-6 no_padding">
+                    <div class="portfolio_page_options clearfix">
+                        <span class="port_pg_opt_links">
+                            <a href="javascript:;" title="Refresh"><span class="sprite sprite-ico_refresh"></span></a>
+                            <a href="javascript:;" title="Print"><span class="sprite sprite-ico_print_new"></span></a>
+                            <a href="javascript:;" title="Export to Excel"><span class="sprite sprite-ico_export_xl"></span></a>
+                        </span>
+                        <span class="date_as_of">Data as of 05 May, 2015 10:51 EST</span>            
+                    </div>
+                </div>
+            </div>
+
+            <div class="page_title_section clearfix">
+                <h1 class="pull-left">Loan: IBRD 42260 <span>(VSL - Variable Spread Loan) <span>|</span> Status:</span> Fully Repaid</h1>
+                <div class="page_utils_links">
+                    <a href="javascript:;">Related Links</a>
+                </div>              
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row section_wrapper">
+        <div class="col-md-12 column_wrapper">
+            <div class="content_wrapper eliminate_vertical_gap">
+                <div class="seven_stages stage_levels clearfix">
+                    <ul class="clearfix">
+                        <li>
+                            <span class="first_level"></span>
+                            <span class="sprite sprite-ico_stage_active"></span>
+                            <p class="stage_desc">
+                                <span class="stage_status">Approval</span>
+                                <span class="stage_date">Sep 09, 1997</span>
+                            </p>
+                        </li>
+                        <li>
+                            <span class="sprite sprite-ico_stage_active"></span>
+                            <p class="stage_desc">
+                                <span class="stage_status">Signing</span>
+                                <span class="stage_date">Mar 19, 1998</span>
+                            </p>
+                        </li>
+                        <li>
+                            <span class="sprite sprite-ico_stage_active"></span>
+                            <p class="stage_desc">
+                                <span class="stage_status">Commitment <br>Charges</span>
+                                <span class="stage_date">May 18, 1998</span>
+                            </p>
+                        </li>
+                        <li>
+                            <span class="sprite sprite-ico_stage_active"></span>
+                            <p class="stage_desc">
+                                <span class="stage_status">Effective</span>
+                                <span class="stage_date">Jun 17, 1998</span>
+                            </p>
+                        </li>
+                        <li>
+                            <span class="sprite sprite-ico_stage_active"></span>
+                            <p class="stage_desc">
+                                <span class="stage_status">First Repayment</span>
+                                <span class="stage_date">May 15, 2003</span>
+                            </p>
+                        </li>
+                        <li>
+                            <span class="sprite sprite-ico_stage_inactive"></span>
+                            <p class="stage_desc">
+                                <span class="stage_status">Application Deadline <br>&amp; Closing</span>
+                                <span class="stage_date">Jun 30, 2015</span>
+                            </p>
+                        </li>
+                        <li>
+                            <span class="last_level"></span>
+                            <span class="sprite sprite-ico_stage_inactive"></span>
+                            <p class="stage_desc">
+                                <span class="stage_status">Last Repayment</span>
+                                <span class="stage_date">Nov 15, 2017</span>
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="stage_level_line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row section_wrapper">
+        <div class="col-md-12 column_wrapper">
+            <div class="content_wrapper">
+                <h4>Currency of Commitment: USD</h4>
+                <p class="result_count">
+                    <label class="table_row_options">Show amounts in</label>
+                    <select class="filters_select form-control input-sm">
+                        <option>USD</option>
+                    </select>
+                </p>
+                <div class="clear"></div>
+                <div class="clearfix">
+                    <div class="col-md-3 no_padding">
+                        <article>
+                            <h4>Percent Disbursed</h4>
+                            <div class="tableau_charts">
+                                <img src="images/tableau_7.png" height="225px">
+                            </div>
+                            <div class="tableau_legends clearfix">
+                                <span class="legend"><span class="legend_1"></span>Undisbursed</span>
+                                <span class="legend"><span class="legend_2"></span>Disbursed</span>
+                            </div>
+                            <div class="spacer_13"></div>
+                        </article>
+                    </div>
+                    <div class="col-md-5 no_ipad_padding">
+                        <article>
+                          <h4>Loan Information (USD)</h4>
+                            <table width="100%" cellspacing="0" cellpadding="0" class="tbl pricing_tbl table loan_tbl">
+                                <tbody>
+                                    <tr>
+                                        <td width="55%">Signed Amount</td>
+                                        <td width="45%">530,000,000.00</td>
+                                    </tr>  
+                                    <tr>
+                                        <td>Cancelled</td>
+                                        <td>284,270,518.37</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disbursed</td>
+                                        <td><a href="javascript:;">245,729,481.63</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Undisbursed</td>
+                                        <td>0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Special Commitments</td>
+                                        <td> 0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Funds Available</td>
+                                        <td>0.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td>&nbsp;</td>
+                                      <td>&nbsp;</td>
+                                    </tr>                                            
+                                </tbody>
+                            </table>
+                        </article>
+                    </div>
+                    <div class="col-md-4 no_padding">
+                        <article>
+                            <h4>In Process (USD)</h4>
+                            <table width="100%" cellspacing="0" cellpadding="0" class="tbl table pricing_tbl loan_tbl">
+                                <tbody>
+                                    <tr>
+                                        <td width="55%">Withdrawal Applications</td>
+                                        <td width="45%">0.00</td>
+                                    </tr>  
+                                    <tr>
+                                        <td>Special Commitment Issuance Applications</td>
+                                        <td>0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Estimated Funds Available</td>
+                                        <td>0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="spacer_88"></div>
+                        </article>
+                    </div>
+                </div>
+                <div class="clear"></div>
+
+                
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row section_wrapper">
+        <div class="col-md-12 column_wrapper clearfix">
+            <div class="col-xs-4 no_padding">
+                <div class="content_wrapper amount_wrap">
+                    <p class="outstand_amt">
+                        0.00
+                        <span>Principal Outstanding</span>
+                    </p>
+                    <p class="disbursed_amt">
+                        <span class="amt_lbl">Disbursed:</span> <span class="amt_val">245,729,481.63</span><br />
+                        <span class="amt_lbl">Repaid:</span> <span class="amt_val">245,729,481.63 </span>
+                    </p>
+                    <p class="clear"></p>
+                    <div class="spacer_33"></div>
+                </div>
+            </div>
+            <div class="col-xs-4 column_wrapper_lg">
+                <div class="content_wrapper amount_wrap">
+                    <p class="outstand_amt">
+                        0.53 %
+                        <span>Net Lending Rate</span>
+                    </p>
+
+                    <p class="disbursed_amt">
+                        Lending Rate: 0.58 %<br>
+                        Waiver: 0.05 %
+                        <span class="amt_type">Type: Variable</span>
+                    </p>
+                    <p class="clear"></p>
+                </div>
+            </div>
+            <div class="col-xs-4 no_padding">
+                <div class="content_wrapper amount_wrap">
+                    <p class="outstand_amt">
+                        0.50 %
+                        <span>Net Commitment Fee</span>
+                    </p>
+                    <p class="disbursed_amt">
+                        Commitment Fee: 0.75 %<br>
+                        Waiver: 0.25 %
+                        <span class="amt_type">Type: Variable</span>
+                    </p>
+                    <p class="clear"></p>                                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row section_wrapper">
+        <div class="col-md-12 column_wrapper clearfix">
+            <div class="col-xs-8 column_wrapper_lg_right">
+                <div class="content_wrapper">
+                    <h4>Reference Information</h4>
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="col-md-10 readonly">
+                                <div class="form-group">
+                                    <label class="control-label static_field col-xs-4" for="">Loan</label>
+                                    <div class="col-xs-8 no_padding">
+                                        <p class="form-control-static">IBRD 42260 (VSL - Variable Spread Loan)</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label static_field col-xs-4" for="">Project</label>
+                                    <div class="col-xs-8 no_padding">
+                                        <p class="form-control-static">P009979 - Coal Sector Rehabiliation Project</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label static_field col-xs-4" for="">Lending Instrument</label>
+                                    <div class="col-xs-8 no_padding">
+                                        <p class="form-control-static">SIL - Specific Investment</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label static_field col-xs-4" for="">Loan Term</label>
+                                    <div class="col-xs-8 no_padding">
+                                        <p class="form-control-static">21 yrs</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label static_field col-xs-4" for="">Guarantor</label>
+                                    <div class="col-xs-8 no_padding">
+                                        <p class="form-control-static">India</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label static_field col-xs-4" for="">Status </label>
+                                    <div class="col-xs-8 no_padding">
+                                        <p class="form-control-static">Fully Repaid</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label static_field col-xs-4" for=""> Borrower of Record</label>
+                                    <div class="col-xs-8 no_padding">
+                                        <p class="form-control-static">COAL INDIA LTD</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label static_field col-xs-4" for="">Grace Period</label>
+                                    <div class="col-xs-8 no_padding">
+                                        <p class="form-control-static">6 Years</p>
+                                    </div>
+                                </div>                                                
+                            </div>
+                            
+                            <div class="clearfix"></div>
+                            
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="col-xs-4 no_padding">
+                <div class="content_wrapper">
+                    <h4>Quick Links</h4>
+                    <ul class="quick_links">
+                        <li><a href="javascript:;">Register Organization</a></li>
+                        <li><a href="javascript:;">Create ASL</a></li>
+                        <li><a href="javascript:;">View Projects and Loans</a></li>
+                        <li><a href="javascript:;">Add new user</a></li>
+                    </ul>
+                </div>
+                <div class="spacer_6"></div>
+                <div class="content_wrapper">
+                    <h4>Related Loans</h4>
+                    <ul class="quick_links">
+                        <li><a href="javascript:;">IBRD 83336</a></li>
+                        <li><a href="javascript:;">IBRD 67328</a></li>
+                    </ul>
+                    <div class="spacer_5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="row section_wrapper">
+        <div class="col-md-12 column_wrapper clearfix">
+            <div class="content_wrapper">
+                <ul role="tablist" class="nav nav-tabs" id="myTab">
+                    <li class="active" role="presentation"> 
+                        <a aria-expanded="true" aria-controls="proj_docs" data-toggle="tab" role="tab" id="tab-proj_docs" href="#proj_docs">Project Documents</a> 
+                    </li>
+                    <li role="presentation">
+                        <a aria-controls="loan_docs" data-toggle="tab" id="tab-loan_docs" role="tab" href="#loan_docs">Loan Documents</a>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content notification_wrapper">
+                    <div role="tabpanel" class="tab-pane fade active in" id="proj_docs" aria-labelledby="tab-proj_docs">
+                        <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2">
+                            <thead>
+                                <tr>
+                                    <th width="30%">Document Type</th>
+                                    <th width="50%">Document Name</th>
+                                    <th width="20%">Submitted On</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="javascript:;">Environmental Assessment</a></td>
+                                    <td>Environmental Assessment</td>
+                                    <td>Jun 17, 1998</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="javascript:;">Credit Agreement</a></td>
+                                    <td>Credit Agreement</td>
+                                    <td>Aug 05, 1999</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="javascript:;">Guarantee Agreement</a></td>
+                                    <td>Guarantee Agreement</td>
+                                    <td>Jul 23, 1999</td>
+                                </tr>
+                                <tr class="no_bg_color">
+                                    <td class="txt_right no_bdr" colspan="3"><a href="javascript:;">More...</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="loan_docs" aria-labelledby="tab-loan_docs">
+                        <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2">
+                            <thead>
+                                <tr>
+                                    <th width="30%">Document Type</th>
+                                    <th width="50%">Document Name</th>
+                                    <th width="20%">Submitted On</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="javascript:;">Guarantee Agreement</a></td>
+                                    <td>Guarantee Agreement</td>
+                                    <td>Jul 23, 1999</td>
+                                </tr>                                
+                                <tr>
+                                    <td><a href="javascript:;">Credit Agreement</a></td>
+                                    <td>Credit Agreement</td>
+                                    <td>Aug 05, 1999</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="javascript:;">Environmental Assessment</a></td>
+                                    <td>Environmental Assessment</td>
+                                    <td>Jun 17, 1998</td>
+                                </tr>
+
+                                <tr class="no_bg_color">
+                                    <td class="txt_right no_bdr" colspan="3"><a href="javascript:;">More...</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+   
+    
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>  
+<script type="text/javascript">
+$(document).ready(function(){
+     $("#myCarousel").carousel({
+         interval : false
+    });
+
+    $('.carousel .item').each(function(){
+        var next = $(this).next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        if (next.next().length>0) {
+            next.next().children(':first-child').clone().appendTo($(this));
+        }
+        else {
+            $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+        }
+    });
+});
+</script>
+</body>
+</html>

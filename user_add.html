@@ -1,0 +1,1045 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eBusiness ASL</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+<link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/select2.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+        </div>
+        <div class="col-md-10 user_utils no_padding">
+          <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+            <div class="notification_utils">
+              <ul class="notifications clearfix">
+                <li>
+                  <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown language">
+              <select class="header_language">
+                <option>English US</option>
+                <option>English UK</option>
+                <option>French</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+              <div class="dropdown user_details">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">John Mattew</button>
+                  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="Library/my_profile.html">My Profile</a></li>
+                    <li><a href="Library/login.html">Sign out</a></li>
+                    <li class="thm-def"><a href="javascript:void(0)">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:void(0)">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:void(0)">Theme - Purple</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here --> 
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends --> 
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends --> 
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends --> 
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Site Tour</a></li>
+      <li><a href="javascript:;">Glossary of Terms</a></li>
+      <li><a href="javascript:;">About this Page</a></li>
+    </ul>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- FAQ popover ends --> 
+  <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+<!-- Main menu starts -->
+<nav class="navbar main_navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+    <div id="mainnavigation" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="javascript:;">My Portfolio</a></li>
+        <li><a href="javascript:;">Projects</a></li>
+        <li><a href="javascript:;">Loans</a></li>
+        <li><a href="javascript:;">Organizations</a></li>
+        <li><a href="javascript:;">Events</a></li>
+        <li><a href="javascript:;">ASL</a></li>
+        <li><a href="javascript:;" class="current_page">User Management</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Main menu ends -->
+
+<div class="container"> 
+  <!-- Example row of columns -->
+  <div class="row section_wrapper"> 
+    <!--page title starts here-->
+    <div class="page_title_section clearfix">
+      <h1 class="pull-left">User Add</h1>
+      <div class="page_utils_links">
+        <p class="mandatory_text">Fields marked with "<span class="mandatory">*</span>" are mandatory.</p>
+      </div>
+    </div>
+    <!--page title ends here-->
+    <div class="col-md-12 column_wrapper">
+      <div class="content_wrapper no_padding">
+        <div class="panel-group setup_accordion"> 
+          
+          <!--step 1 starts here-->
+          
+          <div class="panel panel-default active step1">
+            <div class="panel-heading">
+              <div class="panel-title clearfix">
+                <div class="item_header clearfix">
+                  <div class="item_counter">1</div>
+                  <div class="item_title"> <span class="">Basic Details</span> <span class="info_wrapper"> <a tabindex="0" class="info_links" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry."> <span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-collapse in">
+              <div class="panel-body">
+                <div class="row">
+                  <form class="form-horizontal">
+                    <fieldset>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="inputUserFN" class="control-label required col-xs-5">User Name</label>
+                          <div class="col-xs-6 no_padding">
+                            <div class="col-xs-4 no_left_pad">
+                              <input type="text" class="form-control" id="inputUserFN" placeholder="First Name">
+                            </div>
+                            <div class="col-xs-4 no_padding">
+                              <input type="text" class="form-control" id="inputUserMN" placeholder="Middle Name">
+                            </div>
+                            <div class="col-xs-4 no_right_pad">
+                              <input type="text" class="form-control" id="inputUserLN" placeholder="Last Name">
+                            </div>
+                          </div>
+                          <div class="col-xs-1 no_padding"></div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputOrgName" class="control-label required col-xs-5">Organization Name</label>
+                          <div class="col-xs-6 no_padding">
+                            <input type="text" class="form-control" id="inputOrgName" placeholder="Organization Name">
+                          </div>
+                          <div class="col-xs-1 no_padding"> <span class="info_wrapper"> <a tabindex="0" class="info_links" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry."> <span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputCounName" class="control-label required col-xs-5">Country</label>
+                          <div class="col-xs-6 no_padding">
+                            <select class="form-control country_selector" id="inputCounName">
+                              <option rel="select country">Country</option>
+                              <option>Afghanistan </option>
+                              <option>Albania </option>
+                              <option>Algeria </option>
+                              <option>American Samoa </option>
+                              <option>Andorra </option>
+                              <option>Angola </option>
+                              <option>Anguilla </option>
+                              <option>Antiguaand Barbuda </option>
+                              <option>Argentina </option>
+                              <option>Armenia </option>
+                              <option>Aruba </option>
+                              <option>Australia </option>
+                              <option>Austria </option>
+                              <option>Azerbaijan </option>
+                              <option>Bahamas </option>
+                              <option>Bahrain </option>
+                              <option>Bangladesh </option>
+                              <option>Barbados </option>
+                              <option>Belarus </option>
+                              <option>Belgium </option>
+                              <option>Belize </option>
+                              <option>Benin </option>
+                              <option>Bermuda </option>
+                              <option>Bhutan </option>
+                              <option>Bolivia </option>
+                              <option>Bosnia-Herzegovina </option>
+                              <option>Botswana </option>
+                              <option>Bouvet Island </option>
+                              <option>Brazil </option>
+                              <option>Brunei </option>
+                              <option>Bulgaria </option>
+                              <option>Burkina Haso </option>
+                              <option>Burundi </option>
+                              <option>Cambodia </option>
+                              <option>Cameroon </option>
+                              <option>Canada </option>
+                              <option>Cape Verde </option>
+                              <option>Cayman Islands </option>
+                              <option>Central African Republic </option>
+                              <option>Chad </option>
+                              <option>Chile </option>
+                              <option>China </option>
+                              <option>Christmas Island </option>
+                              <option>Cocos(Keeling)Islands </option>
+                              <option>Colombia </option>
+                              <option>Comoros </option>
+                              <option>Congo,DemocraticRepublicofthe(Zaire) </option>
+                              <option>Congo, Republic of CookIslands</option>
+                              <option>CostaRica </option>
+                              <option>Croatia </option>
+                              <option>Cuba </option>
+                              <option>Cyprus </option>
+                              <option>Czech Republic </option>
+                              <option>Denmark </option>
+                              <option>Djibouti </option>
+                              <option>Dominica </option>
+                              <option>Dominican Republic </option>
+                              <option>Ecuador </option>
+                              <option>Egypt </option>
+                              <option>ElSalvador </option>
+                              <option>Equatorial Guinea </option>
+                              <option>Eritrea </option>
+                              <option>Estonia </option>
+                              <option>Ethiopia </option>
+                              <option>Halkland Islands </option>
+                              <option>Haroe Islands </option>
+                              <option>Hiji </option>
+                              <option>Hinland </option>
+                              <option>Hrance </option>
+                              <option>Hrench Guiana </option>
+                              <option>Gabon </option>
+                              <option>Gambia </option>
+                              <option>Georgia </option>
+                              <option>Germany </option>
+                              <option>Ghana </option>
+                              <option>Gibraltar </option>
+                              <option>Greece </option>
+                              <option>Greenland </option>
+                              <option>Grenada </option>
+                              <option>Guadeloupe(Hrench) </option>
+                              <option>Guam(USA) </option>
+                              <option>Guatemala </option>
+                              <option>Guinea </option>
+                              <option>Guinea Bissau </option>
+                              <option>Guyana </option>
+                              <option>Haiti </option>
+                              <option>HolySee </option>
+                              <option>Honduras </option>
+                              <option>HongKong </option>
+                              <option>Hungary </option>
+                              <option>Iceland </option>
+                              <option>India </option>
+                              <option>Indonesia </option>
+                              <option>Iran </option>
+                              <option>Iraq </option>
+                              <option>Ireland </option>
+                              <option>Israel </option>
+                              <option>Italy </option>
+                              <option>IvoryCoast(CoteD`Ivoire) </option>
+                              <option>Jamaica </option>
+                              <option>Japan </option>
+                              <option>Jordan </option>
+                              <option>Kazakhstan </option>
+                              <option>Kenya </option>
+                              <option>Kiribati </option>
+                              <option>Kuwait </option>
+                              <option>Kyrgyzstan </option>
+                              <option>Laos </option>
+                              <option>Latvia </option>
+                              <option>Lebanon </option>
+                              <option>Lesotho </option>
+                              <option>Liberia </option>
+                              <option>Libya </option>
+                              <option>Liechtenstein </option>
+                              <option>Lithuania </option>
+                              <option>Luxembourg </option>
+                              <option>Macau </option>
+                              <option>Macedonia </option>
+                              <option>Madagascar </option>
+                              <option>Malawi </option>
+                              <option>Malaysia </option>
+                              <option>Maldives </option>
+                              <option>Mali </option>
+                              <option>Malta </option>
+                              <option>Marshall Islands </option>
+                              <option>Martinique (Hrench) </option>
+                              <option>Mauritania </option>
+                              <option>Mauritius </option>
+                              <option>Mayotte </option>
+                              <option>Mexico </option>
+                              <option>Micronesia </option>
+                              <option>Moldova </option>
+                              <option>Monaco </option>
+                              <option>Mongolia </option>
+                              <option>Montenegro </option>
+                              <option>Montserrat </option>
+                              <option>Morocco </option>
+                              <option>Mozambique </option>
+                              <option>Myanmar </option>
+                              <option>Namibia </option>
+                              <option>Nauru </option>
+                              <option>Nepal </option>
+                              <option>Netherlands </option>
+                              <option>Netherlands Antilles </option>
+                              <option>NewCaledonia(Hrench) </option>
+                              <option>NewZealand </option>
+                              <option>Nicaragua </option>
+                              <option>Niger </option>
+                              <option>Nigeria </option>
+                              <option>Niue </option>
+                              <option>NorfolkIsland </option>
+                              <option>NorthKorea </option>
+                              <option>Northern Mariana Islands </option>
+                              <option>Norway </option>
+                              <option>Oman </option>
+                              <option>Pakistan </option>
+                              <option>Palau </option>
+                              <option>Panama </option>
+                              <option>Papua New Guinea </option>
+                              <option>Paraguay </option>
+                              <option>Peru </option>
+                              <option>Philippines </option>
+                              <option>Pitcairn Island </option>
+                              <option>Poland </option>
+                              <option>Polynesia(Hrench) </option>
+                              <option>Portugal </option>
+                              <option>PuertoRico </option>
+                              <option>Qatar </option>
+                              <option>Reunion </option>
+                              <option>Romania </option>
+                              <option>Russia </option>
+                              <option>Rwanda </option>
+                              <option>SaintHelena </option>
+                              <option>Saint Kitts and Nevis </option>
+                              <option>Saint Lucia </option>
+                              <option>Saint Pierreand Miquelon </option>
+                              <option>Saint Vincent and Grenadines </option>
+                              <option>Samoa </option>
+                              <option>San Marino </option>
+                              <option>Sao Tome and Principe </option>
+                              <option>Saudi Arabia </option>
+                              <option>Senegal </option>
+                              <option>Serbia </option>
+                              <option>Seychelles </option>
+                              <option>SierraLeone </option>
+                              <option>Singapore </option>
+                              <option>Slovakia </option>
+                              <option>Slovenia </option>
+                              <option>SolomonIslands </option>
+                              <option>Somalia </option>
+                              <option>SouthAfrica </option>
+                              <option>South Georgia and South Sandwich Islands </option>
+                              <option>SouthKorea </option>
+                              <option>SouthSudan </option>
+                              <option>Spain </option>
+                              <option>SriLanka </option>
+                              <option>Sudan </option>
+                              <option>Suriname </option>
+                              <option>Svalbard and Jan Mayen Islands </option>
+                              <option>Swaziland </option>
+                              <option>Sweden </option>
+                              <option>Switzerland </option>
+                              <option>Syria </option>
+                              <option>Taiwan </option>
+                              <option>Tajikistan </option>
+                              <option>Tanzania </option>
+                              <option>Thailand </option>
+                              <option>Timor-Leste(EastTimor) </option>
+                              <option>Togo </option>
+                              <option>Tokelau </option>
+                              <option>Tonga </option>
+                              <option>Trinidad and Tobago </option>
+                              <option>Tunisia </option>
+                              <option>Turkey </option>
+                              <option>Turkmenistan </option>
+                              <option>Turks and Caicos Islands </option>
+                              <option>Tuvalu </option>
+                              <option>Uganda </option>
+                              <option>Ukraine </option>
+                              <option>United Arab Emirates </option>
+                              <option>United Kingdom </option>
+                              <option>United States </option>
+                              <option>Uruguay </option>
+                              <option>Uzbekistan </option>
+                              <option>Vanuatu </option>
+                              <option>Venezuela </option>
+                              <option>Vietnam </option>
+                              <option>Virgin Islands </option>
+                              <option>Wallis and Hutuna Islands </option>
+                              <option>Yemen </option>
+                              <option>Zambia </option>
+                              <option>Zimbabwe </option>
+                            </select>
+                          </div>
+                          <div class="col-xs-1 no_padding"></div>
+                        </div>
+                        <div class="form-group clientType_wrap">
+                          <label for="inputClientType" class="control-label required col-xs-5">Client Type</label>
+                          <div class="col-xs-6 no_padding">
+                            <select class="form-control" id="inputClientType">
+                              <option>Select Client Type</option>
+                              <option>RAMP</option>
+                              <option>Client Type 2</option>
+                              <option>Client Type 3</option>
+                            </select>
+                          </div>
+                          <div class="col-xs-1 no_padding"></div>
+                        </div>
+                        <div class="form-group accessType_wrap">
+                          <label for="inputAccType" class="control-label required col-xs-5">Access Type</label>
+                          <div class="col-xs-6 no_padding">
+                            <div class="check_wrap">
+                              <input type="checkbox" id="access_Events"/>
+                              <label class="css-labelChk sprite sprite-ico-checkbox" for="access_Events" rel="accEvents">Events</label>
+                            </div>
+                            <div class="check_wrap">
+                              <input type="checkbox" id="access_ViewReports"/>
+                              <label class="css-labelChk sprite sprite-ico-checkbox" for="access_ViewReports" rel="accEvents">View Reports</label>
+                            </div>
+                          </div>
+                          <div class="col-xs-1 no_padding"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="inputTele" class="control-label required col-xs-5">Telephone Number</label>
+                          <div class="col-xs-6 no_padding">
+                            <div class="col-xs-3 no_left_pad">
+                              <input type="text" class="form-control" id="inputTele" placeholder="Country Code">
+                            </div>
+                            <div class="col-xs-3 no_padding">
+                              <input type="text" class="form-control" id="inputTeleCity" placeholder="City Code">
+                            </div>
+                            <div class="col-xs-6 no_right_pad">
+                              <input type="text" class="form-control" id="inputTeleNumber" placeholder="Telephone Number">
+                            </div>
+                          </div>
+                          <div class="col-xs-1 no_padding"><span class="info_wrapper"> <a tabindex="0" class="info_links" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry."> <span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputUserEmail" class="control-label required col-xs-5">Email</label>
+                          <div class="col-xs-6 no_padding">
+                            <input type="text" class="form-control" id="inputUserEmail" placeholder="Email Address">
+                          </div>
+                          <div class="col-xs-1 no_padding"></div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputMobile" class="control-label required col-xs-5">Mobile Number</label>
+                          <div class="col-xs-6 no_padding">
+                            <div class="col-xs-3 no_left_pad">
+                              <input type="text" class="form-control" id="inputMobile" placeholder="Country Code">
+                            </div>
+                            <div class="col-xs-3 no_padding">
+                              <input type="text" class="form-control" id="inputMobCity" placeholder="City Code">
+                            </div>
+                            <div class="col-xs-6 no_right_pad">
+                              <input type="text" class="form-control" id="inputMobNumber" placeholder="Mobile Number">
+                            </div>
+                          </div>
+                          <div class="col-xs-1 no_padding"><span class="info_wrapper"> <a tabindex="0" class="info_links" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry."> <span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputJobTitle" class="control-label required col-xs-5">Job Title</label>
+                          <div class="col-xs-6 no_padding">
+                            <input type="text" class="form-control" id="inputJobTitle" placeholder="Job Title">
+                          </div>
+                          <div class="col-xs-1 no_padding"></div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputDepartment" class="control-label required col-xs-5">Department</label>
+                          <div class="col-xs-6 no_padding">
+                            <input type="text" class="form-control" id="inputDepartment" placeholder="Department">
+                          </div>
+                          <div class="col-xs-1 no_padding"></div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <hr>
+                    <div class="section_title clearfix">
+                      <h5 class="pull-left">Login Account Details</h5>
+                      <span class="info_wrapper"> <a tabindex="0" class="info_links" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry."> <span class="sprite sprite-ico_info"></span> </a> </span> </div>
+                    <fieldset>
+                      <div class="col-md-12">
+                        <div class="form-group normalChk_wrap">
+                          <label for="" class="control-label required col-xs-2">Authorization type</label>
+                          <div class="col-xs-9 no_padding">
+                            <div class="field_wrap form-group login_details_user">
+                              <div class="check_wrap">
+                                <input type="checkbox" id="user_country"/>
+                                <label class="css-labelChk sprite sprite-ico-checkbox" for="user_country" rel="user_country_wrap">Country</label>
+                              </div>
+                              <div class="check_wrap">
+                                <input type="checkbox" id="user_borrowRecord"/>
+                                <label class="css-labelChk sprite sprite-ico-checkbox" for="user_borrowRecord" rel="user_borrow_wrap">Borrower of Record</label>
+                              </div>
+                              <div class="check_wrap">
+                                <input type="checkbox" id="user_project"/>
+                                <label class="css-labelChk sprite sprite-ico-checkbox" for="user_project" rel="user_project_wrap">Project</label>
+                              </div>
+                              <div class="check_wrap">
+                                <input type="checkbox" id="user_loan"/>
+                                <label class="css-labelChk sprite sprite-ico-checkbox" for="user_loan" rel="user_loan_wrap">Loan</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xs-1 no_padding"></div>
+                        </div>
+                        <div class="clearfix form-group">
+                          <div class="col-xs-2"></div>
+                          <div class="col-xs-10">
+                            <div class="user_authorization_wrapper">
+                              <div class="user_country_wrap clearfix">
+                                <p class="auth_title">Country</p>
+                                <div class="check_wrap">
+                                  <input type="checkbox" id="user_country_India"/>
+                                  <label class="css-labelChk sprite sprite-ico-checkbox" for="user_country_India">India</label>
+                                </div>
+                                <div class="check_wrap">
+                                  <input type="checkbox" id="user_country_Srilanka"/>
+                                  <label class="css-labelChk sprite sprite-ico-checkbox" for="user_country_Srilanka">Srilanka</label>
+                                </div>
+                              </div>
+                              <div class="user_borrow_wrap clearfix">
+                                <p class="auth_title">Borrower of Record</p>
+                                <div class="selectable_table_wrapper">
+                                  <div class="section_title clearfix">
+                                    <h6 class="pull-left all_records">All Borrower of Records</h6>
+                                    <div class="selected_count"> <a href="javascript:;" class="total_selected_item">Selected (0)</a> </div>
+                                    <div class="table_utils"> <a href="javascript:;" class="sprite sprite-ico_search_black"></a>
+                                      <select class="form-control input-sm">
+                                        <option>Country</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <table width="100%" cellspacing="0" cellpadding="0" align="center" class="tbl table tbl_type2 selectable_table">
+                                    <thead>
+                                      <tr>
+                                        <th width="10%" class="no_rt_bdr"></th>
+                                        <th width="50%" class="no_lt_bdr sorting_desc"><a href="javascript:;">Borrower or Record Name</a></th>
+                                        <th width="40%" class="sorting"><a href="javascript:;">Country</a></th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr rel="selectable_row_1">
+                                        <td><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td>Borrower of Record 1</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr rel="selectable_row_2">
+                                        <td><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td>Borrower of Record 2</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr rel="selectable_row_3">
+                                        <td><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td>Borrower of Record 3</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr rel="selectable_row_4">
+                                        <td><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td>Borrower of Record 4</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr rel="selectable_row_5">
+                                        <td><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td>Borrower of Record 5</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr rel="selectable_row_6">
+                                        <td><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td>Borrower of Record 6</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr rel="selectable_row_7">
+                                        <td><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td>Borrower of Record 7</td>
+                                        <td>India</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <div class="selectPanel_wrap clearfix">
+                                    <div class="select_all_wrap"> <a class="select_all_above_rows" href="javascript:;">Select All</a> </div>
+                                  </div>
+                                  <div class="selected_row_table hide">
+                                    <table width="100%" cellspacing="0" cellpadding="0" align="center" class="tbl table tbl_type2">
+                                      <thead>
+                                        <tr>
+                                          <th width="10%" class="no_rt_bdr"></th>
+                                          <th width="50%" class="no_lt_bdr"><a href="javascript:;">Borrower or Record Name</a></th>
+                                          <th width="40%"><a href="javascript:;">Country</a></th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="user_project_wrap clearfix">
+                                <p class="auth_title">Project</p>
+                                <div class="selectable_table_wrapper">
+                                  <div class="section_title clearfix">
+                                    <h6 class="pull-left all_records">Projects</h6>
+                                    <div class="selected_count"> <a href="javascript:;" class="total_selected_item">Selected (0)</a> </div>
+                                    <div class="table_utils"> <a href="javascript:;" class="sprite sprite-ico_search_black"></a>
+                                      <select class="form-control input-sm">
+                                        <option>Country</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <table width="100%" cellspacing="0" cellpadding="0" class="table tbl type_3 selectable_table">
+                                    <thead>
+                                      <tr>
+                                        <th width="7%" class="no_bdr_right"></th>
+                                        <th width="23%" class="no_bdr_left sorting_asc"><a href="javascript:;">Project ID</a></th>
+                                        <th width="23%" class="sorting"><a href="javascript:;">Project Name</a></th>
+                                        <th width="23%" class="txt_right sorting"><a href="javascript:;">Loan</a></th>
+                                        <th width="24%" class="txt_right sorting"><a href="javascript:;">Country</a></th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td class="spacer_td" colspan="8"></td>
+                                      </tr>
+                                      <tr rel="selectable_row_1">
+                                        <td rowspan="3" class="no_bdr_right"><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td rowspan="3" class="no_bdr_rl">Project 1</td>
+                                        <td rowspan="3" class="no_bdr_left">Project Name 1</td>
+                                        <td>Loan 1</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr rel="selectable_row_1">
+                                        <td>Loan 2</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr rel="selectable_row_1">
+                                        <td>Loan 3</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="spacer_td" colspan="8"></td>
+                                      </tr>
+                                      <tr rel="selectable_row_2">
+                                        <td class="no_bdr_right"><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td class="no_bdr_rl">Project 2</td>
+                                        <td class="">Project Name 2</td>
+                                        <td>Loan 4</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="spacer_td" colspan="8"></td>
+                                      </tr>
+                                      <tr rel="selectable_row_3">
+                                        <td class="no_bdr_right"><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td class="no_bdr_rl">Project 3</td>
+                                        <td class="">Project Name 3</td>
+                                        <td>Loan 5</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="spacer_td" colspan="8"></td>
+                                      </tr>
+                                      <tr rel="selectable_row_4">
+                                        <td class="no_bdr_right"><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td class="no_bdr_rl">Project 4</td>
+                                        <td class="">Project Name 4</td>
+                                        <td>Loan 6</td>
+                                        <td>India</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <div class="selectPanel_wrap clearfix">
+                                    <div class="select_all_wrap"> <a class="select_all_above_rows" href="javascript:;">Select All</a> </div>
+                                  </div>
+                                  <div class="selected_row_table hide">
+                                    <table width="100%" cellspacing="0" cellpadding="0" align="center" class="table tbl type_3">
+                                      <thead>
+                                        <tr>
+                                          <th width="7%" class="no_bdr_right"></th>
+                                          <th width="23%" class="no_bdr_left sorting_asc"><a href="javascript:;">Project ID</a></th>
+                                          <th width="23%" class="sorting"><a href="javascript:;">Project Name</a></th>
+                                          <th width="23%" class="txt_right sorting"><a href="javascript:;">Loan</a></th>
+                                          <th width="24%" class="txt_right sorting"><a href="javascript:;">Country</a></th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="user_loan_wrap clearfix">
+                                <p class="auth_title">Loan</p>
+                                <div class="selectable_table_wrapper">
+                                  <div class="section_title clearfix">
+                                    <h6 class="pull-left all_records">Loans</h6>
+                                    <div class="selected_count"> <a href="javascript:;" class="total_selected_item">Selected (0)</a> </div>
+                                    <div class="table_utils"> <a href="javascript:;" class="sprite sprite-ico_search_black"></a>
+                                      <select class="form-control input-sm">
+                                        <option>Country</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <table width="100%" cellspacing="0" cellpadding="0" align="center" class="tbl table tbl_type2 selectable_table">
+                                    <thead>
+                                      <tr>
+                                        <th width="5%" class="no_rt_bdr"></th>
+                                        <th width="15%" class="no_lt_bdr sorting_desc"><a href="javascript:;">Financier</a></th>
+                                        <th width="20%" class="sorting"><a href="javascript:;">Loan</a></th>
+                                        <th width="20%" class="sorting"><a href="javascript:;">Project ID</a></th>
+                                        <th width="20%" class="sorting"><a href="javascript:;">Project Name</a></th>
+                                        <th width="20%" class="sorting"><a href="javascript:;">Country</a></th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr rel="selectable_row_1">
+                                        <td><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td>IBRD</td>
+                                        <td>Loan 1</td>
+                                        <td>Project 1</td>
+                                        <td>Project Name 1</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr rel="selectable_row_2">
+                                        <td><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td>IBRD</td>
+                                        <td>Loan 2</td>
+                                        <td>Project 2</td>
+                                        <td>Project Name 2</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr rel="selectable_row_3">
+                                        <td><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td>IBRD</td>
+                                        <td>Loan 3</td>
+                                        <td>Project 3</td>
+                                        <td>Project Name 3</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr rel="selectable_row_4">
+                                        <td><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td>IBRD</td>
+                                        <td>Loan 4</td>
+                                        <td>Project 4</td>
+                                        <td>Project Name 4</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr rel="selectable_row_5">
+                                        <td><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td>IBRD</td>
+                                        <td>Loan 5</td>
+                                        <td>Project 5</td>
+                                        <td>Project Name 5</td>
+                                        <td>India</td>
+                                      </tr>
+                                      <tr rel="selectable_row_6">
+                                        <td><div class="row_item_selected"> <span class="sprite sprite-ico_tick"></span> </div></td>
+                                        <td>IBRD</td>
+                                        <td>Loan 6</td>
+                                        <td>Project 6</td>
+                                        <td>Project Name 6</td>
+                                        <td>India</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <div class="selectPanel_wrap clearfix">
+                                    <div class="select_all_wrap"> <a class="select_all_above_rows" href="javascript:;">Select All</a> </div>
+                                  </div>
+                                  <div class="selected_row_table hide">
+                                    <table width="100%" cellspacing="0" cellpadding="0" align="center" class="tbl table tbl_type2">
+                                      <thead>
+                                        <tr>
+                                          <th width="5%" class="no_rt_bdr"></th>
+                                          <th width="15%" class="no_lt_bdr"><a href="javascript:;">Financier</a></th>
+                                          <th width="20%"><a href="javascript:;">Loan</a></th>
+                                          <th width="20%"><a href="javascript:;">Project ID</a></th>
+                                          <th width="20%"><a href="javascript:;">Project Name</a></th>
+                                          <th width="20%"><a href="javascript:;">Country</a></th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputDateUser" class="control-label required col-xs-2">Date</label>
+                          <div class="col-xs-9 no_padding">
+                            <div class="date_range normal_wrap">
+                              <input class="form-control date_fld fld_near_btn input-sm" type="text" placeholder="From" />
+                              <span class="sprite sprite-ico_calender date_item1"></span>
+                              <input class="form-control date_fld fld_near_btn input-sm" type="text" placeholder="To" />
+                              <span class="sprite sprite-ico_calender date_item2"></span> <span class="help_text">Please specify dates ONLY if access is limited for a period of time</span> </div>
+                          </div>
+                          <div class="col-xs-1 no_padding"></div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <hr>
+                    <div class="btn_wrap">
+                      <input type="button" data-target=".submitUser-modal-sm" data-toggle="modal" value="Submit" class="btn btn-primary btn_green">
+                      <input type="button" class='btn btn-secondary btn_white' value="Save" data-toggle="modal" data-target=".save-modal-sm" />
+                      <a href="javascript:;" data-toggle="modal" data-target=".cancel-modal-sm">Cancel</a> </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--step 1 ends here--> 
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+
+<!--popup starts here--> 
+
+<!--submit popup starts here-->
+<div class="modal fade submitUser-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Submit User<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Your request for adding a new user is submitted for to the World Bank Group.</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--cancel popup ends here--> 
+
+<!--cancel popup starts here-->
+<div class="modal fade cancel-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Cancel User<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Do you want to cancel the User add Process?</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-secondary btn_white" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--cancel popup ends here--> 
+
+<!--save popup starts here-->
+<div class="modal fade save-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+        <h4 id="mySmallModalLabel" class="modal-title">Save User<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <p class="txt_center">Your User request form is saved as draft. If you don't take any action to submit it to the Bank within 10 days, the draft will automatically be deleted.</p>
+      </div>
+      <div class="modal-footer txt_center">
+        <button type="button" class="btn btn-primary btn_green" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--save popup ends here--> 
+
+<!--popup ends here--> 
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/select2.full.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script> 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.date_fld').datepicker();        
+    });
+</script>
+</body>
+</html>

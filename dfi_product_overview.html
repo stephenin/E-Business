@@ -1,0 +1,1272 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>DPC</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+    <link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+    <link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+    <link href="css/select2.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+    <link href="css/jquery.dataTables.css" rel="stylesheet"/>
+    <link href="css/dataTables.bootstrap.css" rel="stylesheet"/>
+    <link href="css/nanoscroller.css" rel="stylesheet"/>
+    <link href="css/slick.css" rel="stylesheet"/>
+    <link href="css/slick-theme.css" rel="stylesheet"/>
+    <link href="css/styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+        </div>
+        <div class="col-md-10 user_utils no_padding">
+          <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+            <div class="notification_utils">
+              <ul class="notifications clearfix">
+                <li>
+                  <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+                </li>
+                <li>
+                  <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown language">
+              <select class="header_language">
+                <option>English US</option>
+                <option>English UK</option>
+                <option>French</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+              <div class="dropdown user_details">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">John Mattew</button>
+                  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="Library/my_profile.html">My Profile</a></li>
+                    <li><a href="Library/login.html">Sign out</a></li>
+                    <li class="thm-def"><a href="javascript:void(0)">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:void(0)">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:void(0)">Theme - Purple</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here --> 
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends --> 
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends --> 
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends --> 
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Site Tour</a></li>
+      <li><a href="javascript:;">Glossary of Terms</a></li>
+      <li><a href="javascript:;">About this Page</a></li>
+    </ul>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- FAQ popover ends --> 
+  <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+    <!-- Main menu starts -->
+    <nav class="navbar main_navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+        <div id="mainnavigation" class="navbar-collapse collapse no_right_pad">
+          <ul class="nav nav-main navbar-nav full_width">
+            <li><a href="dfi_landing_page.html">My Portfolio</a></li>
+            <li class="dropdown"> <a href="#"  class="dropdown-toggle current_page" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-main">
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">IBRD/IDA TFs</a></li>
+              <li><a href="#">FIFs</a></li>
+              <li><a href="#">IFC TFs</a></li>
+              <li><a href="#">EFOs</a></li>
+              <li><a href="#">Others</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">Results</a></li>
+          <li><a href="#">Working With WBG</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Main menu ends -->
+  <div class="container product_overview_page">
+    <div class="row section_wrapper">
+        <div class="col-md-12 no_padding">
+            <div class="clearfix">
+                <div class="col-md-6 no_padding">
+                    <ol class="breadcrumb">
+                        <li><a href="my_portfolio.html">My Portfolio</a></li>
+                        <li><a href="my_portfolio.html">Product</a></li>
+                        <li><a href="my_portfolio.html">IBRD/IFC</a></li>
+                        <li class="active">GP/CCSAs</li>
+                    </ol>
+                </div>
+                <div class="col-md-6 no_padding">
+                    <div class="portfolio_page_options clearfix"> 
+                        <span class="search_field_wrap pull-right">
+                            <input type="text" placeholder="Search" class="form-control search_field">
+                            <span class="sprite sprite-ico_search_field"></span> 
+                        </span>
+                        
+
+                        <span class="port_pg_opt_links">
+                            <a title="Download" href="javascript:;"><span class="sprite sprite-ico_export_xl"></span></a>
+                            <a title="Print" href="javascript:;"><span class="sprite sprite-ico_print_new"></span></a> 
+                        </span> 
+                        <span class="date_as_of">Data as of 05 May, 2015 10:51 EST</span>
+                         
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 no_padding">
+
+              
+              <div class="clearfix set_bot_mar_20 ">
+                <div class="col-md-12 no_padding">
+                    <div class="country_name_wrap clearfix"> 
+                        <p class="country_name">
+                            <img src="images/country_01.png" style="" />
+                            Atlantis
+                        </p>
+                        
+                    </div>
+                  </div>
+                </div>
+                <!-- table container starts here -->
+                <div class="clearfix section_wrapper">
+                  <div class="col-md-12 column_wrapper no_left_padding">
+                    <div class="content_wrapper no_top_pad">
+                      <div class="clearfix">
+                        <div class="col-md-12 no_padding clearfix">
+                        <div class="product_overview_title clearfix"> <span class="pull-left">Contribution to WBG funds: <strong>IBRD/IDA</strong></span> <span class="pull-right update_txt">All amounts are in USD millions</span> </div>
+                        <div class="clearfix">
+                          <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2 no_btm_mgr">
+                            <thead>
+                              <tr>
+                                <th width="20%">&nbsp;</th>
+                                <th colspan="4" align="center"><div class="txt_center">My Contribution</div></th>
+                                <th colspan="4" class="contri_cell"><div class="txt_center">Overall Contribution</div></th>
+                              </tr>
+                              <tr>
+                                <th width="20%">WBG Funds</th>
+                                <th width="10%" class="amount_txt">Paid</th>
+                                <th width="10%" class="amount_txt">Unpaid</th>
+                                <th width="10%" class="amount_txt">Total</th>
+                                <th width="10%" class="amount_txt">Share</th>
+                                <th width="10%" class="amount_txt contri_cell">Paid</th>
+                                <th width="10%" class="amount_txt contri_cell">Unpaid</th>
+                                <th width="10%" class="amount_txt contri_cell">Total</th>
+                                <th width="10%" class="amount_txt contri_cell">Share</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>IBRD/IDA TFs</td>
+                                <td class="amount_txt">10,698<br></td>
+                                <td class="amount_txt">8,624<br></td>
+                                <td class="amount_txt">2,074<br /></td>
+                                <td class="amount_txt">20%</td>
+                                <td class="amount_txt">10,698</td>
+                                <td class="amount_txt">8,624</td>
+                                <td class="amount_txt">2,074</td>
+                                <td class="amount_txt">20%</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Table container ends here -->
+              <!-- table container starts here -->
+              <div class="clearfix section_wrapper">
+                <div class="col-md-12 column_wrapper no_left_padding">
+                  <div class="content_wrapper no_top_pad">
+                    <div class="clearfix">
+                      <div class="col-md-12 no_padding clearfix">
+                      <div class="product_overview_title">Contribution Summary</div>
+                      <div class="view_by col-xs-6">
+                        <label>View By :</label>
+                        <div class="radio_btn_wrap clearfix">
+                            <input class="contribution_summary_rad_btn" checked type="radio" name="contribution_summary_view" id="contribution_summary_view_gp_ccs">
+                            <label class="css_radio_check_small sprite sprite-ico-radio_small" for="contribution_summary_view_gp_ccs">GPs / CCSAs</label>
+                            <input class="contribution_summary_rad_btn" type="radio" name="contribution_summary_view" id="contribution_summary_view_prog">
+                            <label class="css_radio_check_small sprite sprite-ico-radio_small" for="contribution_summary_view_prog">Program Types</label>
+                          </div>
+                      </div>
+                      <div class="clear"></div>
+
+                      <div class="contribution_summary_wrapper">
+                          <div class="clearfix contribution_summary_view_gp_ccs_wrapper">
+                            <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2">
+                              <thead>
+                                <tr>
+                                  <th colspan="2">&nbsp;</th>
+                                  <th colspan="3" align="center"><div class="txt_center">My Contribution</div></th>
+                                  <th colspan="3" class="contri_cell"><div class="txt_center">Overall Contribution</div></th>
+                                </tr>
+                                <tr>
+                                  <th width="22%">Global Practices/CCSAs</th>
+                                  <th width="8%" class="amount_txt">No. of Accounts</th>
+                                  <th width="10%" class="amount_txt">Paid</th>
+                                  <th width="10%" class="amount_txt">Unpaid</th>
+                                  <th width="10%" class="amount_txt">Total</th>
+                                  <th width="10%" class="amount_txt contri_cell">Paid</th>
+                                  <th width="10%" class="amount_txt contri_cell">Unpaid</th>
+                                  <th width="10%" class="amount_txt contri_cell">Total</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              
+                                <tr>
+                                    <td><strong>Global Practices</strong></td>
+                                    <td class="pos_rel ">
+                                      <div class="info_wrapper pull-right">
+                                        <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                            <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                                <p class="tooltip_title">Account Status</p>
+                                                <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">20</a>
+                                 </td>
+                                  <td class="amount_txt">8,624</td>
+                                  <td class="amount_txt">2,344</td>
+                                  <td class="amount_txt">12,698</td>
+                                  <td class="amount_txt contri_cell">8,624</td>
+                                  <td class="amount_txt contri_cell">2,344</td>
+                                  <td class="amount_txt contri_cell">12,698</td>
+                                  </tr>
+                                <tr>
+                                  <td class="child_value">Agriculture</td>
+                                  <td class="pos_rel ">
+                                      <div class="info_wrapper pull-right">
+                                        <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                            <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                              <p class="tooltip_title">Account Status</p>
+                                              <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">5</a>
+                                 </td>
+                                  <td class="amount_txt">726</td>
+                                  <td class="amount_txt">3,969</td>
+                                  <td class="amount_txt">824</td>
+                                  <td class="amount_txt contri_cell">726</td>
+                                  <td class="amount_txt contri_cell">3,969</td>
+                                  <td class="amount_txt contri_cell">824</td>
+                                </tr>
+                                <tr>
+                                  <td class="child_value">Water</td>
+                                   <td class="pos_rel ">
+                                      <div class="info_wrapper pull-right">
+                                        <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                            <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                              <p class="tooltip_title">Account Status</p>
+                                              <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">15</a>
+                                 </td>
+                                  <td class="amount_txt">9,650</td>
+                                  <td class="amount_txt">98</td>
+                                  <td class="amount_txt">13,619</td>
+                                  <td class="amount_txt contri_cell">9,650</td>
+                                  <td class="amount_txt contri_cell">98</td>
+                                  <td class="amount_txt contri_cell">13,619</td>
+                                  </tr>
+                                <tr>
+                                  <td class="child_value"> Education </td>
+                                   <td class="pos_rel ">
+                                      <div class="info_wrapper pull-right">
+                                        <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                            <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                              <p class="tooltip_title">Account Status</p>
+                                              <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">5</a>
+                                 </td>
+                                  <td class="amount_txt">726</td>
+                                  <td class="amount_txt">3,969</td>
+                                  <td class="amount_txt">824</td>
+                                  <td class="amount_txt contri_cell">726</td>
+                                  <td class="amount_txt contri_cell">3,969</td>
+                                  <td class="amount_txt contri_cell">824</td>
+                                  </tr>
+                              
+                                <tr>
+                                  <td class="child_value">Governance</td>
+                                   <td class="pos_rel ">
+                                      <div class="info_wrapper pull-right">
+                                        <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                            <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                              <p class="tooltip_title">Account Status</p>
+                                              <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">15</a>
+                                 </td>
+                                  <td class="amount_txt">9,650</td>
+                                  <td class="amount_txt">98</td>
+                                  <td class="amount_txt">13,619</td>
+                                  <td class="amount_txt contri_cell">9,650</td>
+                                  <td class="amount_txt contri_cell">98</td>
+                                  <td class="amount_txt contri_cell">13,619</td>
+                                  </tr>
+                                <tr>
+                                  <td class="child_value">Poverty</td>
+                                   <td class="pos_rel ">
+                                      <div class="info_wrapper pull-right">
+                                        <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                            <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                              <p class="tooltip_title">Account Status</p>
+                                              <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">5</a>
+                                 </td>
+                                  <td class="amount_txt">726</td>
+                                  <td class="amount_txt">3,969</td>
+                                  <td class="amount_txt">824</td>
+                                  <td class="amount_txt contri_cell">726</td>
+                                  <td class="amount_txt contri_cell">3,969</td>
+                                  <td class="amount_txt contri_cell">824</td>
+                                  </tr>
+                                <tr>
+                                  <td class="child_value">Trade &amp; Competitiveness</td>
+                                   <td class="pos_rel ">
+                                      <div class="info_wrapper pull-right">
+                                        <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                            <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                              <p class="tooltip_title">Account Status</p>
+                                              <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">15</a>
+                                 </td>
+                                  <td class="amount_txt">9,650</td>
+                                  <td class="amount_txt">98</td>
+                                  <td class="amount_txt">13,619</td>
+                                  <td class="amount_txt contri_cell">9,650</td>
+                                  <td class="amount_txt contri_cell">98</td>
+                                  <td class="amount_txt contri_cell">13,619</td>
+                                </tr>
+                                
+                               
+                                <tr>
+                                    <td><strong>Cross Cutting Solution Areas</strong></td>
+                                     <td class="pos_rel ">
+                                      <div class="info_wrapper pull-right">
+                                        <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                            <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                              <p class="tooltip_title">Account Status</p>
+                                              <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">20</a>
+                                 </td>
+                                    <td class="amount_txt">22,265</td>
+                                    <td class="amount_txt">3,224</td>
+                                    <td class="amount_txt">54,489</td>
+                                    <td class="amount_txt contri_cell">22,276</td>
+                                    <td class="amount_txt contri_cell">3,225</td>
+                                    <td class="amount_txt contri_cell">25,489</td>
+                                </tr>
+                                <tr>
+                                    <td class="child_value">Private Public Partnership</td>
+                                    <td class="pos_rel ">
+                                      <div class="info_wrapper pull-right">
+                                        <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                            <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                              <p class="tooltip_title">Account Status</p>
+                                              <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">5</a>
+                                 </td>
+                                <td colspan="7"></td>
+                                </tr>
+                                <tr>
+                                    <td class="child_value">Jobs</td>
+                                    <td class="pos_rel ">
+                                      <div class="info_wrapper pull-right">
+                                        <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                            <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                              <p class="tooltip_title">Account Status</p>
+                                              <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">15</a>
+                                 </td>
+                                 <td colspan="3"></td>
+                                 <td class="contri_cell"></td>
+                                 <td class="contri_cell"></td>
+                                 <td class="contri_cell"></td>
+                                </tr>
+                                <tr>
+                                  <td><strong>Total</strong></td>
+                                   <td class="pos_rel ">
+                                      <div class="info_wrapper pull-right">
+                                        <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                            <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                              <p class="tooltip_title">Account Status</p>
+                                              <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">30</a>
+                                 </td>
+                                  <td class="amount_txt"><strong>36,641</strong></td>
+                                  <td class="amount_txt"><strong>9,365</strong></td>
+                                  <td class="amount_txt"><strong>50,659</strong></td>
+                                  <td class="amount_txt contri_cell">25,658</td>
+                                  <td class="amount_txt contri_cell">5,689</td>
+                                  <td class="amount_txt contri_cell">6,989</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <div class="clearfix contribution_summary_view_prog_wrapper">
+                            <table width="100%" cellspacing="0" cellpadding="0" class="tbl table tbl_type2">
+                          <thead>
+                            <tr>
+                              <th colspan="3">&nbsp;</th>
+                              <th colspan="3" align="center"><div class="txt_center">My Contribution</div></th>
+                              <th colspan="3"><div class="txt_center">Overall Contribution</div></th>
+                            </tr>
+                            <tr>
+                              <th width="20%">Program Types</th>
+                              <th width="10%" class="amount_txt">Participation</th>
+                              <th width="10%" class="amount_txt">No. of Accounts</th>
+                              <th width="10%" class="amount_txt">Paid</th>
+                              <th width="10%" class="amount_txt">Unpaid</th>
+                              <th width="10%" class="amount_txt">Total</th>
+                              <th width="10%"><span class="amount_txt">Paid</span></th>
+                              <th width="10%"><span class="amount_txt">Unpaid</span></th>
+                              <th width="10%"><span class="amount_txt">Total</span></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          
+                            <tr>
+                              <td colspan="2"><strong>Program types</strong></td>
+                              <td class="pos_rel "><div class="info_wrapper pull-right">
+                                  <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                      <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                          <p class="tooltip_title">Account Status</p>
+                                          <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                      </div>
+                                  </div>
+                              </div>
+                                  <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">30</a></td>
+                              <td class="amount_txt"><strong>8,624</strong></td>
+                              <td class="amount_txt"><strong>2,344</strong></td>
+                              <td class="amount_txt"><strong>12,698</strong></td>
+                              <td class="amount_txt"><strong>8,624</strong></td>
+                              <td class="amount_txt"><strong>2,344</strong></td>
+                              <td class="amount_txt"><strong>12,698</strong></td>
+                              </tr>
+                            <tr>
+                              <td>&nbsp;</td>
+                              <td class="amount_txt">Single</td>
+                              <td class="pos_rel "><div class="info_wrapper pull-right">
+                                  <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                      <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                          <p class="tooltip_title">Account Status</p>
+                                          <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                      </div>
+                                  </div>
+                              </div>
+                                  <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">30</a></td>
+                              <td class="amount_txt">726</td>
+                              <td class="amount_txt">3,969</td>
+                              <td class="amount_txt">824</td>
+                              <td class="amount_txt">726</td>
+                              <td class="amount_txt">3,969</td>
+                              <td class="amount_txt">824</td>
+                              </tr>
+                            <tr>
+                              <td>&nbsp;</td>
+                              <td class="amount_txt">Single</td>
+                              <td class="pos_rel "><div class="info_wrapper pull-right">
+                                  <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                      <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                          <p class="tooltip_title">Account Status</p>
+                                          <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                      </div>
+                                  </div>
+                              </div>
+                                  <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">30</a></td>
+                              <td class="amount_txt">9,650</td>
+                              <td class="amount_txt">98</td>
+                              <td class="amount_txt">13,619</td>
+                              <td class="amount_txt">9,650</td>
+                              <td class="amount_txt">98</td>
+                              <td class="amount_txt">13,619</td>
+                              </tr>
+                           
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td class="amount_txt">&nbsp;</td>
+                                <td class="amount_txt">&nbsp;</td>
+                                <td class="amount_txt">&nbsp;</td>
+                                <td class="amount_txt">&nbsp;</td>
+                                <td class="amount_txt">&nbsp;</td>
+                                <td class="amount_txt">&nbsp;</td>
+                                <td class="amount_txt">&nbsp;</td>
+                                <td class="amount_txt">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong>Freestanding</strong></td>
+                                <td class="pos_rel "><div class="info_wrapper pull-right">
+                                    <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                        <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                            <p class="tooltip_title">Account Status</p>
+                                            <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">30</a></td>
+                                <td class="amount_txt"><strong>8,624</strong></td>
+                                <td class="amount_txt"><strong>2,344</strong></td>
+                                <td class="amount_txt"><strong>12,698</strong></td>
+                                <td class="amount_txt"><strong>8,624</strong></td>
+                                <td class="amount_txt"><strong>2,344</strong></td>
+                                <td class="amount_txt"><strong>12,698</strong></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td class="amount_txt">Single</td>
+                                <td class="pos_rel "><div class="info_wrapper pull-right">
+                                    <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                        <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                            <p class="tooltip_title">Account Status</p>
+                                            <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">30</a></td>
+                                <td class="amount_txt">726</td>
+                                <td class="amount_txt">3,969</td>
+                                <td class="amount_txt">824</td>
+                                <td class="amount_txt">726</td>
+                                <td class="amount_txt">3,969</td>
+                                <td class="amount_txt">824</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td class="amount_txt">Single</td>
+                                <td class="pos_rel "><div class="info_wrapper pull-right">
+                                    <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                        <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                            <p class="tooltip_title">Account Status</p>
+                                            <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">30</a></td>
+                                <td class="amount_txt">9,650</td>
+                                <td class="amount_txt">98</td>
+                                <td class="amount_txt">13,619</td>
+                                <td class="amount_txt">9,650</td>
+                                <td class="amount_txt">98</td>
+                                <td class="amount_txt">13,619</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total</strong></td>
+                                <td class="amount_txt">&nbsp;</td>
+                                <td class="pos_rel "><div class="info_wrapper pull-right">
+                                    <div class="project_overview "> <a class="row_info" href="javascript:;"><span class="sprite sprite-ico_info"></span></a>
+                                        <div class="overview_pop_wrap small"> <span class="sprite sprite-ico_tooltiparrow"></span>
+                                            <p class="tooltip_title">Account Status</p>
+                                            <table width="100%" cellpadding="0" cellspacing="0" class="tbl table">
+                                                    <tbody>
+                                                        <tr>
+                                                          <td>Pending</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">1</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Active</td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">15</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Financially Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Legally Closed </td>
+                                                          <td class="txt_right"><a href="dfi_product_overview_detail.html">3</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <a href="dfi_product_overview_detail.html" class="pull-right amount_txt">30</a></td>
+                                <td class="amount_txt"><strong>32,641</strong></td>
+                                <td class="amount_txt"><strong>32,641</strong></td>
+                                <td class="amount_txt"><strong>50,630</strong></td>
+                                <td class="amount_txt"><strong>32,461</strong></td>
+                                <td class="amount_txt"><strong>9,356</strong></td>
+                                <td class="amount_txt"><strong>50,356</strong></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Table container ends here -->
+            
+        </div>
+        <div class="col-md-3 no_right_padding left_pad_8">
+          <div class="clearfix">
+            <div class="col-md-12 no_padding">
+                
+                <!-- <div class="category_search_wrapper clearfix"> 
+                     <div class="category_select">
+                        <select class="normal_selector form-control" data-tags="true" data-placeholder="Select">
+                            <option></option>
+                            <option>Sector</option>
+                        </select>
+                     </div>
+                     <div class="category_search">
+                        <input type="text" class="form-control" placeholder="Search" />
+                        <a href="javascript:;" class="cate_srch_link"><span class="sprite sprite-ico_search_black"></span></a>
+                     </div>
+                </div> -->
+
+            </div>
+            <div class="col-md-12 no_padding">
+              <section>
+                <div class="section_title">Your Opinion Matters</div>
+                <div class="content_wrapper">
+                  <div class="clearfix">
+                      <div class="col-md-10">
+                        <select class="form-control normal_selector" data-placeholder="Select">
+                            <option></option>
+                            <option>Select</option>
+                        </select>
+                      </div>
+                      <div class="col-md-2 no_padding">
+                        <button type="button" data-role="none" class="btn_custom" aria-label="Next" role="button" data-toggle="modal" data-target=".opinion-modal-sm">
+                            <span class="sprite btn_go_arrow"></span>
+                        </button>
+                      </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="clear"></div>
+            <div class="col-md-12 no_padding">
+              <section>
+                <div class="section_title">Key Resources</div>
+                <div class="content_wrapper">
+                  <ul class="quick_links hightlighted">
+                    <li><a href="javascript:;">WBG Policies</a></li>
+                    <li><a href="javascript:;">Fund Governance Documents</a></li>
+                    <li><a href="javascript:;">Admin Agreements</a></li>
+                    <li><a href="javascript:;">Task Team Leader</a></li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+  </div>
+</div>
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+<!--popup starts here-->
+<!--validate popup starts here-->
+<div class="modal fade opinion-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-md">
+<div class="modal-content">
+  <div class="modal-header">
+    <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true" class="sprite sprite-close_popup"></span></button>
+    <h4 id="mySmallModalLabel" class="modal-title">Your Opinion Matters<a href="#mySmallModalLabel" class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+  </div>
+  <div class="modal-body">
+    <div class="clearfix">
+      <div class="page_utils_links">
+        <p class="mandatory_text">Fields marked with "<span class="mandatory">*</span>" are mandatory.</p>
+      </div>
+    </div>
+    <form class="form-horizontal">
+      <fieldset class="no_left_margin">
+        <div class="form-group">
+          <label class="control-label required col-xs-3" for="">Contact Us for</label>
+          <div class="col-xs-4 no_padding">
+            <select class="form-control normal_selector">
+              <option>Select</option>
+              <option selected>Feedback</option>
+            </select>
+          </div>
+          <div class="col-xs-1"></div>
+        </div>
+      </fieldset>
+    </form>
+    <div class="spacer_30"></div>
+    <div class="clearfix">
+      <h5 class="bdr_btm no_left_margin">Feedback</h5>
+    </div>
+    <p class="normal_txt">Dear John Mathew, <br />
+    Thank You for taking the time to provide us.. feedback You can enter your feedback below </p>
+    <div class="spacer_10"></div>
+    <form class="form-horizontal">
+      <fieldset class="no_left_margin">
+        <div class="form-group">
+          <label class="control-label required col-xs-3" for="">Message</label>
+          <div class="col-xs-8 no_padding">
+            <textarea class="form-control"></textarea>
+          </div>
+          <div class="col-xs-1"></div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <div class="modal-footer txt_center btn_wrap">
+    <input type="button" class="btn btn-primary btn_green submit_org_review" data-dismiss="modal" value="Submit">
+    <a href="javascript:;" data-dismiss="modal">Cancel</a> </div>
+  </div>
+</div>
+</div>
+<!--validate popup ends here-->
+<!--popup ends here-->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/select2.full.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="js/jquery.nanoscroller.min.js"></script>
+<script type="text/javascript" src="js/slick.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+    $(".nano").nanoScroller({
+        sliderMinHeight: 40,
+        alwaysVisible: true,
+        flashDelay: 500
+    });
+    $('.highlight_carousel').slick({
+        infinite: false
+    });
+
+
+});
+</script>
+</body>
+</html>

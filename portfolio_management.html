@@ -1,0 +1,941 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>eBusiness</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/eventCalendar.css" type="text/css" rel="stylesheet" />
+    <link href="css/eventCalendar_theme.css" type="text/css" rel="stylesheet" />
+    <link href="css/eventCalendar_theme_responsive.css" type="text/css" rel="stylesheet" />
+    <link href="css/select2.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+    <link href="css/jquery.dataTables.css" rel="stylesheet"/>
+    <link href="css/dataTables.bootstrap.css" rel="stylesheet"/>
+    <link href="css/slick.css" rel="stylesheet"/>
+    <link href="css/slick-theme.css" rel="stylesheet"/>
+    <link href="css/styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <header><!-- #BeginLibraryItem "/Library/Global Navigation.lbi" -->  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand logo_section" title="eBusiness ASL" href="Library/home.html"><span class="sprite sprite-logo"></span></a> </div>
+          </div>
+          <div class="col-md-10 user_utils no_padding">
+            <div id="navbar" class="navbar-collapse collapse pull-right no_padding">
+              <div class="notification_utils">
+                <ul class="notifications clearfix">
+                  <li>
+                    <p class=""><a href="javascript:;" class="sprite sprite-ico_calander date_handler" role="button" data-toggle="popover" data-placement="bottom" title="Calendar">Calendar</a></p>
+                  </li>
+                  <li>
+                    <p class=""> <a href="javascript:;" class="sprite sprite-ico_alarm alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts">Notifications</a><span class="notify_wrap alerts_handler" role="button" data-toggle="popover" data-placement="bottom" title="Alerts"> <span class="notify_count">10</span> </span></p>
+                  </li>
+                  <li>
+                    <p class=""> <a href="javascript:;" class="sprite sprite-ico_doc pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks">Document</a> <span class="notify_wrap pending_task_handler" role="button" data-toggle="popover" data-placement="bottom" title="Pending Tasks"> <span class="notify_count">15</span> </span></p>
+                  </li>
+                  <li>
+                    <p class=""> <a href="javascript:;" class="sprite sprite-ico_flag faq_handler" role="button" data-toggle="popover" data-placement="bottom" title="Help">Help</a> </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown language">
+                <select class="header_language">
+                  <option>English US</option>
+                  <option>English UK</option>
+                  <option>French</option>
+                  <option>Spanish</option>
+                </select>
+              </div>
+              <div class="user_name"> <span class="sprite sprite-ico_user_img"></span>
+              <div class="dropdown user_details">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">John Mattew</button>
+                  <button type="button" class="btn btn-default dropdown-toggle bdr_left" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle UserName</span> </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="Library/my_profile.html">My Profile</a></li>
+                    <li><a href="Library/login.html">Sign out</a></li>
+                    <li class="thm-def"><a href="javascript:void(0)">Theme - Default</a></li>
+                    <li class="thm-blue"><a href="javascript:void(0)">Theme - Blue</a></li>
+                    <li class="thm-Purple"><a href="javascript:void(0)">Theme - Purple</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Pop over starts here -->
+  <!-- Pending Tasks popover starts -->
+  <div id="popover_content_pending_tasks" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>Type All (10)</option>
+            <option>Withdrawal Application (2)</option>
+            <option>ASL (3)</option>
+            <option>Organization (4)</option>
+            <option>User (1)</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="pending_tasks_table">
+        <thead>
+          <tr>
+            <th style="width:27% !important"><a href="javascript:;">Type</a></th>
+            <th style="width:17% !important"><a href="javascript:;">Date</a></th>
+            <th style="width:25% !important"><a href="javascript:;">Description</a></th>
+            <th  style="width:31% !important"><a href="javascript:;">Status</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Withdrawal Application</td>
+            <td>15-Nov-2015</td>
+            <td><a href="javascript:;">INDHRI-12</a></td>
+            <td>Pending WB Approval</td>
+          </tr>
+          <tr>
+            <td>ASL</td>
+            <td>10-Nov-2015</td>
+            <td><a href="javascript:;">IBRD 47234</a></td>
+            <td>Pending ASL Approval</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>05-Nov-2015</td>
+            <td><a href="javascript:;">Finance Ministry, India</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>01-Nov-2015</td>
+            <td><a href="javascript:;">Roger Doe Williams</a></td>
+            <td>Pending Liaison Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- Pending Tasks popover ends -->
+  <!-- Alerts popover starts -->
+  <div id="popover_content_alerts" class="hide">
+    <div class="filter_by">
+      <form>
+        <fieldset class="no_left_margin">
+          <label>Filter By:</label>
+          <select class="form-control input-sm pending_task_list">
+            <option>All</option>
+            <option>Debt Management</option>
+            <option>Disbursement</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="spacer_10"></div>
+    <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+      <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer" id="alerts_table">
+        <thead>
+          <tr>
+            <th style="width:75% !important"><a href="javascript:;">Alert</a></th>
+            <th style="width:75% !important"><a href="javascript:;">Description</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+          <tr>
+            <td>4 Loans with closing dates in less than 6 months More <a href="javascript:;">More</a></td>
+            <td>IBRD 47500</td>
+          </tr>
+          <tr>
+            <td>3 Loans with inactive advances More <a href="javascript:;">More</a></td>
+            <td>IDA 78630</td>
+          </tr>
+          <tr>
+            <td>1 Loan with interest rate conversion opportunity <a href="javascript:;">More</a></td>
+            <td>IBRD 98560</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="spacer_10"></div>
+    <input type="button" class='btn btn-primary btn_green' value="View All" />
+  </div>
+  <!-- alerts popover ends -->
+  <!-- dates popover starts -->
+  <div id="popover_content_date" class="hide">
+    <div class="col-xs-5">
+      <div id="sandbox-container">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <div id="table_view" class="tab-pane fade active in view_type_wrap" role="tabpanel" aria-labelledby="tab-tile_view">
+        <table width="100%" cellpadding="0" cellspacing="0" class="tbl table tbl_type2 small_fnt dataTable no-footer">
+          <tbody>
+            <tr>
+              <td class="width_35P">Dec 30, 2015</td>
+              <td>Bills are Due</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>3 Loans are closing</td>
+            </tr>
+            <tr>
+              <td>Dec 30, 2015</td>
+              <td>4 Loans with application deadline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="spacer_10"></div>
+    <div class="spacer_10"></div>
+  </div>
+  <!-- dates popover ends -->
+  <!-- FAQ popover starts -->
+  <div id="popover_content_faq" class="hide">
+    <div class="spacer_10"></div>
+    <ul class="quick_links">
+      <li><a href="javascript:;">Report an issue / View history</a></li>
+      <li><a href="javascript:;">Contact Us</a></li>
+    </ul>
+    <p>General<p>
+      <ul class="quick_links">
+        <li><a href="javascript:;">Site Tour</a></li>
+        <li><a href="javascript:;">Glossary of Terms</a></li>
+        <li><a href="javascript:;">About this Page</a></li>
+      </ul>
+      <div class="spacer_10"></div>
+    </div>
+    <!-- FAQ popover ends -->
+    <!-- Pop over ends here --> <!-- #EndLibraryItem --></header>
+    <!-- Main menu starts -->
+    <nav class="navbar main_navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+        <div id="mainnavigation" class="navbar-collapse collapse no_right_pad">
+          <ul class="nav navbar-nav full_width">
+            <li><a href="javascript:;">Home</a></li>
+            <li><a href="javascript:;">My Portfolio</a></li>
+            <li><a href="javascript:;"  class="current_page">Country Analytics</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Main menu ends -->
+    <div class="container country_analytics">
+      <div class="row section_wrapper">
+        <div class="col-md-12 no_padding">
+          <div class="clearfix">
+            <div class="col-md-4 col-sm-4  no_padding">
+              <ol class="breadcrumb">
+                <li><a href="my_portfolio.html">My Portfolio</a></li>
+                <li class="active">Country Analytics</li>
+              </ol>
+            </div>
+            <div class="col-md-8  col-sm-8  no_padding">
+              <div class="portfolio_page_options clearfix"> <span class="search_field_wrap pull-right">
+                <input type="text" class="form-control search_field" placeholder="Search by Project or Loan ID"/>
+                <span class="sprite sprite-ico_search_field"></span> </span> <span class="port_pg_opt_links"> <a href="javascript:;" title="Export to Excel"><span class="sprite sprite-ico_export_xl"></span></a> <a href="javascript:;" title="Print"><span class="sprite sprite-ico_print_new"></span></a> </span> <span class="date_as_of">Data as of 05 May, 2015 10:51 EST</span> </div>
+              </div>
+            </div>
+            <div class="col-md-9 no_padding" >
+              <div class="content_wrapper">
+                <div class="clearfix">
+                  <h4 class="pull-left">Select Country</h4>
+                </div>
+                <div class="home_task_wrap">
+                  <div class="col-sm-3 no_padding">
+                    <select id="inputSelCountry" class="form-control  country_selector select2-hidden-accessible" tabindex="-1" aria-hidden="true" data-tags="true" data-placeholder="Select Country">
+                      <option></option>
+                      <option>Afghanistan </option>
+                      <option>Albania </option>
+                      <option>Algeria </option>
+                      <option>American Samoa </option>
+                      <option>Andorra </option>
+                      <option>Angola </option>
+                      <option>Anguilla </option>
+                      <option>Antiguaand Barbuda </option>
+                      <option>Argentina </option>
+                      <option>Armenia </option>
+                      <option>Aruba </option>
+                      <option>Australia </option>
+                      <option>Austria </option>
+                      <option>Azerbaijan </option>
+                      <option>Bahamas </option>
+                      <option>Bahrain </option>
+                      <option>Bangladesh </option>
+                      <option>Barbados </option>
+                      <option>Belarus </option>
+                      <option>Belgium </option>
+                      <option>Belize </option>
+                      <option>Benin </option>
+                      <option>Bermuda </option>
+                      <option>Bhutan </option>
+                      <option>Bolivia </option>
+                      <option>Bosnia-Herzegovina </option>
+                      <option>Botswana </option>
+                      <option>Bouvet Island </option>
+                      <option>Brazil </option>
+                      <option>Brunei </option>
+                      <option>Bulgaria </option>
+                      <option>Burkina Haso </option>
+                      <option>Burundi </option>
+                      <option>Cambodia </option>
+                      <option>Cameroon </option>
+                      <option>Canada </option>
+                      <option>Cape Verde </option>
+                      <option>Cayman Islands </option>
+                      <option>Central African Republic </option>
+                      <option>Chad </option>
+                      <option>Chile </option>
+                      <option>China </option>
+                      <option>Christmas Island </option>
+                      <option>Cocos(Keeling)Islands </option>
+                      <option>Colombia </option>
+                      <option>Comoros </option>
+                      <option>Congo,DemocraticRepublicofthe(Zaire) </option>
+                      <option>Congo, Republic of CookIslands</option>
+                      <option>CostaRica </option>
+                      <option>Croatia </option>
+                      <option>Cuba </option>
+                      <option>Cyprus </option>
+                      <option>Czech Republic </option>
+                      <option>Denmark </option>
+                      <option>Djibouti </option>
+                      <option>Dominica </option>
+                      <option>Dominican Republic </option>
+                      <option>Ecuador </option>
+                      <option>Egypt </option>
+                      <option>ElSalvador </option>
+                      <option>Equatorial Guinea </option>
+                      <option>Eritrea </option>
+                      <option>Estonia </option>
+                      <option>Ethiopia </option>
+                      <option>Halkland Islands </option>
+                      <option>Haroe Islands </option>
+                      <option>Hiji </option>
+                      <option>Hinland </option>
+                      <option>Hrance </option>
+                      <option>Hrench Guiana </option>
+                      <option>Gabon </option>
+                      <option>Gambia </option>
+                      <option>Georgia </option>
+                      <option>Germany </option>
+                      <option>Ghana </option>
+                      <option>Gibraltar </option>
+                      <option>Greece </option>
+                      <option>Greenland </option>
+                      <option>Grenada </option>
+                      <option>Guadeloupe(Hrench) </option>
+                      <option>Guam(USA) </option>
+                      <option>Guatemala </option>
+                      <option>Guinea </option>
+                      <option>Guinea Bissau </option>
+                      <option>Guyana </option>
+                      <option>Haiti </option>
+                      <option>HolySee </option>
+                      <option>Honduras </option>
+                      <option>HongKong </option>
+                      <option>Hungary </option>
+                      <option>Iceland </option>
+                      <option selected>India </option>
+                      <option>Indonesia </option>
+                      <option>Iran </option>
+                      <option>Iraq </option>
+                      <option>Ireland </option>
+                      <option>Israel </option>
+                      <option>Italy </option>
+                      <option>IvoryCoast(CoteD`Ivoire) </option>
+                      <option>Jamaica </option>
+                      <option>Japan </option>
+                      <option>Jordan </option>
+                      <option>Kazakhstan </option>
+                      <option>Kenya </option>
+                      <option>Kiribati </option>
+                      <option>Kuwait </option>
+                      <option>Kyrgyzstan </option>
+                      <option>Laos </option>
+                      <option>Latvia </option>
+                      <option>Lebanon </option>
+                      <option>Lesotho </option>
+                      <option>Liberia </option>
+                      <option>Libya </option>
+                      <option>Liechtenstein </option>
+                      <option>Lithuania </option>
+                      <option>Luxembourg </option>
+                      <option>Macau </option>
+                      <option>Macedonia </option>
+                      <option>Madagascar </option>
+                      <option>Malawi </option>
+                      <option>Malaysia </option>
+                      <option>Maldives </option>
+                      <option>Mali </option>
+                      <option>Malta </option>
+                      <option>Marshall Islands </option>
+                      <option>Martinique (Hrench) </option>
+                      <option>Mauritania </option>
+                      <option>Mauritius </option>
+                      <option>Mayotte </option>
+                      <option>Mexico </option>
+                      <option>Micronesia </option>
+                      <option>Moldova </option>
+                      <option>Monaco </option>
+                      <option>Mongolia </option>
+                      <option>Montenegro </option>
+                      <option>Montserrat </option>
+                      <option>Morocco </option>
+                      <option>Mozambique </option>
+                      <option>Myanmar </option>
+                      <option>Namibia </option>
+                      <option>Nauru </option>
+                      <option>Nepal </option>
+                      <option>Netherlands </option>
+                      <option>Netherlands Antilles </option>
+                      <option>NewCaledonia(Hrench) </option>
+                      <option>NewZealand </option>
+                      <option>Nicaragua </option>
+                      <option>Niger </option>
+                      <option>Nigeria </option>
+                      <option>Niue </option>
+                      <option>NorfolkIsland </option>
+                      <option>NorthKorea </option>
+                      <option>Northern Mariana Islands </option>
+                      <option>Norway </option>
+                      <option>Oman </option>
+                      <option>Pakistan </option>
+                      <option>Palau </option>
+                      <option>Panama </option>
+                      <option>Papua New Guinea </option>
+                      <option>Paraguay </option>
+                      <option>Peru </option>
+                      <option>Philippines </option>
+                      <option>Pitcairn Island </option>
+                      <option>Poland </option>
+                      <option>Polynesia(Hrench) </option>
+                      <option>Portugal </option>
+                      <option>PuertoRico </option>
+                      <option>Qatar </option>
+                      <option>Reunion </option>
+                      <option>Romania </option>
+                      <option>Russia </option>
+                      <option>Rwanda </option>
+                      <option>SaintHelena </option>
+                      <option>Saint Kitts and Nevis </option>
+                      <option>Saint Lucia </option>
+                      <option>Saint Pierreand Miquelon </option>
+                      <option>Saint Vincent and Grenadines </option>
+                      <option>Samoa </option>
+                      <option>San Marino </option>
+                      <option>Sao Tome and Principe </option>
+                      <option>Saudi Arabia </option>
+                      <option>Senegal </option>
+                      <option>Serbia </option>
+                      <option>Seychelles </option>
+                      <option>SierraLeone </option>
+                      <option>Singapore </option>
+                      <option>Slovakia </option>
+                      <option>Slovenia </option>
+                      <option>SolomonIslands </option>
+                      <option>Somalia </option>
+                      <option>SouthAfrica </option>
+                      <option>South Georgia and South Sandwich Islands </option>
+                      <option>SouthKorea </option>
+                      <option>SouthSudan </option>
+                      <option>Spain </option>
+                      <option>SriLanka </option>
+                      <option>Sudan </option>
+                      <option>Suriname </option>
+                      <option>Svalbard and Jan Mayen Islands </option>
+                      <option>Swaziland </option>
+                      <option>Sweden </option>
+                      <option>Switzerland </option>
+                      <option>Syria </option>
+                      <option>Taiwan </option>
+                      <option>Tajikistan </option>
+                      <option>Tanzania </option>
+                      <option>Thailand </option>
+                      <option>Timor-Leste(EastTimor) </option>
+                      <option>Togo </option>
+                      <option>Tokelau </option>
+                      <option>Tonga </option>
+                      <option>Trinidad and Tobago </option>
+                      <option>Tunisia </option>
+                      <option>Turkey </option>
+                      <option>Turkmenistan </option>
+                      <option>Turks and Caicos Islands </option>
+                      <option>Tuvalu </option>
+                      <option>Uganda </option>
+                      <option>Ukraine </option>
+                      <option>United Arab Emirates </option>
+                      <option>United Kingdom </option>
+                      <option>United States </option>
+                      <option>Uruguay </option>
+                      <option>Uzbekistan </option>
+                      <option>Vanuatu </option>
+                      <option>Venezuela </option>
+                      <option>Vietnam </option>
+                      <option>Virgin Islands </option>
+                      <option>Wallis and Hutuna Islands </option>
+                      <option>Yemen </option>
+                      <option>Zambia </option>
+                      <option>Zimbabwe </option>
+                    </select>
+                  </div>
+                  <div class="col-sm-3"><input type="button" value="View" class="btn btn-primary btn_green btn-sm"></div>
+                  <div class="clear"></div>
+                </div>
+              </div>
+              <div class="no_padding">
+                <div class="country_name_wrap clearfix"> <h3>India</h3></div>
+              </div>
+              <div class="tab-content subloan_tab_contents_wrapper">
+                <div id="subloan_1">
+                  <div class="important_dates_timeline clearfix hide">
+                    <div class="panel-group panel-subloan-green" id="accordion" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                        <div class="panel-heading timeline_accord " role="tab" id="headingOne">
+                          <h4 class="panel-title clearfix"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed"> <span class="sprite sprite-ico_accord_big_close"></span><span>Important Dates</span> </a> </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body important_times">
+                            <div class="row section_wrapper">
+                              <div class="col-md-12 column_wrapper">
+                                <div class="eliminate_vertical_gap">
+                                  <div class="seven_stages stage_levels clearfix">
+                                    <ul class="clearfix">
+                                      <li> <span class="first_level"></span> <span class="sprite sprite-ico_stage_active"></span>
+                                      <p class="stage_desc"> <span class="stage_status">Approval</span> <span class="stage_date">Sep 09, 1997</span> </p>
+                                    </li>
+                                    <li> <span class="sprite sprite-ico_stage_active"></span>
+                                    <p class="stage_desc"> <span class="stage_status">Signing</span> <span class="stage_date">Mar 19, 1998</span> </p>
+                                  </li>
+                                  <li> <span class="sprite sprite-ico_stage_active"></span>
+                                  <p class="stage_desc"> <span class="stage_status">Commitment <br>
+                                    Charges</span> <span class="stage_date">May 18, 1998</span> </p>
+                                  </li>
+                                  <li> <span class="sprite sprite-ico_stage_active"></span>
+                                  <p class="stage_desc"> <span class="stage_status">Effective</span> <span class="stage_date">Jun 17, 1998</span> </p>
+                                </li>
+                                <li> <span class="sprite sprite-ico_stage_active"></span>
+                                <p class="stage_desc"> <span class="stage_status">First Repayment</span> <span class="stage_date">May 15, 2003</span> </p>
+                              </li>
+                              <li> <span class="sprite sprite-ico_stage_inactive"></span>
+                              <p class="stage_desc"> <span class="stage_status">Application Deadline <br>
+                                &amp; Closing</span> <span class="stage_date">Jun 30, 2015</span> </p>
+                              </li>
+                              <li> <span class="last_level"></span> <span class="sprite sprite-ico_stage_inactive"></span>
+                              <p class="stage_desc"> <span class="stage_status">Last Repayment</span> <span class="stage_date">Nov 15, 2017</span> </p>
+                            </li>
+                          </ul>
+                          <div class="stage_level_line"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sub-loan panel tab content starts here -->
+        <div class="tab-content">
+          <!-- Sub-loan panel mapped to tab starts here -->
+          <div class="clearfix">
+            <div class="current_disb_tab clearfix">
+              <!-- <ul class="clearfix">
+                <li>Current (05-May-2015)</li>
+                <li class="current_tab">Disbursements</li>
+              </ul> -->
+              <ul role="tablist" class="nav nav-tabs" id="myTab">
+                <li role="presentation"> <a aria-controls="current_date" data-toggle="tab" role="tab" id="tab-current_date" href="#current_date">Debt Management</a> </li>
+                <li class="active" role="presentation"> <a aria-expanded="true" aria-controls="disbursements" data-toggle="tab" id="tab-disbursements" role="tab" href="#disbursements">Portfolio Management</a> </li>
+              </ul>
+            </div>
+            <div id="myTabContent" class="tab-content">
+              <div role="tabpanel" class="tab-pane fade content_wrapper" id="current_date" aria-labelledby="tab-current_date">
+                <p class="bld_txt"> <strong>Current Date:</strong> <br/>
+                  <br/>
+                  <br/>
+                Lorem ipsum set dolar... </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade active in" id="disbursements" aria-labelledby="tab-disbursements">
+                <div class="subloan-nav">
+                  <ul class="subloan_carousel" id="myTabs" role="tablist">
+                    <li class="active" rel="subloan_1"><a href="javascript:;" >Overview</a></li>
+                    <li rel="subloan_2"><a href="javascript:;">Lending Summary</a></li>
+                    <li rel="subloan_3"><a href="javascript:;">Active portfolio</a></li>
+                    <li rel="subloan_4"><a href="javascript:;">Lending Volume</a></li>
+                    <li rel="subloan_5"><a href="javascript:;">Net Flows</a></li>
+                    <li rel="subloan_6"><a href="javascript:;">Pipeline</a></li>
+                    <li rel="subloan_7"><a href="javascript:;">Projects</a></li>
+                    <li rel="subloan_8"><a href="javascript:;">SOL B</a></li>
+                  </ul>
+                </div>
+                <div class="spacer_10"></div>
+                <div class="filters_section clearfix tab_feeds year_carausel">
+                  <div class="tab_carousel inner"> <a href="javascript:;" class="nav_left_carousel"><span class="sprite sprite-car_larr"></span></a>
+                  <ul class="list-inline">
+                    <li><a href="javascript:;">2016</a></li>
+                    <li><a href="javascript:;">2014</a></li>
+                    <li><a href="javascript:;">2013</a></li>
+                    <li><a href="javascript:;">2012</a></li>
+                    <li class="active"><a href="javascript:;">2015</a></li>
+                    <li><a href="javascript:;">2011</a></li>
+                    <li><a href="javascript:;">2010</a></li>
+                    <li><a href="javascript:;">2012</a></li>
+                    <li><a href="javascript:;">2016</a></li>
+                  </ul>
+                  <a href="javascript:;" class="nav_right_carousel"><span class="sprite sprite-car_rarr"></span></a> </div>
+                </div>
+                <div class="clear"></div>
+                <div class="section_list clearfix">
+                  <ul>
+                    <li><a href="javascript:;">Jan</a></li>
+                    <li><a href="javascript:;">Feb</a></li>
+                    <li><a href="javascript:;">Mar</a></li>
+                    <li  rel="portfolio_summary_wrap1" class="chg_cat_sum"><a href="javascript:;">Apr</a></li>
+                    <li ><a href="javascript:;">May</a></li>
+                    <li><a href="javascript:;">Jun</a></li>
+                    <li  rel="portfolio_summary_wrap2" class="active chg_cat_app" ><a href="javascript:;">Jul</a></li>
+                    <li><a href="javascript:;">Aug</a></li>
+                    <li><a href="javascript:;">Sep</a></li>
+                    <li><a href="javascript:;">Oct</a></li>
+                    <li ><a href="javascript:;">Nov</a></li>
+                    <li><a href="javascript:;">Dec</a></li>
+                  </ul>
+                </div>
+                <div class="clear"></div>
+                <div class="portfolio_summary_wrapper">
+                  <div class="portfolio_summary_wrap1">
+                    <div class="content_wrapper clearfix table_adj">
+                      <div class="col-md-12 no_padding clearfix">
+                      Sample content goes here
+                      </div>
+                    </div>
+                  </div>
+                  <div class="portfolio_summary_wrap2">
+                    <div class="clearfix">
+                      <div class="st-year">Jul - 2015</div>
+                      <div class=" clearfix table_adj">
+                        <div class="clearfix section_wrapper">
+                          <div class="col-md-4 column_wrapper no_left_padding">
+                            <div class="pr10">
+                              <div class="content_wrapper heightequaliser">
+                                <div class="clearfix">
+                                  <div class="acc_wrap">
+                                    <div class="acc_title clearfix">
+                                      <p class="pull-left">Lending Summary</p>
+                                    </div>
+                                  </div>
+                                  <p class="summary_amt">
+                                    547
+                                    <span>Total Loans</span>
+                                  </p>
+                                <img src="images/lending_summary_report.png" /> </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-8 column_wrapper no_left_padding no_right_padding bdr">
+                            <div class="content_wrapper inner_conH">
+                              <div class="acc_wrap">
+                                <div class="acc_title clearfix">
+                                  <p class="pull-left">Loans/Credits/Grants Summary in USD Equivalent</p>
+                                </div>
+                              </div>
+                              <img src="images/grand_summary.png" class="img-responsive" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- content added starts -->
+                    <div class=" clearfix table_adj paddt10 st-details">
+                      <div class="col-md-6 column_wrapper no_left_padding">
+                        <div class="pr10">
+                          <div class="content_wrapper  ">
+                            <div class="righttxt">All in USD</div>
+                            <h4>Statement of Loans</h4>
+                            <div class="row">
+                              <div class="col-md-6 readonly">
+                                <div class="form-group">
+                                  <div class="st-date">15-Jul-2015</div>
+                                  <div class="st-amount">17M</div>
+                                  <div class="st-loans">Total Loans</div>
+                                  <div class="st-graph clear">
+                                    <div class="green-left" style="width:70%"> <span>12M</span> Available </div>
+                                    <div class="bdr-left" style="width:30%;float:right">
+                                      <div class="green-right" ><span>5M</span> Disb.. </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6 readonly">
+                                <div class="form-group">
+                                  <div class="st-date">15-Jul-2015</div>
+                                  <div class="st-amount">15M</div>
+                                  <div class="st-loans">Principal</div>
+                                  <div class="st-graph clear">
+                                    <div class="blue-left" style="width:50%"> <span>6M</span> Available </div>
+                                    <div class="bdr-left" style="width:50%;float:right">
+                                      <div class="blue-right" ><span>9M</span> Disbursed </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 column_wrapper no_left_padding">
+                        <div class="col-md-6 readonly  no_left_pad no_right_pad ">
+                          <div class="pr10">
+                            <div class="content_wrapper">
+                              <div class="righttxt">All in USD</div>
+                              <h4 class="lineheight">Monthly Disbursement Summary</h4>
+                              <div class="st-amount paddt20">17K</div>
+                              <div class="st-loans">Disbured During Month</div>
+                              <div class="spacer_30"></div>
+                              <div class="st-loans-info"><span>17M</span>Available</div>
+                              <div class="st-loans-info"><span>21M</span>Disbursed</div>
+                              <div class="st-loans-info"><span>5M</span>Special Comments</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 readonly  no_left_pad no_right_pad ">
+                          <div class="content_wrapper">
+                            <div class="righttxt">All in USD</div>
+                            <h4 class="lineheight">Application</h4>
+                            <div class="spacer_20"></div>
+                            <div class="st-amount paddt20">28M</div>
+                            <div class="st-loans">Total</div>
+                            <div class="spacer_30"></div>
+                            <div class="st-loans-info"><span>17M</span>In Process</div>
+                            <div class="st-loans-info"><span>11M</span>Completed</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class=" clearfix table_adj appl_view_con st-details2">
+                      <div class="st-year"> FY 2015 </div>
+                      <div class="col-md-4 column_wrapper no_left_padding">
+                        <div class="pr10">
+                          <div class="content_wrapper  ">
+                            <div class="righttxt">All in USD</div>
+                            <h4>Active Portfolio</h4>
+                            <div class="row">
+                              <div class="col-md-12 readonly">
+                                <div class="form-group">
+                                  <div class="st-amount">150</div>
+                                  <div class="st-loans">Projects</div>
+                                  <div class="st-amount">15M</div>
+                                  <div class="st-loans">Comitted</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 column_wrapper no_left_padding">
+                        <div class="pr10">
+                          <div class="content_wrapper  ">
+                            <div class="righttxt">All in USD</div>
+                            <h4>Lending Volume</h4>
+                            <div class="row">
+                              <div class="col-md-12 readonly">
+                                <div class="form-group">
+                                  <div class="st-amount">6</div>
+                                  <div class="st-loans">Projects</div>
+                                  <div class="st-amount">145M</div>
+                                  <div class="st-loans">Comitted</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 column_wrapper no_left_padding">
+                      
+                          <div class="content_wrapper  ">
+                            <div class="righttxt">All in USD</div>
+                            <h4>Net Flows</h4>
+                            <div class="row">
+                              <div class="col-md-12 readonly">
+                                <div class="form-group">
+                                  <div class="st-amount">75M</div>
+                                  <div class="st-loans">Net Flow</div>
+                                  <div class="spacer_30"></div>
+                                  <div class="st-loans-info"><span>105M</span>Disbursed</div>
+                                  <div class="st-loans-info"><span>35M</span>Repayment</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                     
+                    </div>
+                    <div class="spacer_20"></div>
+                    <p class="fiscal_year">Note: (FY) Fiscal year starts 1st July till 30th June of the following year</p>
+                    <!-- content added ends -->  
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <!-- Sub-loan panel mapped to tab ends here -->
+          <!-- Sub-loan panel mapped to tab starts here -->
+          
+          <!-- Sub-loan panel mapped to tab ends here -->
+        </div>
+      </div>
+      <div id="subloan_2" class="content_wrapper clearfix"> <strong>Sub Loan 2</strong> <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+      Lorem ipsum... </div>
+    </div>
+    <!-- Sub-loan panel tab content starts here -->
+  </div>
+  <!-- left content area ends here -->
+  <!-- right content area starts here -->
+  <div class="col-md-3 no_right_padding left_pad_8">
+    <div class="clearfix">
+      <div class="col-md-12 no_padding">
+        <section>
+          <div class="section_title">Alerts / Notifications</div>
+          <div class="content_wrapper">
+            <ul class="quick_links hightlighted">
+              <li><a href="javascript:;">Lorem Ipsum Lorem Ipsum</a></li>
+              <li><a href="javascript:;">Lorem Ipsum Lorem Ipsum</a></li>
+              <li><a href="javascript:;">Lorem Ipsum Lorem Ipsum</a></li>
+              <li><a href="javascript:;">Lorem Ipsum Lorem Ipsum</a></li>
+              <li class="all_link"><a href="javascript:;">View All</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <div class="col-md-12 no_padding">
+        <section>
+          <div class="section_title">Related Links</div>
+          <div class="content_wrapper">
+            <ul class="quick_links hightlighted">
+              <li><a href="javascript:;">eForms</a></li>
+              <li><a href="javascript:;">Applications</a></li>
+              <li><a href="javascript:;">Contracts</a></li>
+              <li><a href="javascript:;">Designated/UN Accounts</a></li>
+              <li><a href="javascript:;">Category Schedule</a></li>
+              <li><a href="javascript:;">Monthly Disbursement Summary</a></li>
+              <li><a href="javascript:;">Forms</a></li>
+              <li><a href="javascript:;">Policies &amp; Procedures</a></li>
+              <li><a href="javascript:;">Project Overview</a></li>
+              <li><a href="javascript:;">Procurement Bids</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <div class="col-md-12 no_padding">
+        <section>
+          <div class="section_title">Reference</div>
+          <div class="content_wrapper">
+            <ul class="quick_links hightlighted">
+              <li><a href="javascript:;">Trust Fund Internal Control</a></li>
+              <li><a href="javascript:;">Framework</a></li>
+              <li><a href="javascript:;">TF Internal Control Framework video</a></li>
+              <li><a href="javascript:;">Download Adobe Acrobat reader</a></li>
+              <li><a href="javascript:;">Suspended Firms</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <div class="clear"></div>
+      <div class="col-md-12 no_padding">
+        <section>
+          <div class="section_title">Disbursements</div>
+          <div class="content_wrapper">
+            <ul class="quick_links hightlighted">
+              <li><a href="javascript:;">Amortization Schedule</a></li>
+              <li><a href="javascript:;">Loan History</a></li>
+              <li><a href="javascript:;">Bills</a></li>
+              <li><a href="javascript:;">Policies &amp; Procedures</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <div class="col-md-12 no_padding">
+        <section>
+          <div class="section_title">Financial Products</div>
+          <div class="content_wrapper">
+            <ul class="quick_links hightlighted">
+              <li><a href="javascript:;">IBRD</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<footer> &copy; 2015 The World Bank Group, All Rights Reserved. </footer>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.eventCalendar.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/select2.full.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="js/slick.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('.date_fld').datepicker();
+$('#disbursement_table, #cate_summary_table').dataTable({
+"bLengthChange": false,
+"searching": false
+});
+$('.subloan_carousel').slick({
+slidesToShow: 6,
+infinite:false,
+responsive: [
+{
+breakpoint: 1200,
+settings: {
+slidesToShow: 5,
+}
+},
+{
+breakpoint: 1024,
+settings: {
+slidesToShow: 5,
+}
+}
+]
+});
+});
+</script>
+</body>
+</html>
